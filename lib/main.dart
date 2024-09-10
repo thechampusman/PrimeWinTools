@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cleaner/win32_blur.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -34,7 +35,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: Scaffold(
+        backgroundColor: Colors.red.withOpacity(0.0),
         appBar: AppBar(
+          backgroundColor: Colors.white.withOpacity(0.0),
           title: Text('Windows File Cleaner'),
         ),
         body: FileCleanerHome(),
@@ -49,6 +52,12 @@ class FileCleanerHome extends StatefulWidget {
 }
 
 class _FileCleanerHomeState extends State<FileCleanerHome> {
+  @override
+  void initState() {
+    super.initState();
+    applyBlurEffect(); // Call the blur effect function here
+  }
+
   List<String> tempFiles = [];
   void scanTempFiles() {
     List<String> tempDirectories = [
@@ -120,7 +129,9 @@ class _FileCleanerHomeState extends State<FileCleanerHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue.withOpacity(0.0),
       appBar: AppBar(
+        backgroundColor: Colors.white.withOpacity(0.0),
         title: Text('Windows Temp File Cleaner'),
       ),
       body: Padding(
