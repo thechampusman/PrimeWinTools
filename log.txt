@@ -1,0 +1,34 @@
+2024-09-16 13:06:22.283998 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\.ses
+2024-09-16 13:06:22.283998 - Failed to delete: File: C:\Users\Usmans\AppData\Local\Temp\020c152e-6d3c-4b70-ab22-95c811f8ed2e.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\Usmans\AppData\Local\Temp\020c152e-6d3c-4b70-ab22-95c811f8ed2e.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2024-09-16 13:06:22.283998 - Failed to delete: File: C:\Users\Usmans\AppData\Local\Temp\1010951b-5c09-43e8-aedf-98052435991f.tmp.node, Error: PathAccessException: Cannot delete file, path = 'C:\Users\Usmans\AppData\Local\Temp\1010951b-5c09-43e8-aedf-98052435991f.tmp.node' (OS Error: Access is denied.
+, errno = 5)
+2024-09-16 13:06:22.283998 - Failed to delete: File: C:\Users\Usmans\AppData\Local\Temp\16ada512-2fda-4677-825a-b59dde1bf268.tmp.node, Error: PathAccessException: Cannot delete file, path = 'C:\Users\Usmans\AppData\Local\Temp\16ada512-2fda-4677-825a-b59dde1bf268.tmp.node' (OS Error: Access is denied.
+, errno = 5)
+2024-09-16 13:06:22.283998 - Failed to delete: File: C:\Users\Usmans\AppData\Local\Temp\3c612850-835e-4192-94d0-d1ab9586a8b8.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\Usmans\AppData\Local\Temp\3c612850-835e-4192-94d0-d1ab9586a8b8.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2024-09-16 13:06:22.283998 - Failed to delete: File: C:\Users\Usmans\AppData\Local\Temp\4310c92d99c30ca5a328cffd966c36da-{87A94AB0-E370-4cde-98D3-ACC110C5967D}, Error: PathAccessException: Cannot delete file, path = 'C:\Users\Usmans\AppData\Local\Temp\4310c92d99c30ca5a328cffd966c36da-{87A94AB0-E370-4cde-98D3-ACC110C5967D}' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2024-09-16 13:06:22.283998 - Failed to delete: File: C:\Users\Usmans\AppData\Local\Temp\9510aad7-ff99-48ab-90f4-3d3582e838d9.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\Usmans\AppData\Local\Temp\9510aad7-ff99-48ab-90f4-3d3582e838d9.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2024-09-16 13:06:22.283998 - Failed to delete: File: C:\Users\Usmans\AppData\Local\Temp\9f9860db-18d6-4577-a345-5c590f2f1b4f.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\Usmans\AppData\Local\Temp\9f9860db-18d6-4577-a345-5c590f2f1b4f.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2024-09-16 13:06:22.283998 - Failed to delete: File: C:\Users\Usmans\AppData\Local\Temp\adb.log, Error: PathAccessException: Cannot delete file, path = 'C:\Users\Usmans\AppData\Local\Temp\adb.log' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2024-09-16 13:06:22.283998 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\cleanerd3ba497b
+2024-09-16 13:06:22.283998 - Failed to delete: File: C:\Users\Usmans\AppData\Local\Temp\d70d253b-7d34-4f1d-bd52-30f413028f9a.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\Usmans\AppData\Local\Temp\d70d253b-7d34-4f1d-bd52-30f413028f9a.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2024-09-16 13:06:22.283998 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240916120715.log
+2024-09-16 13:06:22.283998 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\flutter_tools.bc968bf9
+2024-09-16 13:06:22.283998 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\hsperfdata_Usmans
+2024-09-16 13:06:22.283998 - Failed to delete: Folder: C:\Users\Usmans\AppData\Local\Temp\mozilla-temp-files, Error: PathAccessException: Deletion failed, path = 'C:\Users\Usmans\AppData\Local\Temp\mozilla-temp-files' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2024-09-16 13:06:22.283998 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\MSBuildTemp
+2024-09-16 13:06:22.283998 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\OptaneIconOverlay.ico
+2024-09-16 13:06:22.283998 - Failed to delete: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240915-2234.log, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\DESKTOP-MLKCRKA-20240915-2234.log' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2024-09-16 13:06:22.283998 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240916-1207.log
+2024-09-16 13:06:22.283998 - Failed to delete: File: C:\Windows\Temp\FXSAPIDebugLogFile.txt, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\FXSAPIDebugLogFile.txt' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2024-09-16 13:06:22.283998 - Failed to delete: File: C:\Windows\Temp\FXSTIFFDebugLogFile.txt, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\FXSTIFFDebugLogFile.txt' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
