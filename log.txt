@@ -32,3 +32,260 @@
 , errno = 32)
 2024-09-16 13:06:22.283998 - Failed to delete: File: C:\Windows\Temp\FXSTIFFDebugLogFile.txt, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\FXSTIFFDebugLogFile.txt' (OS Error: The process cannot access the file because it is being used by another process.
 , errno = 32)
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\.ses
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\1fxj15ue.vvm
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\3zn1it13.eua
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\a3pz2cjr
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\acrobat_sbx
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\acrocef_low
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\acrord32_super_sbx
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\ActivityVisualCache
+2024-09-26 19:16:17.487118 - Failed to delete: File: C:\Users\Usmans\AppData\Local\Temp\adb.log, Error: PathAccessException: Cannot delete file, path = 'C:\Users\Usmans\AppData\Local\Temp\adb.log' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2024-09-26 19:16:17.487118 - Failed to delete: File: C:\Users\Usmans\AppData\Local\Temp\byteBuddyAgent11101141166759217657.jar, Error: PathAccessException: Cannot delete file, path = 'C:\Users\Usmans\AppData\Local\Temp\byteBuddyAgent11101141166759217657.jar' (OS Error: Access is denied.
+, errno = 5)
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\byteBuddyAgent12103980300163921752.jar
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\byteBuddyAgent7304972099410410267.jar
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\byteBuddyAgent7544759978138470889.jar
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\byteBuddyAgent7720660677245373021.jar
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\cdc78f7e-0f01-4cb1-bbef-78ca53222bcc.tmp
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\cleaner175b3bba
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\cleaner3d1189a7
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\cleaner4354fe41
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\cleaner4447a33f
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\cleaner4d789cfe
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\cleaner516e8fa4
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\cleanerf8d7167a
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\cv_debug.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240921220536.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240921220536_result_Error.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240922091625.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240922091625_result_Error.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240922113838.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240922113838_result_Error.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240922122401.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240922122401_result_Error.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240922163344.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240924081206.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240924081206_result_Error.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240924082352.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240924082838.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240924085820.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240924085820_result_Error.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240924172827.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240924172827_00_setup.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240924172827_00_setup_errors.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240924172827_result_Success.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240925065222.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240925065222_result_Error.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240925071358.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240925073947.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240925073947_result_Error.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240925175645.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240925175645_result_Error.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240925210127.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240925210127_result_Error.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240925220805.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240925220805_00_setup.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240925220805_00_setup_errors.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240925220805_result_Success.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240925223729.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240925224748.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240925225249.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240925233052.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240926002458.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\dd_BackgroundDownload_20240926024842.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\DESKTOP-MLKCRKA-20240922-0908.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\DESKTOP-MLKCRKA-20240925-0739.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\DESKTOP-MLKCRKA-20240926-1617.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\e70a7d5b-ea0a-4b25-b22c-cb33d313308a.tmp
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\ek5ji1nq.x5z
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\flutter_tools.432ade92
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\flutter_tools.46095cb7
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\flutter_tools.632a22c0
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\flutter_tools.669dfd68
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\flutter_tools.72fc1fa0
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\flutter_tools.9ecf5f36
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\flutter_tools.d52bf2d7
+2024-09-26 19:16:17.487118 - Failed to delete: Folder: C:\Users\Usmans\AppData\Local\Temp\hsperfdata_Usmans, Error: PathAccessException: Deletion failed, path = 'C:\Users\Usmans\AppData\Local\Temp\hsperfdata_Usmans' (OS Error: Access is denied.
+, errno = 5)
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\is-CIFRG.tmp
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\is-FM8AH.tmp
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\jna--1751940585
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\megabasterd_folder_cache_GllWnKjR
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\MSBuildTemp
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\NuGetScratch
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\OptaneIconOverlay.ico
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\Setup Log 2024-09-22 #001.txt
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\Setup Log 2024-09-22 #002.txt
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\SoftwareUpdate_Temp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\sqlite-3.43.0.0-8c41552b-e1ee-4862-b9c2-0f318738bd89-sqlitejdbc.dll
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\sqlite-3.43.0.0-8c41552b-e1ee-4862-b9c2-0f318738bd89-sqlitejdbc.dll.lck
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\sqlite-3.43.0.0-960df00e-8b2a-45bc-81d3-11f823438b0b-sqlitejdbc.dll
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\sqlite-3.43.0.0-960df00e-8b2a-45bc-81d3-11f823438b0b-sqlitejdbc.dll.lck
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\sqlite-3.43.0.0-e90542e7-7e05-4820-bd7e-e3697bc67c7c-sqlitejdbc.dll
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\sqlite-3.43.0.0-e90542e7-7e05-4820-bd7e-e3697bc67c7c-sqlitejdbc.dll.lck
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\StructuredQuery.log
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\v2rsqxnp.gxm
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct1643.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct2D3B.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct2D3C.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct3388.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct3D55.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct40C0.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct40C1.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct4F00.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct5A4C.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct5C65.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct6219.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct62CA.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct6714.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct672.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct69FD.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct6C26.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct6EC.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct7C21.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct7C22.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct87FF.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wct91B3.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wctA74D.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wctAB21.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wctB6B3.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wctBD71.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wctC26A.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wctC80B.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wctC86.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wctD1D4.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wctD1D5.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wctD7A0.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wctDC4E.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wctE790.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wctF249.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wctF6ED.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\wctFF17.tmp
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\WinGet
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\~DF38293E65833B0B8E.TMP
+2024-09-26 19:16:17.487118 - Failed to delete: File: C:\Users\Usmans\AppData\Local\Temp\~DF7C4BE49109D034BD.TMP, Error: PathAccessException: Cannot delete file, path = 'C:\Users\Usmans\AppData\Local\Temp\~DF7C4BE49109D034BD.TMP' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\~DFAB4310433D48A663.TMP
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\bb3a785178f443fda931098a5a9a306b.db.ses
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240921-0629.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240921-1233.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240921-1349.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240921-1354.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240921-1406.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240921-1422.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240921-1443.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240921-1502.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240921-2001.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240921-2039.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240921-2117.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240921-2132.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240921-2205.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240922-0905.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240922-0908.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240922-0908a.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240922-0916.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240922-0929.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240922-0954.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240922-1023.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240922-1123.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240922-1128.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240922-1138.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240922-1149.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240922-1208.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240922-1224.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240922-1404.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240922-1428.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240922-1510.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240922-1633.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240924-0729.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240924-0738.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240924-0738a.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240924-0739.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240924-0812.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240924-0812a.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240924-0823.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240924-0828.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240924-0858.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240924-1728.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240924-1904.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240925-0641.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240925-0646.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240925-0650.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240925-0650a.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240925-0652.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240925-0713.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240925-0739.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240925-0750.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240925-1725.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240925-1756.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240925-2101.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240925-2208.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240925-2247.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240925-2252.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240925-2330.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240926-0024.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240926-0248.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240926-0804.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240926-1616.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240926-1617.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240926-1619.log
+2024-09-26 19:16:17.487118 - Failed to delete: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240926-1857.log, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\DESKTOP-MLKCRKA-20240926-1857.log' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2024-09-26 19:16:17.487118 - Failed to delete: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240926-1902.log, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\DESKTOP-MLKCRKA-20240926-1902.log' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\FXSAPIDebugLogFile.txt
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\FXSTIFFDebugLogFile.txt
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\MpCmdRun.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\MpSigStub.log
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\wct14D8.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\wct1E51.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\wct31CD.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\wct3D95.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\wct4D37.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\wct56FB.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\wct5A4C.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\wct69FD.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\wct73C1.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\wct97C6.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\wctA14E.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\wctB93D.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\wctC0A2.tmp
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\wctD054.tmp
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Windows\Temp\_49E718B9-2C12-409C-87B0-D030117B76BB
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Windows\Temp\_66BB8E59-0218-48BD-936E-C39905633357
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Windows\Temp\_CB94FAF9-DBA0-49C4-9467-FEF832BC3661
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Windows\Temp\_CF18FD06-7435-4EA6-AE78-F85D28FEF64F
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Windows\Temp\_D40EF29C-5A7A-43DB-8E45-07A1D1C279C1
+2024-09-26 19:16:17.487118 - Deleted Folder: Folder: C:\Windows\Temp\_FCE75D15-D4A1-4A41-A716-47D9375524E8
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\{2A3A25E6-DC55-48CA-A7B8-68B9BA8375D8} - OProcSessId.dat
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\{3A80F534-F517-4F1B-A26E-D430C1BA62E8} - OProcSessId.dat
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\{689ACE64-5766-42DC-A879-0BF8A1C5DAD6} - OProcSessId.dat
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\{74C093AD-33F6-4BF6-B16C-94789E8BB28C} - OProcSessId.dat
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\{79B3B5E6-17CC-49BF-9EC2-A1C8D02C92F3} - OProcSessId.dat
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\{8A553E2C-4D76-44BD-AC27-615BF74427B6} - OProcSessId.dat
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\{DDD93EEA-53B6-417A-BC89-E2799C67F2C9} - OProcSessId.dat
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\{F1B32CA6-278A-4ED6-8E15-F336C3EBBFDD} - OProcSessId.dat
+2024-09-26 19:16:17.487118 - Deleted File: File: C:\Windows\Temp\{FF2CBB42-1DE1-4202-B747-E54907CD576F} - OProcSessId.dat
+2024-09-26 19:49:25.147303 - Deleted File: File: C:\Users\Usmans\AppData\Local\Temp\.ses
+2024-09-26 19:49:25.147303 - Failed to delete: File: C:\Users\Usmans\AppData\Local\Temp\adb.log, Error: PathAccessException: Cannot delete file, path = 'C:\Users\Usmans\AppData\Local\Temp\adb.log' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2024-09-26 19:49:25.147303 - Failed to delete: File: C:\Users\Usmans\AppData\Local\Temp\byteBuddyAgent11101141166759217657.jar, Error: PathAccessException: Cannot delete file, path = 'C:\Users\Usmans\AppData\Local\Temp\byteBuddyAgent11101141166759217657.jar' (OS Error: Access is denied.
+, errno = 5)
+2024-09-26 19:49:25.147303 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\cleanerb66ba4a1
+2024-09-26 19:49:25.147303 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\cleanereccfb469
+2024-09-26 19:49:25.147303 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\flutter_tools.199f22b7
+2024-09-26 19:49:25.147303 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\flutter_tools.2264528f
+2024-09-26 19:49:25.147303 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\flutter_tools.292b161c
+2024-09-26 19:49:25.147303 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\flutter_tools.8b371cf2
+2024-09-26 19:49:25.147303 - Failed to delete: Folder: C:\Users\Usmans\AppData\Local\Temp\hsperfdata_Usmans, Error: PathAccessException: Deletion failed, path = 'C:\Users\Usmans\AppData\Local\Temp\hsperfdata_Usmans' (OS Error: Access is denied.
+, errno = 5)
+2024-09-26 19:49:25.147303 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\MSBuildTemp
+2024-09-26 19:49:25.147303 - Deleted Folder: Folder: C:\Users\Usmans\AppData\Local\Temp\SoftwareUpdate_Temp
+2024-09-26 19:49:25.147303 - Failed to delete: File: C:\Users\Usmans\AppData\Local\Temp\~DF7C4BE49109D034BD.TMP, Error: PathAccessException: Cannot delete file, path = 'C:\Users\Usmans\AppData\Local\Temp\~DF7C4BE49109D034BD.TMP' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2024-09-26 19:49:25.147303 - Failed to delete: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240926-1857.log, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\DESKTOP-MLKCRKA-20240926-1857.log' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2024-09-26 19:49:25.147303 - Failed to delete: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240926-1902.log, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\DESKTOP-MLKCRKA-20240926-1902.log' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)

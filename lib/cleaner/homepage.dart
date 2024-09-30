@@ -110,7 +110,7 @@ class _HomepageState extends State<Homepage> {
             'Log History',
             style: TextStyle(color: Colors.white),
           ),
-          content: Container(
+          content: SizedBox(
             width: double.maxFinite,
             child: ListView.builder(
               shrinkWrap: true,
@@ -154,16 +154,16 @@ class _HomepageState extends State<Homepage> {
         body: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Container(
-            padding: EdgeInsets.all(15),
+            padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
-                color: Color(0xFF454342).withOpacity(0.5),
-                borderRadius: BorderRadius.all(Radius.circular(7))),
+                color: const Color(0xFF454342).withOpacity(0.5),
+                borderRadius: const BorderRadius.all(Radius.circular(7))),
             child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "Your Personal Cleaner",
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
@@ -226,7 +226,7 @@ class _HomepageState extends State<Homepage> {
                 Expanded(
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Color(0xFF757675).withOpacity(0.3),
+                        color: const Color(0xFF757675).withOpacity(0.3),
                         borderRadius: BorderRadius.circular(8),
                         border:
                             Border.all(color: Colors.white.withOpacity(0.6))),

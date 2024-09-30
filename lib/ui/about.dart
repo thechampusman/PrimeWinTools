@@ -7,7 +7,7 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       key: key,
-      child: Text(
+      child: const Text(
         'About Page - Details about the application and team',
         style: TextStyle(fontSize: 24, color: Colors.white),
       ),

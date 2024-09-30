@@ -1,4 +1,4 @@
-name: cleaner
+name: PrimeWinTool
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -37,6 +37,9 @@ dependencies:
   cupertino_icons: ^1.0.6
   win32: ^5.5.4
   window_manager: ^0.4.2
+  sqflite: ^2.3.3+1
+  path: ^1.9.0
+  sqflite_common_ffi: ^2.3.3
 
 dev_dependencies:
   flutter_test:

@@ -1,23 +1,29 @@
 import 'dart:io';
 
-import 'package:PrimeWinTool/about.dart';
-import 'package:PrimeWinTool/homepage.dart';
-import 'package:PrimeWinTool/win32_blur.dart';
+import 'package:PrimeWinTool/ui/about.dart';
+import 'package:PrimeWinTool/cleaner/homepage.dart';
+import 'package:PrimeWinTool/cleaner/win32_blur.dart';
 import 'package:flutter/material.dart';
 
-class FileCleanerHome extends StatefulWidget {
-  const FileCleanerHome({super.key});
+import '../clipboard/ClipBoardManager.dart';
+import '../clipboard/clipboard.dart';
+
+class Dashboard extends StatefulWidget {
+  const Dashboard({super.key});
 
   @override
-  _FileCleanerHomeState createState() => _FileCleanerHomeState();
+  _DashboardState createState() => _DashboardState();
 }
 
-class _FileCleanerHomeState extends State<FileCleanerHome> {
+class _DashboardState extends State<Dashboard> {
   int _selectedIndex = 0;
-
+  final ClipboardManager clipboardManager = ClipboardManager();
   @override
   void initState() {
     super.initState();
+    clipboardManager.monitorClipboard(() {
+      setState(() {}); // Update the UI when clipboard changes
+    });
     applyBlurEffect();
   }
 
@@ -33,7 +39,7 @@ class _FileCleanerHomeState extends State<FileCleanerHome> {
       children: [
         // Navigation bar with icons and text
         Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               color: Color(0xFF454342),
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(15), topRight: Radius.circular(15))),
@@ -48,14 +54,14 @@ class _FileCleanerHomeState extends State<FileCleanerHome> {
                     children: [
                       Icon(Icons.home,
                           color: _selectedIndex == 0
-                              ? Color(0xFFE76343)
+                              ? const Color(0xFFE76343)
                               : Colors.white),
                       const SizedBox(width: 8),
                       Text(
                         "Home",
                         style: TextStyle(
                           color: _selectedIndex == 0
-                              ? Color(0xFFE76343)
+                              ? const Color(0xFFE76343)
                               : Colors.white,
                         ),
                       ),
@@ -68,16 +74,37 @@ class _FileCleanerHomeState extends State<FileCleanerHome> {
                 onTap: () => _onItemTapped(1),
                 child: Row(
                   children: [
-                    Icon(Icons.info,
+                    Icon(Icons.list_alt,
                         color: _selectedIndex == 1
-                            ? Color(0xFFE76343)
+                            ? const Color(0xFFE76343)
+                            : Colors.white),
+                    const SizedBox(width: 8),
+                    Text(
+                      "Clip Board",
+                      style: TextStyle(
+                        color: _selectedIndex == 1
+                            ? const Color(0xFFE76343)
+                            : Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 40),
+              GestureDetector(
+                onTap: () => _onItemTapped(1),
+                child: Row(
+                  children: [
+                    Icon(Icons.info,
+                        color: _selectedIndex == 2
+                            ? const Color(0xFFE76343)
                             : Colors.white),
                     const SizedBox(width: 8),
                     Text(
                       "About",
                       style: TextStyle(
-                        color: _selectedIndex == 1
-                            ? Color(0xFFE76343)
+                        color: _selectedIndex == 2
+                            ? const Color(0xFFE76343)
                             : Colors.white,
                       ),
                     ),
@@ -98,8 +125,13 @@ class _FileCleanerHomeState extends State<FileCleanerHome> {
               );
             },
             child: _selectedIndex == 0
-                ? Homepage(key: const ValueKey<int>(0)) // Home page content
-                : About(key: const ValueKey<int>(1)), // About page content
+                ? const Homepage(key: ValueKey<int>(0)) // Home page content
+                : _selectedIndex == 1
+                    ? ClipboardScreen(
+                        copiedItems: clipboardManager
+                            .copiedItems, // Pass the actual clipboard items
+                      ) // Clipboard page content
+                    : const About(key: ValueKey<int>(2)), // About page content
           ),
         ),
       ],
