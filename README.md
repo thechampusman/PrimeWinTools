@@ -57,7 +57,7 @@ PrimeWinTools is licensed under a **custom proprietary license**. You are allowe
 - You may **not copy**, redistribute, or create new distributions, forks, or versions of this software without explicit written permission from the copyright holder.
 - You may **not sublicense, sell, or transfer** this software in any way without permission.
 
-For more details, please see the [LICENSE](./LICENSE) file.
+For more details, please see the [LICENSE](./LICENSE.txt) file.
 
 ---
 
