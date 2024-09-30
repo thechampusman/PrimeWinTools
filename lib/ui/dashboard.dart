@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:cleaner/about.dart';
-import 'package:cleaner/homepage.dart';
-import 'package:cleaner/win32_blur.dart';
+import 'package:PrimeWinTool/about.dart';
+import 'package:PrimeWinTool/homepage.dart';
+import 'package:PrimeWinTool/win32_blur.dart';
 import 'package:flutter/material.dart';
 
 class FileCleanerHome extends StatefulWidget {

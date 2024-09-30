@@ -92,25 +92,51 @@ class _HomepageState extends State<Homepage> {
 
   void _showLogHistory() async {
     final logFile = File('${Directory.current.path}\\log.txt');
-    String logContent = '';
+    List<String> logEntries = [];
 
+    // Check if the log file exists and read its contents
     if (logFile.existsSync()) {
-      logContent = logFile.readAsStringSync();
+      logEntries = logFile.readAsLinesSync();
     } else {
-      logContent = 'No log data found.';
+      logEntries = ['No log data found.'];
     }
 
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Log History'),
-          content: SingleChildScrollView(
-            child: Text(logContent),
+          backgroundColor: Colors.black.withOpacity(0.5),
+          title: const Text(
+            'Log History',
+            style: TextStyle(color: Colors.white),
+          ),
+          content: Container(
+            width: double.maxFinite,
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: logEntries.length,
+              itemBuilder: (context, index) {
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Display each log entry
+                    Text(
+                      logEntries[index],
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                    // Add a white line separator between log entries
+                    const Divider(
+                      color: Colors.white,
+                      thickness: 1,
+                    ),
+                  ],
+                );
+              },
+            ),
           ),
           actions: <Widget>[
             TextButton(
-              child: Text('Close'),
+              child: const Text('Close'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -207,20 +233,6 @@ class _HomepageState extends State<Homepage> {
                     child: ListView.builder(
                       itemCount: tempFiles.length,
                       itemBuilder: (context, index) {
-                        // Predefined list of specific colors
-                        final List<Color> colors = [
-                          Colors.green,
-                          Colors.red,
-                          Colors.orange,
-                          Color.fromARGB(255, 110, 74, 194)
-                        ];
-
-                        // Function to select a random color from the predefined list
-                        Color getRandomSpecificColor() {
-                          Random random = Random();
-                          return colors[random.nextInt(colors.length)];
-                        }
-
                         bool isFile = tempFiles[index].startsWith('File: ');
                         bool isFolder = tempFiles[index].startsWith('Folder: ');
                         return ListTile(
@@ -228,7 +240,7 @@ class _HomepageState extends State<Homepage> {
                             isFile
                                 ? Icons.insert_drive_file
                                 : Icons.folder, // File or Folder icon
-                            color: getRandomSpecificColor(),
+                            color: isFile ? Colors.green : Colors.orange,
                           ),
                           title: Text(
                             tempFiles[index],
