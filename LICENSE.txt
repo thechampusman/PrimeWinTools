@@ -1,0 +1,16 @@
+PrimeWinTools License
+
+Copyright (C) 2024, [USMAN (The Champ)]. All rights reserved.
+
+This software is provided for the purpose of allowing contributions and improvements to the PrimeWinTools project. By using this software, you agree to the following conditions:
+
+- You may **contribute to this project** by submitting pull requests or patches to the original repository.
+- You may **not copy**, redistribute, or create new distributions, forks, or versions of this software without explicit written permission from the copyright holder.
+- You may **not sublicense, sell, or transfer this software** in any way without explicit written permission from the copyright holder.
+- You may use this software for personal or non-commercial purposes only.
+
+Any violation of these terms will result in the termination of your rights to use, modify, and contribute to this project.
+
+For any inquiries or permissions, please contact: [USMANGOURWORKINGID@GMAI.COM].
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
