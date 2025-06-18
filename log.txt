@@ -289,3 +289,1409 @@
 , errno = 32)
 2024-09-26 19:49:25.147303 - Failed to delete: File: C:\Windows\Temp\DESKTOP-MLKCRKA-20240926-1902.log, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\DESKTOP-MLKCRKA-20240926-1902.log' (OS Error: The process cannot access the file because it is being used by another process.
 , errno = 32)
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\.ses
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\4310c92d99c30ca5a328cffd966c36da-{87A94AB0-E370-4cde-98D3-ACC110C5967D}
+2025-06-10 07:39:04.543044 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\5f65d2fa-e947-4fd4-9833-e1fa9f5502bb.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\5f65d2fa-e947-4fd4-9833-e1fa9f5502bb.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:39:04.543044 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\6092006c-bdcb-4473-9eba-bba0a920d591.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\6092006c-bdcb-4473-9eba-bba0a920d591.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:39:04.543044 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\692ed955-10af-4c6f-a131-2abac88f2a65.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\692ed955-10af-4c6f-a131-2abac88f2a65.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:39:04.543044 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\adb.log, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\adb.log' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\AndroidEmulator
+2025-06-10 07:39:04.543044 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\APPX.8fwpgedig1h2x9zclh7pf26_f.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\APPX.8fwpgedig1h2x9zclh7pf26_f.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:39:04.543044 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\APPX.z6klumwvv5qjy0mscgewdezue.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\APPX.z6klumwvv5qjy0mscgewdezue.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:39:04.543044 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\c6796d0b-9374-4812-a50c-d763a9da599d.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\c6796d0b-9374-4812-a50c-d763a9da599d.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\chrome_drag10872_1333421371
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\chrome_drag10872_1678939414
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\chrome_drag10872_1932285142
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\chrome_drag10872_1969219354
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\dart-code-startup-log-134e.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\dart-code-startup-log-1674.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\dart-code-startup-log-22c5.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\dart-code-startup-log-28b3.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\dart-code-startup-log-34d3.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\dart-code-startup-log-3507.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\dart-code-startup-log-3bec.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\dart-code-startup-log-5028.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\dart-code-startup-log-72ea.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\dart-code-startup-log-7564.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\dart-code-startup-log-9b70.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\dart-code-startup-log-9c54.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\dart-code-startup-log-ae82.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\dart-code-startup-log-c7c9.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\dart-code-startup-log-cf00.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\dart-code-startup-log-cf0b.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\dart-code-startup-log-d15b.txt
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\Diagnostics
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.1c1def50
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.1e070dc8
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.20a83e78
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.20b73601
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.2dae3ea6
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.2f40b718
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.39fd8425
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.3b60a95a
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.3f3a71da
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.4546cb4c
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.4dbc78b4
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.56935b25
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.5961733b
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.6b96112c
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.7956b7ed
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.7a80b025
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.7c6bb2b0
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.86ab8c5
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.8a0b98ba
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.8ac5c65b
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.9698978e
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.97fc6acd
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.98a563a1
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.9c216b5a
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.a68975d4
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.a74303cf
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.b0308b16
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.b7c1f02a
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.bb4eb217
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.c22e6acc
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.c2f4cb41
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.c4a5a00d
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.c995bb3
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.d1c73391
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.e0ccf928
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.e1c6c3
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.e55dc1ce
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.ef9e88d3
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\gcapi.dll
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\hsperfdata_usman
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\iobit-db-license-tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\jna-111585788
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\kotlin-compiler-in-android-16921790225754375440.alive
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\kotlin-compiler-in-android-2876433849466268522.alive
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\kotlin-compiler-in-android-7693949812099133904.alive
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\kotlin-daemon.2025-06-08.21-07-38-442.00.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\kotlin-daemon.2025-06-08.21-07-38-442.00.log.lck
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\kotlin-daemon.2025-06-09.09-37-18-110.00.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\kotlin-daemon.2025-06-09.09-37-18-110.00.log.lck
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\kotlin-daemon.2025-06-09.20-56-25-924.00.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\kotlin-daemon.2025-06-09.23-42-42-468.00.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\kotlin-daemon.2025-06-09.23-42-42-468.00.log.lck
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\MSBuildTemp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\native-platform14965738052397358107dir
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\native-platform15060245983761078082dir
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\native-platform7085095728917097097dir
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\native-platform8792841858939151049dir
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\native-platform9871695682865175774dir
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\PrimeWinTools7dc226cd
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\PrimeWinToolsf61aa0bd
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\SmartScreen
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\SoftwareUpdate_Temp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\StructuredQuery.log
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\system-commandline-sentinel-files
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\Temp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\TempSet.ini
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\THECHAMP-20250608-0710.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\THECHAMP-20250610-0643.log
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\vscode-typescript
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\wct280C.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\wct4A3C.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\wct4ECE.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\wct773C.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\wct8447.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\wct8F5D.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\wctAA6D.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\wctE997.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\wctFD0B.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\WinGet
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (10).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (100).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (101).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (102).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (103).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (104).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (105).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (106).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (107).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (108).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (109).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (11).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (110).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (111).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (112).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (113).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (114).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (115).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (116).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (117).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (118).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (119).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (12).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (120).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (121).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (122).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (123).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (124).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (125).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (126).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (127).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (128).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (129).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (13).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (130).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (131).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (132).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (133).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (134).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (135).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (136).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (137).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (138).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (139).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (14).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (140).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (141).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (142).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (143).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (144).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (145).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (146).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (147).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (148).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (149).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (15).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (150).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (151).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (152).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (153).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (154).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (155).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (156).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (157).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (158).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (159).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (16).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (160).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (161).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (162).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (163).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (164).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (165).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (166).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (167).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (168).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (169).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (17).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (170).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (171).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (172).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (173).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (174).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (175).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (176).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (177).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (178).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (179).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (18).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (180).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (181).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (182).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (183).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (184).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (185).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (186).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (187).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (188).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (189).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (19).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (190).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (191).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (192).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (193).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (194).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (195).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (196).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (197).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (198).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (199).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (2).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (20).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (200).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (201).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (202).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (203).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (204).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (205).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (206).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (207).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (208).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (209).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (21).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (210).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (211).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (212).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (213).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (214).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (215).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (216).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (217).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (218).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (219).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (22).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (220).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (221).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (222).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (223).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (224).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (225).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (226).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (227).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (228).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (229).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (23).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (230).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (231).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (232).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (233).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (234).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (235).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (236).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (237).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (238).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (239).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (24).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (240).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (241).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (242).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (243).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (244).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (245).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (246).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (247).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (248).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (249).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (25).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (250).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (251).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (252).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (253).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (254).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (255).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (256).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (257).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (258).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (259).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (26).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (260).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (261).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (262).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (263).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (264).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (265).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (266).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (267).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (268).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (269).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (27).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (270).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (271).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (272).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (273).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (274).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (275).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (276).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (277).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (278).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (279).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (28).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (280).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (281).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (282).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (283).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (284).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (285).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (286).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (287).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (288).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (289).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (29).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (290).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (291).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (292).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (293).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (294).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (295).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (296).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (297).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (298).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (299).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (3).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (30).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (300).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (301).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (302).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (303).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (304).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (305).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (306).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (307).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (308).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (309).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (31).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (310).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (311).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (312).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (313).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (314).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (315).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (316).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (317).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (318).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (319).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (32).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (320).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (321).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (322).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (323).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (324).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (325).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (326).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (327).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (328).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (329).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (33).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (330).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (331).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (332).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (333).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (334).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (335).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (336).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (337).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (338).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (339).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (34).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (340).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (341).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (342).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (343).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (344).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (345).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (346).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (347).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (348).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (349).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (35).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (350).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (351).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (352).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (353).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (354).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (355).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (356).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (357).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (358).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (359).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (36).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (360).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (361).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (362).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (363).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (364).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (365).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (366).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (367).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (368).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (369).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (37).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (370).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (371).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (372).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (373).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (374).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (375).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (376).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (377).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (378).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (379).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (38).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (380).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (381).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (382).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (383).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (384).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (385).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (386).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (387).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (388).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (389).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (39).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (390).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (391).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (392).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (393).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (394).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (395).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (396).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (397).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (398).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (399).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (4).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (40).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (400).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (401).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (402).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (403).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (404).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (405).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (406).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (407).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (408).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (409).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (41).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (410).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (411).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (412).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (413).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (414).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (415).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (416).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (417).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (418).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (419).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (42).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (420).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (421).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (422).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (423).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (424).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (425).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (426).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (427).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (428).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (429).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (43).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (430).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (431).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (432).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (433).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (434).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (435).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (436).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (437).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (438).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (439).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (44).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (440).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (441).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (442).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (443).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (444).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (445).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (446).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (447).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (448).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (449).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (45).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (450).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (451).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (452).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (453).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (454).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (455).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (456).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (457).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (458).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (459).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (46).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (460).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (461).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (462).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (463).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (464).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (465).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (466).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (467).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (468).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (469).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (47).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (470).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (471).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (472).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (473).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (474).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (475).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (476).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (477).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (478).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (479).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (48).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (480).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (481).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (482).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (483).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (484).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (485).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (486).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (487).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (488).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (489).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (49).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (490).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (491).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (492).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (493).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (494).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (495).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (496).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (497).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (498).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (499).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (5).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (50).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (500).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (501).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (502).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (503).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (504).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (505).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (506).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (507).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (508).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (509).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (51).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (510).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (511).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (512).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (513).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (514).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (515).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (516).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (517).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (518).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (519).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (52).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (520).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (521).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (522).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (523).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (524).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (525).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (526).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (527).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (528).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (529).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (53).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (530).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (531).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (532).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (533).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (534).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (535).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (536).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (537).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (538).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (539).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (54).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (540).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (541).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (542).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (543).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (544).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (545).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (546).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (547).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (548).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (549).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (55).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (550).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (551).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (552).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (553).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (554).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (555).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (556).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (557).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (558).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (559).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (56).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (560).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (561).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (562).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (563).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (564).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (565).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (566).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (567).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (568).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (569).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (57).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (570).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (571).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (572).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (573).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (574).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (575).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (576).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (577).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (578).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (579).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (58).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (580).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (581).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (582).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (583).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (584).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (585).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (586).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (587).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (588).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (589).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (59).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (590).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (591).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (592).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (593).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (594).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (595).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (596).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (597).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (598).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (599).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (6).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (60).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (600).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (601).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (602).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (603).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (604).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (605).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (606).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (607).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (608).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (609).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (61).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (610).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (611).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (612).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (613).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (614).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (615).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (616).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (617).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (618).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (619).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (62).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (620).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (621).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (622).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (623).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (624).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (625).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (626).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (627).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (628).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (629).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (63).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (630).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (631).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (632).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (633).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (634).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (635).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (636).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (637).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (638).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (639).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (64).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (640).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (641).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (642).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (643).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (644).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (645).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (646).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (647).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (648).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (649).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (65).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (650).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (651).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (652).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (653).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (654).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (655).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (656).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (657).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (658).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (659).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (66).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (660).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (661).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (662).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (663).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (664).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (665).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (666).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (667).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (668).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (67).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (68).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (69).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (7).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (70).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (71).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (72).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (73).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (74).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (75).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (76).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (77).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (78).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (79).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (8).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (80).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (81).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (82).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (83).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (84).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (85).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (86).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (87).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (88).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (89).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (9).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (90).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (91).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (92).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (93).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (94).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (95).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (96).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (97).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (98).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (99).xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file.xml
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\~DF33F31F2D80A0FE97.TMP
+2025-06-10 07:39:04.543044 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\~DF3A199A3409A4B3D3.TMP, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\~DF3A199A3409A4B3D3.TMP' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:39:04.543044 - Failed to delete: File: C:\Windows\Temp\FXSAPIDebugLogFile.txt, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\FXSAPIDebugLogFile.txt' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:39:04.543044 - Failed to delete: File: C:\Windows\Temp\FXSTIFFDebugLogFile.txt, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\FXSTIFFDebugLogFile.txt' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-00AVH.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-0GV23.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-21U7T.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-2F7KR.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-39FL5.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-39PEI.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-4NHA1.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-4RTT5.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-6OHM4.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-8HLHO.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-8LN7S.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-AURP4.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-GL6KI.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-INR2P.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-IRE58.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-JMT69.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-JV6V1.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-KKVUO.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-KNMGG.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-L9BE6.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-LSKI5.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-MHSJ9.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-P9OI4.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-R9CRF.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-T9BFI.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-TFRER.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-USLPL.tmp
+2025-06-10 07:39:04.543044 - Deleted Folder: Folder: C:\Windows\Temp\is-UV473.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\MpSigStub.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\perfboost.exe_c2rdll(2025061006425615CC).log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-06 #001.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-06 #002.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-08 #001.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-08 #002.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-08 #003.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-08 #004.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-08 #005.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-08 #006.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-08 #007.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-08 #008.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-08 #009.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-08 #010.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-08 #011.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-08 #012.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-08 #013.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-09 #001.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-09 #002.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-09 #003.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-09 #004.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-09 #005.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-09 #006.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-09 #007.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-09 #008.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-09 #009.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-09 #010.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-09 #011.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-09 #012.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\Setup Log 2025-06-09 #013.txt
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250606-2217.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250606-2222.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250606-2241.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250606-2337.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250607-0822.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250607-1126.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250607-1131.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250607-1133.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-0609.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-0615.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-0618.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-0618a.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-0642.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-1227.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-1232.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-1331.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-1409.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-1501.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-1542.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-1609.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-1653.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-1717.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-1729.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-1745.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-1947.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-1952.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-2104.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250608-2132.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-0618.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-0623.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-0625.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-0625a.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-0724.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-0749.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-0956.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-1012.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-1151.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-1156.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-1225.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-1252.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-1306.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-1318.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-1325.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-1339.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-1349.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-1401.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-1407.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-2002.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-2258.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-2304.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250609-2325.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250610-0635.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250610-0640.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250610-0641.log
+2025-06-10 07:39:04.543044 - Failed to delete: File: C:\Windows\Temp\THECHAMP-20250610-0642.log, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\THECHAMP-20250610-0642.log' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250610-0643.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250610-0643a.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\THECHAMP-20250610-0704.log
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\vminst.log
+2025-06-10 07:39:04.543044 - Failed to delete: Folder: C:\Windows\Temp\vmware-SYSTEM, Error: PathAccessException: Deletion failed, path = 'C:\Windows\Temp\vmware-SYSTEM' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\wct1C74.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\wct1D2C.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\wct280C.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\wct2FBF.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\wct4A3C.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\wct523D.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\wct5A0E.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\wct6CF6.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\wctD57E.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\wctDD02.tmp
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Temp\{664EE24A-9986-4592-8B78-29672502C5B6} - OProcSessId.dat
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\AAPT.EXE-253B1121.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\AAPT2.EXE-A739F0C3.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\ADB.EXE-656F0EB0.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\ADB.EXE-BF07A1E7.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\AM_DELTA_PATCH_1.429.391.0.EX-A9E2733B.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\AM_DELTA_PATCH_1.429.411.0.EX-CC2528B8.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\AM_DELTA_PATCH_1.429.416.0.EX-5122F4C1.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\AM_DELTA_PATCH_1.429.419.0.EX-D421A260.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\AM_DELTA_PATCH_1.429.423.0.EX-A4C9198F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\ANNIEN.EXE-C14E020D.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\ANYDESK.EXE-766915F5.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\APPLICATIONFRAMEHOST.EXE-0CDEF718.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\APPVSHNOTIFY.EXE-9841E0BF.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\ASRFT.EXE-1F564E9C.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\AUDIODG.EXE-856E5CA0.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\AUTONTS.EXE-3A9D6A9A.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\AUTOUPDATE.EXE-64562810.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\BACKGROUNDTASKHOST.EXE-1762193C.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\BACKGROUNDTASKHOST.EXE-1FE96337.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\BACKGROUNDTASKHOST.EXE-84E8F6E0.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\BACKGROUNDTASKHOST.EXE-BDA58B19.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\BACKGROUNDTASKHOST.EXE-EB5D7243.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\BACKGROUNDTRANSFERHOST.EXE-E77E2389.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\BRAVECRASHHANDLER.EXE-9380AAB4.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\BRAVECRASHHANDLER64.EXE-7C534456.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\BRAVEUPDATE.EXE-655378E1.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CALC.EXE-DBDE74BE.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CALCULATORAPP.EXE-64C35AFC.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CHROME.EXE-58668556.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CHROME.EXE-58668557.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CHROME.EXE-58668558.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CHROME.EXE-5866855A.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CHROME.EXE-5866855F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CHROME.EXE-58668561.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CHROME.EXE-58668563.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CHROME.EXE-58668564.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CL.EXE-DD7D106E.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CLOCKWIDGETS.EXE-FF4F47DB.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CMAKE.EXE-90B7F703.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CMD.EXE-8E75B5BB.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CMD.EXE-F0053CFF.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CMDKEY.EXE-8E8A5088.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CODE-TUNNEL.EXE-2C29CD1A.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CODE.EXE-289D3EC2.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CODE.EXE-289D3EC3.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CODE.EXE-289D3EC4.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CODE.EXE-289D3EC6.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CODE.EXE-289D3ECC.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CODE.EXE-289D3ECD.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CODE.EXE-289D3ED0.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\COMPATTELRUNNER.EXE-6FC4C746.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\COMPPKGSRV.EXE-92CAF70B.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CONHOST.EXE-E6AFC9F5.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CONSENT.EXE-1A8D0661.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CRASHHELPER.EXE-85AD7919.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CRASHPAD_HANDLER.EXE-100A91D9.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CTFMON.EXE-437D7ABA.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\CVTRES.EXE-85AF14EE.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DART.EXE-9CDA322B.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DARTAOTRUNTIME.EXE-B540E43B.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DEFRAG.EXE-07BC86FC.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-0250D564.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-241C0086.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-24A619F4.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-2924BE41.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-34799D9A.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-366B7059.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-3C0C9069.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-3E13D0EC.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-402A751B.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-57CEB700.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-5E5CB3F3.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-633D5C3E.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-64739D47.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-6881EA92.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-6D51747C.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-72F02F91.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-7382D059.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-7D545D08.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-855F2A5B.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-9E36A338.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-9E7DA6BB.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-A4695E16.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-B6C63946.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-D1D575BA.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-D5696B59.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-DEE5F95D.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-F054CED1.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DELDIRRPA.EXE-F6A6DD16.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DIRECTXDATABASEUPDATER.EXE-ECA909F0.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DISMHOST.EXE-43FA3DA3.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DLLHOST.EXE-02535E66.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DLLHOST.EXE-17A14DD3.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DLLHOST.EXE-49ADD151.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DLLHOST.EXE-57A853C4.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DLLHOST.EXE-62E0F4B7.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DLLHOST.EXE-67556D86.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DLLHOST.EXE-7E189E3F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DLLHOST.EXE-87B22A05.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DLLHOST.EXE-8F67B636.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DLLHOST.EXE-C23C4191.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DLLHOST.EXE-ECCD4DD1.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DLLHOST.EXE-F5F979B5.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DOCKER.EXE-B8577DBD.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DOTNET.EXE-EFBBEB31.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DRIVERBOOSTER.EXE-8DCBD07E.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DRVINST.EXE-14255DC1.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DSAARCDETECT64.EXE-634A3743.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DSATRAY.EXE-B51EA0A0.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\DWM.EXE-B3F13FFF.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\dynrespri.7db
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\EMULATOR.EXE-DEE648A7.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\ESCSVC64.EXE-B3DE273C.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\EXCEL.EXE-6EA455DF.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\E_YTSUPE.EXE-0350208A.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\E_YUBUPE.EXE-99C77032.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\FILECOAUTH.EXE-36B7CE34.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\FILECOAUTH.EXE-E036F38E.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\FINDSTR.EXE-33D2471D.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\FIREFOX.EXE-E5F6B4FB.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\FONT-SUBSET.EXE-294ABA30.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\FSNOTIFIER.EXE-A1BDD239.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\GEN_SNAPSHOT.EXE-3C6E59C5.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\GEN_SNAPSHOT.EXE-66053993.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\GEN_SNAPSHOT.EXE-B044AE9D.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\GIT-CREDENTIAL-MANAGER.EXE-F4DBCAB6.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\GIT-REMOTE-HTTPS.EXE-566DBEB0.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\GIT.EXE-840DC8EB.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\GIT.EXE-B022AB25.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\GIT.EXE-E36481F6.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\GRPCONV.EXE-7F944EA2.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\HQYA2H0M.EXE-AA563B8C.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\HQYA2H0M.TMP-255DBC2A.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\HQYA2H0M.TMP-295B8256.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\HQYA2H0M.TMP-6E4E62C0.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\HQYA2H0M.TMP-96772D41.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\HQYA2H0M.TMP-9CF248E8.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\HQYA2H0M.TMP-A875B545.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\HQYA2H0M.TMP-FE3AE53D.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\HVCIFIX.EXE-C0A9E7D9.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\HWMONITOR.EXE-1F480B73.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\IDM TRIAL RESET.EXE-4C8B60CB.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\IDM1.TMP-BCBF5C45.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\IDMAN.EXE-30614921.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\IDMBROKER.EXE-0E5ADA67.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\IDMGRHLP.EXE-D312270F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\IDMMSGHOST.EXE-1E75BED7.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\IDMUPDT.EXE-6E2EDF7D.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\IGCC.EXE-D745C789.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\IGCCTRAY.EXE-312CEB6B.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\IMPELLERC.EXE-F2298AE7.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\INTEGRATOR.EXE-2E256DBA.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\JAVA.EXE-DE8CFA10.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\Layout.ini
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\LINK.EXE-67E89051.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\LOGONUI.EXE-D0853078.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MANTA.EXE-39960A51.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MEDIUMILSTART.EXE-25A69A38.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MFAP.EXE-2507DB74.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MICROSOFTEDGEUPDATE.EXE-E6A90AE0.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MICROSOFTEDGE_X64_137.0.3296.-2BC2D3F7.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MICROSOFTEDGE_X64_137.0.3296.-9CDC7F50.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MOBSYNC.EXE-8D5354C6.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MONOTIFICATIONUX.EXE-F43B6463.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MOUSOCOREWORKER.EXE-B4BE72C1.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MPCMDRUN.EXE-B55315EE.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MPSIGSTUB.EXE-3DA7FE0D.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSBUILD.EXE-0A6F0DAE.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSCORSVW.EXE-1F1ABDEC.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSCORSVW.EXE-9474B9EE.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSEDGEWEBVIEW2.EXE-B5689E08.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSEDGEWEBVIEW2.EXE-B5689E09.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSEDGEWEBVIEW2.EXE-B5689E0B.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSEDGEWEBVIEW2.EXE-B5689E11.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSEDGEWEBVIEW2.EXE-B5689E12.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSEDGEWEBVIEW2.EXE-B5689E14.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSEDGEWEBVIEW2.EXE-DAC1DD55.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSEDGEWEBVIEW2.EXE-DAC1DD56.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSEDGEWEBVIEW2.EXE-DAC1DD57.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSEDGEWEBVIEW2.EXE-DAC1DD59.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSEDGEWEBVIEW2.EXE-DAC1DD5F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSEDGEWEBVIEW2.EXE-DAC1DD60.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSEDGEWEBVIEW2.EXE-DAC1DD61.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSEDGEWEBVIEW2.EXE-DAC1DD62.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSIEXEC.EXE-6A46892D.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MSIEXEC.EXE-A80B33F1.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\MT.EXE-364725DF.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\NET.EXE-84C882AE.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\NET1.EXE-A1088373.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\NETCFGNOTIFYOBJECTHOST.EXE-D9525458.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\NETSH.EXE-0D54B5F9.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\NGEN.EXE-0729BF48.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\NGEN.EXE-FD329D8A.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\NGENTASK.EXE-16D5183F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\NGENTASK.EXE-8C2F1441.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\NORDUPDATERSETUP.EXE-6A3EDBBD.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\NORDUPDATERSETUP.TMP-750B3E61.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\OFFICECLICKTORUN.EXE-080434BA.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\OFFICECLICKTORUN.EXE-A9FAC492.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\OFFICESVCMGR.EXE-C01AC836.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\ONEAPP.IGCC.WINSERVICE.LACE.E-00AD919F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\OPENCONSOLE.EXE-0AC4908A.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\OPENCONSOLE.EXE-C97DBEA5.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\PCAUI.EXE-5A209EF9.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\PERFBOOST.EXE-5B137D8E.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\PfPre_b4bbd3ed.mkd
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\PINGSENDER.EXE-9E97E44F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\POWERSHELL.EXE-3A393AF1.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\PRIMEWINTOOLS.EXE-07594F9F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\PRIMEWINTOOLS.EXE-45664002.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\PRODUCTSTAT3.EXE-8E9FFAF4.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\PUBPLATFORM.EXE-A6E32CFC.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\PWSH.EXE-318157D7.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RC.EXE-E8D1F93B.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\REG.EXE-2BDCBF7D.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\REG.EXE-8D6C46C1.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\REGSVR32.EXE-1098A44D.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\REGSVR32.EXE-614DD671.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\ResPriUHMStaticDb.ebd
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RG.EXE-FDAF2930.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RMA.EXE-4F03B62C.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNDLL32.EXE-1C020BA0.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNDLL32.EXE-1D8F7711.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNDLL32.EXE-945222CE.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNDLL32.EXE-D2AB110B.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNDLL32.EXE-DB3691A3.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNNERW.EXE-5F14B231.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNONCE.EXE-97D5BF89.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNONCE.EXE-D59A6A4D.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNTIMEBROKER.EXE-053E98D8.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNTIMEBROKER.EXE-0A38695F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNTIMEBROKER.EXE-1EBD2F60.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNTIMEBROKER.EXE-37F05089.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNTIMEBROKER.EXE-3FFDB28C.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNTIMEBROKER.EXE-63F4F782.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNTIMEBROKER.EXE-6C7C417D.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNTIMEBROKER.EXE-7CD00936.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNTIMEBROKER.EXE-D17BD526.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNTIMEBROKER.EXE-E2032D01.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNTIMEBROKER.EXE-E3F137D7.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNTIMEBROKER.EXE-E6856165.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNTIMEBROKER.EXE-EA73507C.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNTIMEBROKER.EXE-EB892620.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\RUNTIMEBROKER.EXE-FA8514EE.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SCANDISP.EXE-6AC47E75.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SCHEDULER.EXE-974ADE5F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SCHTASKS.EXE-E8DB1F93.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SCRCPY.EXE-444575D1.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SDBINST.EXE-24342502.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SDXHELPER.EXE-066ADE85.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SEARCHFILTERHOST.EXE-DDB228B1.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SEARCHINDEXER.EXE-C215DBE0.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SEARCHPROTOCOLHOST.EXE-23DB6E8D.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SECURITYHEALTHHOST.EXE-29CDBC37.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SECURITYHEALTHSERVICE.EXE-D8AA6932.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SECURITYHEALTHSYSTRAY.EXE-2C1C1248.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SED-4.2.1-SETUP.EXE-D8EE600C.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SED-4.2.1-SETUP.TMP-8AE8E651.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SED-4.2.1-SETUP.TMP-F0F3330E.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SERIOUSBIT.NETBALANCER.TRAY.E-D2360FA7.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SETACLX64.EXE-83D19862.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SETUP.EXE-635B72A0.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SETUP.EXE-F65F146E.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SH.EXE-9138A0C7.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SHELLEXPERIENCEHOST.EXE-CA19932D.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SIHCLIENT.EXE-79682CC6.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SMARTSCREEN.EXE-89A7B40A.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SNIPPINGTOOL.EXE-0B55DB13.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SPATIALAUDIOLICENSESRV.EXE-B15033A5.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SPPSVC.EXE-6025096A.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SRTASKS.EXE-16E8A1E6.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\STUDIO64.EXE-A35CA956.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-09E9D237.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-17ABBC96.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-1A1FF766.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-1B53BDF1.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-1E6492B2.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-25E44A5A.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-261C1901.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-275A0F86.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-2CEB0DBB.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-33C381B9.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-3C5BD007.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-42B324DF.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-4495B7E1.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-4E1B97AC.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-509B1556.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-520F927F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-54F9093F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-5E50C932.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-5F3E962F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-5F7A3881.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-74745E72.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-774F8DB6.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-7C65F1F8.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-8BD79435.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-9888771B.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-9D25C269.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-9DDA6BD7.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-A0712951.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-A2D59D35.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-AF938B6C.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-B3147ADB.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-B83CA908.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-C4E7243D.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-C60ADAE0.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-D39E4CA3.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-D4839716.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-D5C10F09.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-D68E3981.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-EBC7B73B.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-EEA01D12.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-F31139DE.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-F400CAAB.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\SYSTEMSETTINGSBROKER.EXE-0BB37DBE.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TASKHOSTW.EXE-0F00F8CF.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TASKKILL.EXE-1B91EAB2.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TASKMGR.EXE-26D073B4.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TELEGRAM.EXE-F742AF6A.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TEXTINPUTHOST.EXE-519D2215.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TIME.EXE-24101622.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TIWORKER.EXE-688F1BB6.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TRACKER.EXE-6111869A.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TRANSLUCENTTB.EXE-4697E012.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TRIALPROMOTE.EXE-ACC52ABE.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TRIALSCHPT.EXE-8786DC1A.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TRUSTEDINSTALLER.EXE-E9C29A2C.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.EXE-4A2EEE60.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-03DA0D6C.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-0ADF3463.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-0BD1F443.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-10AEC01F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-2FBB6938.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-3FD76FCC.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-49861A3B.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-6432416F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-71F4E36B.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-783E04C8.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-8ACE550A.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-980B3397.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-A0743D92.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-A0CF36DE.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-A2507129.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-AA319364.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-D633814F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-D843010C.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\TUWIKXYY.TMP-EDAE8258.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\UPDATER.EXE-43CEA393.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\UPDATER.EXE-B2FE3CF6.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\USEROOBEBROKER.EXE-8AD68219.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\USOCLIENT.EXE-2B7FBE65.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\VCTIP.EXE-2C2B6961.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\VSSVC.EXE-D44D9F00.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\VSWHERE.EXE-4CCFCF10.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WERFAULT.EXE-72D631B9.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WERFAULT.EXE-C38B63DD.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WEVTUTIL.EXE-7B8F2A23.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WGET.EXE-31588E75.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WGET.EXE-97A5570A.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WIDGETS.EXE-00684256.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WIDGETSERVICE.EXE-C096C157.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WINDOWSPACKAGEMANAGERSERVER.E-66F73D8F.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WINDOWSTERMINAL.EXE-E5693534.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WINRAR.EXE-F9F35BA8.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WMIADAP.EXE-3FA5A921.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WMIAPSRV.EXE-A1A5E6F7.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WMIPRVSE.EXE-8DDA8D43.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WMIPRVSE.EXE-DF1B2B47.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WSL.EXE-9DC96175.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WSL.EXE-EEC6E8E1.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WUAUCLTCORE.EXE-B14CABE9.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\WUDFHOST.EXE-3C35C0DB.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\X64PROXY.EXE-32FC72C8.pf
+2025-06-10 07:39:04.543044 - Deleted File: File: C:\Windows\Prefetch\_SETUP64.TMP-C2E9B879.pf
+2025-06-10 07:42:57.358465 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\5f65d2fa-e947-4fd4-9833-e1fa9f5502bb.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\5f65d2fa-e947-4fd4-9833-e1fa9f5502bb.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:42:57.358465 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\6092006c-bdcb-4473-9eba-bba0a920d591.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\6092006c-bdcb-4473-9eba-bba0a920d591.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:42:57.358465 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\692ed955-10af-4c6f-a131-2abac88f2a65.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\692ed955-10af-4c6f-a131-2abac88f2a65.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:42:57.358465 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\adb.log, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\adb.log' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:42:57.358465 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\APPX.8fwpgedig1h2x9zclh7pf26_f.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\APPX.8fwpgedig1h2x9zclh7pf26_f.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:42:57.358465 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\APPX.z6klumwvv5qjy0mscgewdezue.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\APPX.z6klumwvv5qjy0mscgewdezue.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:42:57.358465 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (10).xml
+2025-06-10 07:42:57.358465 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (2).xml
+2025-06-10 07:42:57.358465 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (3).xml
+2025-06-10 07:42:57.358465 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\xml_file (4).xml
+2025-06-10 07:42:57.358465 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\~DF3A199A3409A4B3D3.TMP, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\~DF3A199A3409A4B3D3.TMP' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:42:57.358465 - Failed to delete: File: C:\Windows\Temp\FXSAPIDebugLogFile.txt, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\FXSAPIDebugLogFile.txt' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:42:57.358465 - Failed to delete: File: C:\Windows\Temp\FXSTIFFDebugLogFile.txt, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\FXSTIFFDebugLogFile.txt' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:42:57.358465 - Failed to delete: File: C:\Windows\Temp\THECHAMP-20250610-0642.log, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\THECHAMP-20250610-0642.log' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:42:57.358465 - Failed to delete: Folder: C:\Windows\Temp\vmware-SYSTEM, Error: PathAccessException: Deletion failed, path = 'C:\Windows\Temp\vmware-SYSTEM' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:42:57.358465 - Deleted File: File: C:\Windows\Prefetch\CMD.EXE-8E75B5BB.pf
+2025-06-10 07:42:57.358465 - Deleted File: File: C:\Windows\Prefetch\GIT.EXE-B022AB25.pf
+2025-06-10 07:42:57.358465 - Deleted File: File: C:\Windows\Prefetch\GIT.EXE-E36481F6.pf
+2025-06-10 07:42:57.358465 - Deleted File: File: C:\Windows\Prefetch\TASKKILL.EXE-1B91EAB2.pf
+2025-06-10 07:43:02.762366 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\5f65d2fa-e947-4fd4-9833-e1fa9f5502bb.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\5f65d2fa-e947-4fd4-9833-e1fa9f5502bb.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:43:02.762366 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\6092006c-bdcb-4473-9eba-bba0a920d591.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\6092006c-bdcb-4473-9eba-bba0a920d591.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:43:02.762366 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\692ed955-10af-4c6f-a131-2abac88f2a65.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\692ed955-10af-4c6f-a131-2abac88f2a65.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:43:02.762366 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\adb.log, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\adb.log' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:43:02.762366 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\APPX.8fwpgedig1h2x9zclh7pf26_f.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\APPX.8fwpgedig1h2x9zclh7pf26_f.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:43:02.762366 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\APPX.z6klumwvv5qjy0mscgewdezue.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\APPX.z6klumwvv5qjy0mscgewdezue.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:43:02.762366 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\~DF3A199A3409A4B3D3.TMP, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\~DF3A199A3409A4B3D3.TMP' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:43:02.762366 - Failed to delete: File: C:\Windows\Temp\FXSAPIDebugLogFile.txt, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\FXSAPIDebugLogFile.txt' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:43:02.762366 - Failed to delete: File: C:\Windows\Temp\FXSTIFFDebugLogFile.txt, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\FXSTIFFDebugLogFile.txt' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:43:02.762366 - Failed to delete: File: C:\Windows\Temp\THECHAMP-20250610-0642.log, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\THECHAMP-20250610-0642.log' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:43:02.762366 - Failed to delete: Folder: C:\Windows\Temp\vmware-SYSTEM, Error: PathAccessException: Deletion failed, path = 'C:\Windows\Temp\vmware-SYSTEM' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:47:25.763521 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\227edd4e-ebfb-4503-9cfc-d313e09bca95.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\227edd4e-ebfb-4503-9cfc-d313e09bca95.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:47:25.763521 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\4c0df8e1-4754-4644-8cf9-ba741ef42599.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\4c0df8e1-4754-4644-8cf9-ba741ef42599.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:47:25.763521 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\5f65d2fa-e947-4fd4-9833-e1fa9f5502bb.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\5f65d2fa-e947-4fd4-9833-e1fa9f5502bb.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:47:25.763521 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\6092006c-bdcb-4473-9eba-bba0a920d591.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\6092006c-bdcb-4473-9eba-bba0a920d591.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:47:25.763521 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\692ed955-10af-4c6f-a131-2abac88f2a65.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\692ed955-10af-4c6f-a131-2abac88f2a65.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:47:25.763521 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\adb.log, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\adb.log' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:47:25.763521 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\APPX.8fwpgedig1h2x9zclh7pf26_f.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\APPX.8fwpgedig1h2x9zclh7pf26_f.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:47:25.763521 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\APPX.z6klumwvv5qjy0mscgewdezue.tmp, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\APPX.z6klumwvv5qjy0mscgewdezue.tmp' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:47:25.763521 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.7d1a5dce
+2025-06-10 07:47:25.763521 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\hsperfdata_usman
+2025-06-10 07:47:25.763521 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\MSBuildTemp
+2025-06-10 07:47:25.763521 - Deleted Folder: Folder: C:\Users\usman\AppData\Local\Temp\PrimeWinToolsb43abd23
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Users\usman\AppData\Local\Temp\wct8C6A.tmp
+2025-06-10 07:47:25.763521 - Failed to delete: File: C:\Users\usman\AppData\Local\Temp\~DF3A199A3409A4B3D3.TMP, Error: PathAccessException: Cannot delete file, path = 'C:\Users\usman\AppData\Local\Temp\~DF3A199A3409A4B3D3.TMP' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:47:25.763521 - Failed to delete: File: C:\Windows\Temp\FXSAPIDebugLogFile.txt, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\FXSAPIDebugLogFile.txt' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:47:25.763521 - Failed to delete: File: C:\Windows\Temp\FXSTIFFDebugLogFile.txt, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\FXSTIFFDebugLogFile.txt' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:47:25.763521 - Failed to delete: File: C:\Windows\Temp\THECHAMP-20250610-0642.log, Error: PathAccessException: Cannot delete file, path = 'C:\Windows\Temp\THECHAMP-20250610-0642.log' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:47:25.763521 - Failed to delete: Folder: C:\Windows\Temp\vmware-SYSTEM, Error: PathAccessException: Deletion failed, path = 'C:\Windows\Temp\vmware-SYSTEM' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\CL.EXE-DD7D106E.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\CMAKE.EXE-90B7F703.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\CMD.EXE-8E75B5BB.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\CODE.EXE-289D3EC3.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\CVTRES.EXE-85AF14EE.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\DART.EXE-9CDA322B.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\DARTAOTRUNTIME.EXE-B540E43B.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\GIT.EXE-B022AB25.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\GIT.EXE-E36481F6.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\IMPELLERC.EXE-F2298AE7.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\JAVA.EXE-DE8CFA10.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\LIB.EXE-9FE8A32E.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\LINK.EXE-67E89051.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\MSBUILD.EXE-0A6F0DAE.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\MT.EXE-364725DF.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\PRIMEWINTOOLS.EXE-45664002.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\PWSH.EXE-318157D7.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\RC.EXE-E8D1F93B.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\RG.EXE-FDAF2930.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\SVCHOST.EXE-A0712951.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\TASKKILL.EXE-1B91EAB2.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\TRACKER.EXE-6111869A.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\UPDATER.EXE-43CEA393.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\VCTIP.EXE-2C2B6961.pf
+2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\VSWHERE.EXE-4CCFCF10.pf

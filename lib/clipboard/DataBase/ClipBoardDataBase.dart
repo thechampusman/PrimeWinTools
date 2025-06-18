@@ -22,11 +22,17 @@ class ClipboardDatabase {
     String path = join(await getDatabasesPath(), 'clipboard_history.db');
     return await openDatabase(
       path,
-      version: 1,
+      version: 2, // <-- Bump version to 2
       onCreate: (db, version) {
         return db.execute(
-          'CREATE TABLE clipboard(id INTEGER PRIMARY KEY AUTOINCREMENT, text TEXT, timestamp INTEGER)',
+          'CREATE TABLE clipboard(id INTEGER PRIMARY KEY AUTOINCREMENT, text TEXT, timestamp INTEGER, pinned INTEGER DEFAULT 0)',
         );
+      },
+      onUpgrade: (db, oldVersion, newVersion) async {
+        if (oldVersion < 2) {
+          await db.execute(
+              'ALTER TABLE clipboard ADD COLUMN pinned INTEGER DEFAULT 0');
+        }
       },
     );
   }
@@ -66,5 +72,43 @@ class ClipboardDatabase {
         currentTime - (20 * 24 * 60 * 60 * 1000); // 20 days in milliseconds
     await db.delete('clipboard',
         where: 'timestamp < ?', whereArgs: [twentyDaysAgo]);
+  }
+
+  // Update pin status for an entry
+  Future<void> updatePinStatus(int id, int pinned) async {
+    final db = await database;
+    await db.update(
+      'clipboard',
+      {'pinned': pinned},
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+  }
+
+  // Delete a single clipboard entry by id
+  Future<void> deleteClipboardEntry(int id) async {
+    final db = await database;
+    await db.delete(
+      'clipboard',
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+  }
+
+  // Clear all clipboard history
+  Future<void> clearClipboardHistory() async {
+    final db = await database;
+    await db.delete('clipboard');
+  }
+
+  // Update clipboard entry text
+  Future<void> updateClipboardEntry(int id, String newText) async {
+    final db = await database;
+    await db.update(
+      'clipboard',
+      {'text': newText},
+      where: 'id = ?',
+      whereArgs: [id],
+    );
   }
 }
