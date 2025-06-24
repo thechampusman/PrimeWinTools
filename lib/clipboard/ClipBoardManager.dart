@@ -7,28 +7,57 @@ import 'DataBase/ClipBoardDataBase.dart';
 
 class ClipboardManager {
   List<String> copiedItems = [];
-
+  Timer? _monitorTimer;
+  Timer? _cleanupTimer;
+  String? _lastClipboardContent;
+  
   final ClipboardDatabase dbHelper = ClipboardDatabase();
 
-  // Accept a callback function to update UI in the Dashboard
+  // Enhanced background monitoring with optimized polling
   void monitorClipboard(Function onClipboardUpdate) {
-    Timer.periodic(const Duration(seconds: 1), (timer) async {
+    // Stop any existing timers
+    _monitorTimer?.cancel();
+    _cleanupTimer?.cancel();
+    
+    // Start monitoring with more efficient approach
+    _monitorTimer = Timer.periodic(const Duration(milliseconds: 500), (timer) async {
       final clipboardText = _getClipboardText();
+      
+      // Only process if clipboard content has actually changed
       if (clipboardText != null &&
           clipboardText.isNotEmpty &&
+          clipboardText != _lastClipboardContent &&
           !copiedItems.contains(clipboardText)) {
+        
+        _lastClipboardContent = clipboardText;
         copiedItems.add(clipboardText);
 
         // Save to the database, avoiding duplicates
         await dbHelper.saveClipboardItem(clipboardText);
 
         onClipboardUpdate(); // Call the callback to update UI
-        print('Copied: $clipboardText');
+        print('New clipboard content captured: ${clipboardText.substring(0, clipboardText.length > 50 ? 50 : clipboardText.length)}...');
       }
-
-      // Delete items older than 20 days
+    });
+    
+    // Clean up old items every 5 minutes instead of every second (single timer)
+    _cleanupTimer = Timer.periodic(const Duration(minutes: 5), (timer) async {
       await dbHelper.deleteOldItems();
     });
+  }
+  // Stop monitoring when app is minimized/hidden
+  void stopMonitoring() {
+    _monitorTimer?.cancel();
+    _cleanupTimer?.cancel();
+    print('Clipboard monitoring paused');
+  }
+
+  // Resume monitoring when app is shown
+  void resumeMonitoring(Function onClipboardUpdate) {
+    if (_monitorTimer == null || !_monitorTimer!.isActive) {
+      monitorClipboard(onClipboardUpdate);
+      print('Clipboard monitoring resumed');
+    }
   }
 
   // Method to get text from clipboard
@@ -64,5 +93,16 @@ class ClipboardManager {
   void deleteCopiedItem(String item) {
     copiedItems.remove(item);
     print('Deleted: $item');
+  }
+  // Clean up resources when app is closed
+  void dispose() {
+    _monitorTimer?.cancel();
+    _cleanupTimer?.cancel();
+    print('ClipboardManager disposed');
+  }
+
+  // Get current clipboard content for immediate access
+  String? getCurrentClipboardContent() {
+    return _getClipboardText();
   }
 }

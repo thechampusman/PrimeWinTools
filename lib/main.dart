@@ -15,25 +15,34 @@ void main() async {
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
     sqfliteFfiInit();
     databaseFactory = databaseFactoryFfi;
-  }
-
-  // Set window to be transparent and frameless (Windows only)
+  }  // Set window to be transparent and start visible for testing
   if (Platform.isWindows) {
     await windowManager.setBackgroundColor(Colors.transparent);
     await windowManager.setHasShadow(false);
- 
-    // await windowManager.setAsFrameless();
+    await windowManager.show(); // Show window on startup for testing
   }
 
   removeWindowTitle();
   final clipboardDb = ClipboardDatabase();
   await clipboardDb.database;
   runApp(const MyApp());
-
   trayManager.setIcon('assets/app_icon.ico');
+  trayManager.setToolTip('PrimeWinTools - Clipboard Manager');
   trayManager.setContextMenu(Menu(items: [
-    MenuItem(key: 'show', label: 'Show'),
-    MenuItem(key: 'exit', label: 'Exit'),
+    MenuItem(
+      key: 'show',
+      label: 'Show PrimeWinTools',
+    ),
+    MenuItem.separator(),
+    MenuItem(
+      key: 'clipboard',
+      label: 'Open Clipboard History',
+    ),
+    MenuItem.separator(),
+    MenuItem(
+      key: 'exit',
+      label: 'Exit',
+    ),
   ]));
 
   trayManager.addListener(MyTrayListener());
@@ -47,18 +56,23 @@ void removeWindowTitle() async {
 class MyTrayListener with TrayListener {
   @override
   void onTrayIconMouseDown() {
-    windowManager.show();
-    windowManager.focus();
+    _showAndFocusWindow();
   }
 
   @override
   void onTrayMenuItemClick(MenuItem menuItem) {
     if (menuItem.key == 'show') {
-      windowManager.show();
-      windowManager.focus();
+      _showAndFocusWindow();
+    } else if (menuItem.key == 'clipboard') {
+      _showAndFocusWindow();
+      // TODO: Navigate directly to clipboard history
     } else if (menuItem.key == 'exit') {
       windowManager.destroy();
     }
+  }
+  void _showAndFocusWindow() async {
+    await windowManager.show();
+    await windowManager.focus();
   }
 }
 
@@ -81,12 +95,18 @@ class _MyAppState extends State<MyApp> with WindowListener {
     windowManager.removeListener(this);
     super.dispose();
   }
-
   @override
   Future<bool> onWindowClose() async {
-    // Hide window instead of closing
+    // Hide window to system tray instead of closing
     await windowManager.hide();
     return false; // Prevent app from closing
+  }
+
+  @override
+  Future<bool> onWindowMinimize() async {
+    // Hide to system tray when minimized
+    await windowManager.hide();
+    return false; // Prevent default minimize behavior
   }
 
   @override
@@ -97,9 +117,8 @@ class _MyAppState extends State<MyApp> with WindowListener {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-      ),
-      home: Scaffold(
-        backgroundColor: Colors.red.withOpacity(0.0),
+      ),      home: Scaffold(
+        backgroundColor: Colors.transparent,
         body: const Dashboard(),
       ),
     );
