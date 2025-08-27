@@ -239,8 +239,6 @@ void removeFlutterIcon() {
 
   // Remove WS_SYSMENU to hide the icon and system buttons
   setWindowLong(hwnd, GWL_STYLE, style & ~WINDOW_STYLE.WS_SYSMENU);
-
-  print('Flutter icon removed.');
 }
 
 // void removeWindowButtons() {

@@ -2,6 +2,7 @@
 
 #include <dwmapi.h>
 #include <flutter_windows.h>
+#include <windowsx.h>
 
 #include "resource.h"
 
@@ -135,7 +136,7 @@ bool Win32Window::Create(const std::wstring& title,
   double scale_factor = dpi / 96.0;
 
   HWND window = CreateWindow(
-      window_class, title.c_str(), WS_OVERLAPPEDWINDOW,
+      window_class, title.c_str(), WS_POPUP | WS_THICKFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX,
       Scale(origin.x, scale_factor), Scale(origin.y, scale_factor),
       Scale(size.width, scale_factor), Scale(size.height, scale_factor),
       nullptr, nullptr, GetModuleHandle(nullptr), this);
@@ -216,6 +217,36 @@ Win32Window::MessageHandler(HWND hwnd,
     case WM_DWMCOLORIZATIONCOLORCHANGED:
       UpdateTheme(hwnd);
       return 0;
+
+    case WM_NCHITTEST: {
+      // Enable dragging by treating the top area as title bar
+      POINT cursor = {GET_X_LPARAM(lparam), GET_Y_LPARAM(lparam)};
+      ScreenToClient(hwnd, &cursor);
+      
+      RECT clientRect;
+      GetClientRect(hwnd, &clientRect);
+      
+      // Define title bar area (top 32 pixels)
+      if (cursor.y >= 0 && cursor.y <= 32) {
+        // Check if we're not over the traffic light buttons (left 100 pixels)
+        if (cursor.x > 100) {
+          return HTCAPTION; // Allow dragging
+        }
+      }
+      
+      // Check for resize borders
+      const int borderWidth = 5;
+      if (cursor.x < borderWidth && cursor.y < borderWidth) return HTTOPLEFT;
+      if (cursor.x > clientRect.right - borderWidth && cursor.y < borderWidth) return HTTOPRIGHT;
+      if (cursor.x < borderWidth && cursor.y > clientRect.bottom - borderWidth) return HTBOTTOMLEFT;
+      if (cursor.x > clientRect.right - borderWidth && cursor.y > clientRect.bottom - borderWidth) return HTBOTTOMRIGHT;
+      if (cursor.x < borderWidth) return HTLEFT;
+      if (cursor.x > clientRect.right - borderWidth) return HTRIGHT;
+      if (cursor.y < borderWidth) return HTTOP;
+      if (cursor.y > clientRect.bottom - borderWidth) return HTBOTTOM;
+      
+      return HTCLIENT;
+    }
   }
 
   return DefWindowProc(window_handle_, message, wparam, lparam);
@@ -285,4 +316,21 @@ void Win32Window::UpdateTheme(HWND const window) {
     DwmSetWindowAttribute(window, DWMWA_USE_IMMERSIVE_DARK_MODE,
                           &enable_dark_mode, sizeof(enable_dark_mode));
   }
+}
+
+// Window management methods for custom title bar
+void Win32Window::MinimizeWindow() {
+  ShowWindow(window_handle_, SW_MINIMIZE);
+}
+
+void Win32Window::MaximizeWindow() {
+  if (IsZoomed(window_handle_)) {
+    ShowWindow(window_handle_, SW_RESTORE);
+  } else {
+    ShowWindow(window_handle_, SW_MAXIMIZE);
+  }
+}
+
+void Win32Window::CloseWindow() {
+  PostMessage(window_handle_, WM_CLOSE, 0, 0);
 }

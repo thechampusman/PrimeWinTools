@@ -1695,3 +1695,203 @@
 2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\UPDATER.EXE-43CEA393.pf
 2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\VCTIP.EXE-2C2B6961.pf
 2025-06-10 07:47:25.763521 - Deleted File: File: C:\Windows\Prefetch\VSWHERE.EXE-4CCFCF10.pf
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\4310c92d99c30ca5a328cffd966c36da-{87A94AB0-E370-4cde-98D3-ACC110C5967D}
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\adb.log
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\b752455a-fece-4069-94d8-8983e7ca855a.tmp
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\bf8d14b2-8489-470a-a8d5-417481c3c63e.tmp
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\db5e50b3-5b2d-4a12-bc13-9d24acf9287d.tmp
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\f72e3d82-7c80-44ec-be50-328aafe6c2c9.tmp
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\f958e7a5-23cc-4ece-84de-87fa65a702f4.tmp
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.9c7cbad1
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\hsperfdata_usman
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\mozilla-temp-files
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\MSBuildTemp
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\PrimeWinTools983c342a
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\WinGet
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (10).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (11).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (12).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (13).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (14).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (15).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (16).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (17).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (18).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (19).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (2).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (20).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (21).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (22).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (23).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (24).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (3).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (4).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (5).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (6).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (7).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (8).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (9).xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file.xml
+2025-07-23 14:30:48.527722 - [DEBUG] Simulated Delete File: File: C:\Windows\Temp\THECHAMP-20250723-0028.log
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\.ses
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\4310c92d99c30ca5a328cffd966c36da-{87A94AB0-E370-4cde-98D3-ACC110C5967D}
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\adb.log
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\b752455a-fece-4069-94d8-8983e7ca855a.tmp
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\bf8d14b2-8489-470a-a8d5-417481c3c63e.tmp
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\cv_debug.log
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\db5e50b3-5b2d-4a12-bc13-9d24acf9287d.tmp
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\edge_BITS_16084_1175526200
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\edge_BITS_16084_1234053671
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\edge_BITS_21972_1536016231
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\f72e3d82-7c80-44ec-be50-328aafe6c2c9.tmp
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\f958e7a5-23cc-4ece-84de-87fa65a702f4.tmp
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.8233eca7
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\flutter_tools.c23f2887
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\hsperfdata_usman
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\mat-debug-18624.log
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\mat-debug-9828.log
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\mozilla-temp-files
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\MSBuildTemp
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\PrimeWinTools983c342a
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\PrimeWinTools99e85fea
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\PrimeWinToolsac8d601e
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\PrimeWinToolscab1351f
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete Folder: Folder: C:\Users\usman\AppData\Local\Temp\WinGet
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (10).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (100).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (101).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (102).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (103).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (104).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (105).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (106).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (107).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (108).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (109).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (11).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (110).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (111).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (112).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (113).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (114).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (115).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (116).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (117).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (118).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (119).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (12).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (120).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (121).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (122).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (123).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (124).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (125).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (126).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (127).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (128).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (129).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (13).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (130).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (131).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (132).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (14).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (15).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (16).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (17).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (18).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (19).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (2).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (20).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (21).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (22).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (23).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (24).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (25).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (26).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (27).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (28).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (29).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (3).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (30).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (31).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (32).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (33).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (34).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (35).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (36).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (37).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (38).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (39).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (4).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (40).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (41).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (42).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (43).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (44).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (45).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (46).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (47).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (48).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (49).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (5).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (50).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (51).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (52).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (53).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (54).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (55).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (56).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (57).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (58).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (59).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (6).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (60).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (61).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (62).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (63).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (64).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (65).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (66).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (67).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (68).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (69).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (7).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (70).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (71).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (72).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (73).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (74).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (75).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (76).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (77).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (78).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (79).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (8).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (80).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (81).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (82).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (83).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (84).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (85).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (86).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (87).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (88).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (89).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (9).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (90).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (91).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (92).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (93).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (94).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (95).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (96).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (97).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (98).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file (99).xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\xml_file.xml
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Users\usman\AppData\Local\Temp\~DFBB1060C7FD7BBAA4.TMP
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Windows\Temp\THECHAMP-20250723-0028.log
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Windows\Temp\THECHAMP-20250723-1435.log
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Windows\Temp\THECHAMP-20250723-1529.log
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Windows\Temp\THECHAMP-20250723-1541.log
+2025-07-23 16:07:11.526377 - [DEBUG] Simulated Delete File: File: C:\Windows\Temp\THECHAMP-20250723-1552.log

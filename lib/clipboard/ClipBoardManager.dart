@@ -10,7 +10,7 @@ class ClipboardManager {
   Timer? _monitorTimer;
   Timer? _cleanupTimer;
   String? _lastClipboardContent;
-  
+
   final ClipboardDatabase dbHelper = ClipboardDatabase();
 
   // Enhanced background monitoring with optimized polling
@@ -18,17 +18,17 @@ class ClipboardManager {
     // Stop any existing timers
     _monitorTimer?.cancel();
     _cleanupTimer?.cancel();
-    
+
     // Start monitoring with more efficient approach
-    _monitorTimer = Timer.periodic(const Duration(milliseconds: 500), (timer) async {
+    _monitorTimer =
+        Timer.periodic(const Duration(milliseconds: 500), (timer) async {
       final clipboardText = _getClipboardText();
-      
+
       // Only process if clipboard content has actually changed
       if (clipboardText != null &&
           clipboardText.isNotEmpty &&
           clipboardText != _lastClipboardContent &&
           !copiedItems.contains(clipboardText)) {
-        
         _lastClipboardContent = clipboardText;
         copiedItems.add(clipboardText);
 
@@ -36,27 +36,25 @@ class ClipboardManager {
         await dbHelper.saveClipboardItem(clipboardText);
 
         onClipboardUpdate(); // Call the callback to update UI
-        print('New clipboard content captured: ${clipboardText.substring(0, clipboardText.length > 50 ? 50 : clipboardText.length)}...');
       }
     });
-    
+
     // Clean up old items every 5 minutes instead of every second (single timer)
     _cleanupTimer = Timer.periodic(const Duration(minutes: 5), (timer) async {
       await dbHelper.deleteOldItems();
     });
   }
+
   // Stop monitoring when app is minimized/hidden
   void stopMonitoring() {
     _monitorTimer?.cancel();
     _cleanupTimer?.cancel();
-    print('Clipboard monitoring paused');
   }
 
   // Resume monitoring when app is shown
   void resumeMonitoring(Function onClipboardUpdate) {
     if (_monitorTimer == null || !_monitorTimer!.isActive) {
       monitorClipboard(onClipboardUpdate);
-      print('Clipboard monitoring resumed');
     }
   }
 
@@ -92,13 +90,12 @@ class ClipboardManager {
 
   void deleteCopiedItem(String item) {
     copiedItems.remove(item);
-    print('Deleted: $item');
   }
+
   // Clean up resources when app is closed
   void dispose() {
     _monitorTimer?.cancel();
     _cleanupTimer?.cancel();
-    print('ClipboardManager disposed');
   }
 
   // Get current clipboard content for immediate access

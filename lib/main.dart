@@ -15,11 +15,21 @@ void main() async {
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
     sqfliteFfiInit();
     databaseFactory = databaseFactoryFfi;
-  }  // Set window to be transparent and start visible for testing
+  }
+  
+  // Configure window for custom title bar
   if (Platform.isWindows) {
-    await windowManager.setBackgroundColor(Colors.transparent);
-    await windowManager.setHasShadow(false);
-    await windowManager.show(); // Show window on startup for testing
+    WindowOptions windowOptions = const WindowOptions(
+      size: Size(1280, 720),
+      center: true,
+      backgroundColor: Colors.transparent,
+      skipTaskbar: false,
+      titleBarStyle: TitleBarStyle.hidden, // Hide the default title bar
+    );
+    await windowManager.waitUntilReadyToShow(windowOptions, () async {
+      await windowManager.show();
+      await windowManager.focus();
+    });
   }
 
   removeWindowTitle();

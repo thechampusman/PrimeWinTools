@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 
@@ -55,8 +54,6 @@ class _HomepageState extends State<Homepage> {
       setState(() {
         _progress = (i + 1) / totalDirs;
       });
-      await Future.delayed(
-          const Duration(milliseconds: 200)); // Simulate progress
     }
 
     setState(() {
@@ -110,8 +107,6 @@ class _HomepageState extends State<Homepage> {
       setState(() {
         _progress = (i + 1) / total;
       });
-      await Future.delayed(
-          const Duration(milliseconds: 120)); // Simulate progress
     }
 
     setState(() {
@@ -192,7 +187,7 @@ class _HomepageState extends State<Homepage> {
                             return TweenAnimationBuilder<double>(
                               tween: Tween<double>(begin: 0, end: 1),
                               duration:
-                                  Duration(milliseconds: 350 + index * 40),
+                                  Duration(milliseconds: 200 + index * 10),
                               builder: (context, value, child) {
                                 return Opacity(
                                   opacity: value,
@@ -252,134 +247,345 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white.withOpacity(0.1),
+      backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: Container(
-          padding: const EdgeInsets.all(15),
-          decoration: BoxDecoration(
-            color: const Color(0xFF454342).withOpacity(0.5),
-            borderRadius: const BorderRadius.all(Radius.circular(7)),
-          ),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    "Your Personal Cleaner",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+        padding: const EdgeInsets.all(24.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // 🎨 Beautiful Header Card with cool and warm colors
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(24),
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [
+                    Color(0xFF3B82F6), // Cool blue
+                    Color(0xFF8B5CF6), // Warm purple
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xFF3B82F6).withOpacity(0.2),
+                    blurRadius: 12,
+                    offset: const Offset(0, 4),
                   ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
                   Row(
                     children: [
-                      _AnimatedGradientButton(
-                        onPressed: _isLoading ? null : _showLogHistory,
-                        label: 'View Log',
-                        icon: Icons.history,
-                        gradient: const LinearGradient(
-                          colors: [Colors.purple, Colors.blueAccent],
+                      // 🎨 Emoji icon
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(12),
                         ),
-                        disabled: _isLoading,
+                        child: const Text(
+                          '🧹',
+                          style: TextStyle(fontSize: 24),
+                        ),
                       ),
-                      const SizedBox(width: 10),
-                      _AnimatedGradientButton(
-                        onPressed: _isLoading ? null : scanTempFiles,
-                        label: 'Scan Files',
-                        icon: Icons.clear_all_outlined,
-                        gradient: const LinearGradient(
-                          colors: [Colors.green, Colors.lightGreenAccent],
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "System Cleaner",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "Keep your system sparkling clean",
+                              style: TextStyle(
+                                color: Colors.white.withOpacity(0.8),
+                                fontSize: 14,
+                              ),
+                            ),
+                          ],
                         ),
-                        disabled: _isLoading,
                       ),
-                      const SizedBox(width: 10),
-                      _AnimatedGradientButton(
-                        onPressed: (_isLoading || tempFiles.isEmpty)
-                            ? null
-                            : cleanTempFiles,
-                        label: 'Clean Files',
-                        icon: Icons.delete,
-                        gradient: const LinearGradient(
-                          colors: [Colors.red, Colors.orangeAccent],
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  // 🎨 Action buttons with cool and warm colors
+                  Row(
+                    children: [
+                      Expanded(
+                        child: _AnimatedGradientButton(
+                          onPressed: _isLoading ? null : _showLogHistory,
+                          label: 'View Log',
+                          icon: Icons.history,
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xFF06B6D4),
+                              Color(0xFF0891B2)
+                            ], // Cool cyan
+                          ),
+                          disabled: _isLoading,
                         ),
-                        disabled: _isLoading || tempFiles.isEmpty,
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: _AnimatedGradientButton(
+                          onPressed: _isLoading ? null : scanTempFiles,
+                          label: 'Scan Files',
+                          icon: Icons.search_rounded,
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xFF10B981),
+                              Color(0xFF059669)
+                            ], // Cool green
+                          ),
+                          disabled: _isLoading,
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: _AnimatedGradientButton(
+                          onPressed: (_isLoading || tempFiles.isEmpty)
+                              ? null
+                              : cleanTempFiles,
+                          label: 'Clean Files',
+                          icon: Icons.cleaning_services_rounded,
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xFFF59E0B),
+                              Color(0xFFEF4444)
+                            ], // Warm amber to red
+                          ),
+                          disabled: _isLoading || tempFiles.isEmpty,
+                        ),
                       ),
                     ],
                   ),
                 ],
               ),
-              if (_isLoading) ...[
-                const SizedBox(height: 18),
-                Row(
+            ),
+            const SizedBox(height: 20),
+
+            // 🎨 Progress section with cool colors
+            if (_isLoading) ...[
+              Container(
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF8FAFC), // Cool light gray
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(
+                    color: const Color(0xFFE2E8F0),
+                    width: 1,
+                  ),
+                ),
+                child: Column(
                   children: [
-                    Expanded(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(6),
-                        child: LinearProgressIndicator(
-                          minHeight: 7,
-                          backgroundColor: Colors.white.withOpacity(0.13),
-                          valueColor: const AlwaysStoppedAnimation<Color>(
-                            Colors.orangeAccent,
+                    Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              colors: [
+                                Color(0xFF6366F1), // Cool indigo
+                                Color(0xFF8B5CF6), // Warm purple
+                              ],
+                            ),
+                            borderRadius: BorderRadius.circular(8),
                           ),
-                          value: _progress,
+                          child: const Text(
+                            '⚡',
+                            style: TextStyle(fontSize: 16),
+                          ),
                         ),
-                      ),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: Text(
+                            _loadingText,
+                            style: const TextStyle(
+                              color: Color(0xFF1F2937), // Cool dark gray
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          "${(_progress * 100).toStringAsFixed(0)}%",
+                          style: const TextStyle(
+                            color: Color(0xFF6366F1), // Cool indigo
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
                     ),
-                    const SizedBox(width: 16),
-                    Text(
-                      "$_loadingText  ${(_progress * 100).toStringAsFixed(0)}%",
-                      style:
-                          const TextStyle(color: Colors.white70, fontSize: 15),
+                    const SizedBox(height: 12),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: LinearProgressIndicator(
+                        minHeight: 8,
+                        backgroundColor: const Color(0xFFE5E7EB),
+                        valueColor: const AlwaysStoppedAnimation<Color>(
+                          Color(0xFF6366F1), // Cool indigo
+                        ),
+                        value: _progress,
+                      ),
                     ),
                   ],
                 ),
-              ] else
-                const SizedBox(height: 20),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF757675).withOpacity(0.3),
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.white.withOpacity(0.6)),
-                  ),
-                  child: ListView.builder(
-                    itemCount: tempFiles.length,
-                    itemBuilder: (context, index) {
-                      bool isFile = tempFiles[index].startsWith('File: ');
-                      bool isFolder = tempFiles[index].startsWith('Folder: ');
-                      return ListTile(
-                        leading: ShaderMask(
-                          shaderCallback: (Rect bounds) {
-                            return isFile
-                                ? const LinearGradient(
-                                    colors: [
-                                      Color(0xFF43CEA2),
-                                      Color(0xFF185A9D)
-                                    ],
-                                  ).createShader(bounds)
-                                : const LinearGradient(
-                                    colors: [
-                                      Color(0xFFFFE53B),
-                                      Color(0xFFFF2525)
-                                    ],
-                                  ).createShader(bounds);
-                          },
-                          child: Icon(
-                            isFile ? Icons.insert_drive_file : Icons.folder,
-                            color: Colors.white,
-                          ),
-                        ),
-                        title: Text(
-                          tempFiles[index],
-                          style: const TextStyle(
-                              color: Colors.white, fontSize: 15),
-                        ),
-                      );
-                    },
-                  ),
-                ),
               ),
             ],
-          ),
+
+            const SizedBox(height: 20),
+
+            // 🎨 Files list with cool background
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF8FAFC), // Cool light gray
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(
+                    color: const Color(0xFFE2E8F0),
+                    width: 1,
+                  ),
+                ),
+                child: tempFiles.isEmpty
+                    ? Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(20),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF6366F1).withOpacity(0.1),
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: const Text(
+                                '🔍',
+                                style: TextStyle(fontSize: 48),
+                              ),
+                            ),
+                            const SizedBox(height: 16),
+                            const Text(
+                              'No files scanned yet',
+                              style: TextStyle(
+                                color: Color(0xFF1F2937), // Cool dark gray
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(height: 8),
+                            const Text(
+                              'Click "Scan Files" to start cleaning!',
+                              style: TextStyle(
+                                color: Color(0xFF6B7280), // Warm gray
+                                fontSize: 14,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    : ListView.builder(
+                        padding: const EdgeInsets.all(16),
+                        itemCount: tempFiles.length,
+                        itemBuilder: (context, index) {
+                          bool isFile = tempFiles[index].startsWith('File: ');
+                          return Container(
+                            margin: const EdgeInsets.only(bottom: 8),
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: const Color(0xFFE5E7EB),
+                                width: 1,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.02),
+                                  blurRadius: 4,
+                                  offset: const Offset(0, 1),
+                                ),
+                              ],
+                            ),
+                            child: Row(
+                              children: [
+                                // 🎨 Beautiful file/folder icons with cool/warm gradients
+                                Container(
+                                  padding: const EdgeInsets.all(8),
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      colors: isFile
+                                          ? [
+                                              const Color(0xFF3B82F6),
+                                              const Color(0xFF6366F1)
+                                            ] // Cool blue to indigo
+                                          : [
+                                              const Color(0xFFF59E0B),
+                                              const Color(0xFFEF4444)
+                                            ], // Warm amber to red
+                                    ),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Icon(
+                                    isFile
+                                        ? Icons.description_rounded
+                                        : Icons.folder_rounded,
+                                    color: Colors.white,
+                                    size: 16,
+                                  ),
+                                ),
+                                const SizedBox(width: 12),
+                                // File path text
+                                Expanded(
+                                  child: Text(
+                                    tempFiles[index].replaceFirst(
+                                        isFile ? 'File: ' : 'Folder: ', ''),
+                                    style: const TextStyle(
+                                      color:
+                                          Color(0xFF374151), // Cool dark gray
+                                      fontSize: 13,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                                // File type indicator
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 4),
+                                  decoration: BoxDecoration(
+                                    color: isFile
+                                        ? const Color(0xFF3B82F6)
+                                            .withOpacity(0.1)
+                                        : const Color(0xFFF59E0B)
+                                            .withOpacity(0.1),
+                                    borderRadius: BorderRadius.circular(6),
+                                  ),
+                                  child: Text(
+                                    isFile ? 'FILE' : 'FOLDER',
+                                    style: TextStyle(
+                                      color: isFile
+                                          ? const Color(0xFF3B82F6)
+                                          : const Color(0xFFF59E0B),
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -458,7 +664,8 @@ class _AnimatedGradientButtonState extends State<_AnimatedGradientButton> {
           onPressed: isDisabled ? null : widget.onPressed,
           icon: ShaderMask(
             shaderCallback: (Rect bounds) {
-              return widget.gradient.createShader(const Rect.fromLTWH(0, 0, 24, 24));
+              return widget.gradient
+                  .createShader(const Rect.fromLTWH(0, 0, 24, 24));
             },
             child: Icon(
               widget.icon,
