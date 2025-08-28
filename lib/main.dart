@@ -7,6 +7,10 @@ import 'package:tray_manager/tray_manager.dart';
 import 'package:window_manager/window_manager.dart';
 
 import 'clipboard/DataBase/ClipBoardDataBase.dart';
+import 'services/hotkey_manager.dart';
+
+// Global navigator key to access overlay from anywhere
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,7 +20,7 @@ void main() async {
     sqfliteFfiInit();
     databaseFactory = databaseFactoryFfi;
   }
-  
+
   // Configure window for custom title bar
   if (Platform.isWindows) {
     WindowOptions windowOptions = const WindowOptions(
@@ -35,6 +39,10 @@ void main() async {
   removeWindowTitle();
   final clipboardDb = ClipboardDatabase();
   await clipboardDb.database;
+
+  // Initialize global hotkeys
+  await GlobalHotKeyManager.initialize();
+
   runApp(const MyApp());
   trayManager.setIcon('assets/app_icon.ico');
   trayManager.setToolTip('PrimeWinTools - Clipboard Manager');
@@ -80,6 +88,7 @@ class MyTrayListener with TrayListener {
       windowManager.destroy();
     }
   }
+
   void _showAndFocusWindow() async {
     await windowManager.show();
     await windowManager.focus();
@@ -105,6 +114,7 @@ class _MyAppState extends State<MyApp> with WindowListener {
     windowManager.removeListener(this);
     super.dispose();
   }
+
   @override
   Future<bool> onWindowClose() async {
     // Hide window to system tray instead of closing
@@ -122,12 +132,14 @@ class _MyAppState extends State<MyApp> with WindowListener {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       title: 'PrimeWinTool',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-      ),      home: Scaffold(
+      ),
+      home: Scaffold(
         backgroundColor: Colors.transparent,
         body: const Dashboard(),
       ),

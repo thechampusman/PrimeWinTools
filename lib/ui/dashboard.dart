@@ -9,9 +9,18 @@ import 'package:window_manager/window_manager.dart';
 
 import '../clipboard/ClipBoardManager.dart';
 import '../clipboard/clipboard.dart';
+import 'clipboard_overlay.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
+
+  // Static method to show clipboard overlay from anywhere
+  static void showClipboardOverlay() {
+    if (_DashboardState._dashboardContext != null &&
+        _DashboardState._dashboardContext!.mounted) {
+      ClipboardOverlay.show(_DashboardState._dashboardContext!);
+    }
+  }
 
   @override
   _DashboardState createState() => _DashboardState();
@@ -20,6 +29,9 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   int _selectedIndex = 0;
   final ClipboardManager clipboardManager = ClipboardManager();
+
+  // Static reference to dashboard context for global access
+  static BuildContext? _dashboardContext;
 
   @override
   void initState() {
@@ -32,6 +44,9 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
+    // Store the context for global access
+    _dashboardContext = context;
+
     final screenWidth = MediaQuery.of(context).size.width;
     final sidebarWidth = screenWidth * 0.18; // 18% of screen width
 
