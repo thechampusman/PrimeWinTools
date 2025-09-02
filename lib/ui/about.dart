@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
 
 class About extends StatelessWidget {
   const About({super.key});
@@ -66,7 +65,8 @@ class About extends StatelessWidget {
                   const SizedBox(height: 20),
                   // Version info
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(12),
@@ -82,9 +82,9 @@ class About extends StatelessWidget {
                 ],
               ),
             ),
-            
+
             const SizedBox(height: 24),
-            
+
             // 🎨 Feature Cards Grid with cool and warm colors
             Expanded(
               child: GridView.count(
@@ -95,9 +95,13 @@ class About extends StatelessWidget {
                   _buildFeatureCard(
                     emoji: '🧹',
                     title: 'System Cleaner',
-                    description: 'Clean temporary files and optimize your system',
+                    description:
+                        'Clean temporary files and optimize your system',
                     gradient: const LinearGradient(
-                      colors: [Color(0xFF10B981), Color(0xFF059669)], // Cool green
+                      colors: [
+                        Color(0xFF10B981),
+                        Color(0xFF059669)
+                      ], // Cool green
                     ),
                   ),
                   _buildFeatureCard(
@@ -105,7 +109,10 @@ class About extends StatelessWidget {
                     title: 'Clipboard Manager',
                     description: 'Keep track of everything you copy',
                     gradient: const LinearGradient(
-                      colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)], // Cool indigo to warm purple
+                      colors: [
+                        Color(0xFF6366F1),
+                        Color(0xFF8B5CF6)
+                      ], // Cool indigo to warm purple
                     ),
                   ),
                   _buildFeatureCard(
@@ -113,7 +120,10 @@ class About extends StatelessWidget {
                     title: 'Performance',
                     description: 'Blazing fast and lightweight',
                     gradient: const LinearGradient(
-                      colors: [Color(0xFFF59E0B), Color(0xFFEF4444)], // Warm amber to red
+                      colors: [
+                        Color(0xFFF59E0B),
+                        Color(0xFFEF4444)
+                      ], // Warm amber to red
                     ),
                   ),
                   _buildFeatureCard(
@@ -121,13 +131,16 @@ class About extends StatelessWidget {
                     title: 'Beautiful UI',
                     description: 'Modern clean design',
                     gradient: const LinearGradient(
-                      colors: [Color(0xFF06B6D4), Color(0xFF0891B2)], // Cool cyan
+                      colors: [
+                        Color(0xFF06B6D4),
+                        Color(0xFF0891B2)
+                      ], // Cool cyan
                     ),
                   ),
                 ],
               ),
             ),
-            
+
             // 🎨 Footer info with cool colors
             Container(
               width: double.infinity,
@@ -167,7 +180,7 @@ class About extends StatelessWidget {
       ),
     );
   }
-  
+
   Widget _buildFeatureCard({
     required String emoji,
     required String title,

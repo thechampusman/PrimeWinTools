@@ -36,14 +36,16 @@ class GlobalHotKeyManager {
 
   static Future<void> _showClipboardPopup() async {
     print('🚀 Showing native clipboard popup...');
-    
+
     try {
       await NativeClipboardPopup.showPopup();
       print('✅ Native clipboard popup shown!');
     } catch (e) {
       print('❌ Error showing native popup: $e');
     }
-  }  static Future<void> dispose() async {
+  }
+
+  static Future<void> dispose() async {
     try {
       await hotKeyManager.unregisterAll();
       _isInitialized = false;

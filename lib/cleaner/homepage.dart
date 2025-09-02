@@ -1,275 +1,52 @@
+import 'package:flutter/material.dart';
 import 'dart:io';
 
-import 'package:flutter/material.dart';
-
-class Homepage extends StatefulWidget {
-  const Homepage({
-    super.key,
-  });
+class Cleaner extends StatefulWidget {
+  const Cleaner({super.key});
 
   @override
-  State<Homepage> createState() => _HomepageState();
+  State<Cleaner> createState() => _CleanerState();
 }
 
-class _HomepageState extends State<Homepage> {
-  List<String> tempFiles = [];
-  bool _isLoading = false;
-  String _loadingText = "";
-  double _progress = 0.0;
-
-  Future<void> scanTempFiles() async {
-    setState(() {
-      _isLoading = true;
-      _loadingText = "Scanning files...";
-      _progress = 0.0;
-    });
-
-    List<String> tempDirectories = [
-      Platform.environment['TEMP']!,
-      r'C:\Windows\Temp',
-      r'C:\Windows\Prefetch',
-    ];
-
-    List<String> foundItems = [];
-    int totalDirs = tempDirectories.length;
-
-    for (int i = 0; i < tempDirectories.length; i++) {
-      String dirPath = tempDirectories[i];
-      final dir = Directory(dirPath);
-      if (dir.existsSync()) {
-        try {
-          dir.listSync().forEach((FileSystemEntity entity) {
-            if (entity is File) {
-              foundItems.add('File: ${entity.path}');
-            } else if (entity is Directory) {
-              foundItems.add('Folder: ${entity.path}');
-            }
-          });
-        } catch (e) {
-          print('Error accessing $dirPath: $e');
-          foundItems
-              .add('Error accessing $dirPath: Requires Administrator Access');
-        }
-      }
-      setState(() {
-        _progress = (i + 1) / totalDirs;
-      });
-    }
-
-    setState(() {
-      tempFiles = foundItems;
-      _isLoading = false;
-      _loadingText = "";
-      _progress = 0.0;
-    });
-  }
-
-  Future<void> cleanTempFiles() async {
-    setState(() {
-      _isLoading = true;
-      _loadingText = "Cleaning files...";
-      _progress = 0.0;
-    });
-
-    final logFile = File('${Directory.current.path}\\log.txt');
-    final now = DateTime.now();
-
-    int total = tempFiles.length;
-    if (total == 0) total = 1; // Prevent division by zero
-
-    for (int i = 0; i < tempFiles.length; i++) {
-      String itemPath = tempFiles[i];
-      final file = File(itemPath.replaceFirst('File: ', ''));
-      final folder = Directory(itemPath.replaceFirst('Folder: ', ''));
-
-      try {
-        if (itemPath.startsWith('File: ')) {
-          if (file.existsSync()) {
-            file.deleteSync();
-            logFile.writeAsStringSync('$now - Deleted File: $itemPath\n',
-                mode: FileMode.append);
-            print('Deleted file: $itemPath');
-          }
-        } else if (itemPath.startsWith('Folder: ')) {
-          if (folder.existsSync()) {
-            folder.deleteSync(recursive: true);
-            logFile.writeAsStringSync('$now - Deleted Folder: $itemPath\n',
-                mode: FileMode.append);
-            print('Deleted folder: $itemPath');
-          }
-        }
-      } catch (e) {
-        print('Failed to delete $itemPath: $e');
-        logFile.writeAsStringSync(
-            '$now - Failed to delete: $itemPath, Error: $e\n',
-            mode: FileMode.append);
-      }
-      setState(() {
-        _progress = (i + 1) / total;
-      });
-    }
-
-    setState(() {
-      tempFiles.clear();
-      _isLoading = false;
-      _loadingText = "";
-      _progress = 0.0;
-    });
-  }
-
-  void _showLogHistory() async {
-    final logFile = File('${Directory.current.path}\\log.txt');
-    List<String> logEntries = [];
-
-    // Check if the log file exists and read its contents
-    if (logFile.existsSync()) {
-      logEntries = logFile.readAsLinesSync();
-    } else {
-      logEntries = ['No log data found.'];
-    }
-
-    showDialog(
-      context: context,
-      barrierColor: Colors.black.withOpacity(0.35),
-      builder: (BuildContext context) {
-        return Dialog(
-          backgroundColor: Colors.white.withOpacity(0.07),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
-          child: Container(
-            constraints: const BoxConstraints(maxWidth: 480, maxHeight: 500),
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Title with gradient icon
-                Row(
-                  children: [
-                    ShaderMask(
-                      shaderCallback: (Rect bounds) {
-                        return const LinearGradient(
-                          colors: [Color(0xFF43CEA2), Color(0xFF185A9D)],
-                        ).createShader(bounds);
-                      },
-                      child: const Icon(Icons.history,
-                          size: 32, color: Colors.white),
-                    ),
-                    const SizedBox(width: 12),
-                    const Text(
-                      'Log History',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 0.3,
-                      ),
-                    ),
-                    const Spacer(),
-                    // Animated close button
-                    _AnimatedCloseButton(),
-                  ],
-                ),
-                const SizedBox(height: 18),
-                Expanded(
-                  child: logEntries.isEmpty
-                      ? Center(
-                          child: Text(
-                            "No log data found.",
-                            style: TextStyle(
-                              color: Colors.white.withOpacity(0.8),
-                              fontSize: 16,
-                            ),
-                          ),
-                        )
-                      : ListView.builder(
-                          itemCount: logEntries.length,
-                          itemBuilder: (context, index) {
-                            return TweenAnimationBuilder<double>(
-                              tween: Tween<double>(begin: 0, end: 1),
-                              duration:
-                                  Duration(milliseconds: 200 + index * 10),
-                              builder: (context, value, child) {
-                                return Opacity(
-                                  opacity: value,
-                                  child: Transform.translate(
-                                    offset: Offset(0, (1 - value) * 20),
-                                    child: child,
-                                  ),
-                                );
-                              },
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 6.0),
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Icon(
-                                      logEntries[index].contains('Deleted File')
-                                          ? Icons.insert_drive_file
-                                          : logEntries[index]
-                                                  .contains('Deleted Folder')
-                                              ? Icons.folder
-                                              : Icons.info_outline,
-                                      color: logEntries[index]
-                                              .contains('Deleted File')
-                                          ? Colors.lightBlueAccent
-                                          : logEntries[index]
-                                                  .contains('Deleted Folder')
-                                              ? Colors.amberAccent
-                                              : Colors.white70,
-                                      size: 22,
-                                    ),
-                                    const SizedBox(width: 10),
-                                    Expanded(
-                                      child: Text(
-                                        logEntries[index],
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 15,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                ),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
+class _CleanerState extends State<Cleaner> {
+  bool _isScanning = false;
+  List<FileSystemEntity> _tempFiles = [];
+  Map<String, List<FileSystemEntity>> _filesByFolder = {};
+  String _selectedFolder = '';
+  int _totalSize = 0;
+  bool _showAllFiles = false;
+  List<String> _scannedFolders = [
+    'C:\\Windows\\Temp',
+    'C:\\Users\\%USERNAME%\\AppData\\Local\\Temp',
+    'C:\\Windows\\Prefetch',
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
+    return Container(
+      color: const Color(0xFFF8F9FA), // Clean light background
+      width: double.infinity,
+      height: double.infinity,
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(24), // Reduced from 40
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🎨 Beautiful Header Card with cool and warm colors
+            // Clean Header with gradient background
             Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(24),
+              padding: const EdgeInsets.all(20), // Reduced from 32
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [
-                    Color(0xFF3B82F6), // Cool blue
-                    Color(0xFF8B5CF6), // Warm purple
-                  ],
+                  colors: [Color(0xFF667EEA), Color(0xFF764BA2)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
                 ),
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(12), // Reduced from 16
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF3B82F6).withOpacity(0.2),
-                    blurRadius: 12,
-                    offset: const Offset(0, 4),
+                    color: const Color(0xFF667EEA).withOpacity(0.3),
+                    blurRadius: 15, // Reduced from 20
+                    offset: const Offset(0, 6), // Reduced from 10
                   ),
                 ],
               ),
@@ -278,91 +55,41 @@ class _HomepageState extends State<Homepage> {
                 children: [
                   Row(
                     children: [
-                      // 🎨 Emoji icon
                       Container(
-                        padding: const EdgeInsets.all(12),
+                        padding: const EdgeInsets.all(8), // Reduced from 12
                         decoration: BoxDecoration(
                           color: Colors.white.withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius:
+                              BorderRadius.circular(8), // Reduced from 12
                         ),
-                        child: const Text(
-                          '🧹',
-                          style: TextStyle(fontSize: 24),
+                        child: const Icon(
+                          Icons.cleaning_services,
+                          color: Colors.white,
+                          size: 24, // Reduced from 32
                         ),
                       ),
-                      const SizedBox(width: 16),
-                      Expanded(
+                      const SizedBox(width: 12), // Reduced from 16
+                      const Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
-                              "System Cleaner",
+                            Text(
+                              'System Cleaner',
                               style: TextStyle(
+                                fontSize: 24, // Reduced from 32
+                                fontWeight: FontWeight.w700,
                                 color: Colors.white,
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold,
                               ),
                             ),
+                            SizedBox(height: 2), // Reduced from 4
                             Text(
-                              "Keep your system sparkling clean",
+                              'Clean temporary files and optimize your system',
                               style: TextStyle(
-                                color: Colors.white.withOpacity(0.8),
-                                fontSize: 14,
+                                fontSize: 14, // Reduced from 16
+                                color: Colors.white70,
                               ),
                             ),
                           ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  // 🎨 Action buttons with cool and warm colors
-                  Row(
-                    children: [
-                      Expanded(
-                        child: _AnimatedGradientButton(
-                          onPressed: _isLoading ? null : _showLogHistory,
-                          label: 'View Log',
-                          icon: Icons.history,
-                          gradient: const LinearGradient(
-                            colors: [
-                              Color(0xFF06B6D4),
-                              Color(0xFF0891B2)
-                            ], // Cool cyan
-                          ),
-                          disabled: _isLoading,
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: _AnimatedGradientButton(
-                          onPressed: _isLoading ? null : scanTempFiles,
-                          label: 'Scan Files',
-                          icon: Icons.search_rounded,
-                          gradient: const LinearGradient(
-                            colors: [
-                              Color(0xFF10B981),
-                              Color(0xFF059669)
-                            ], // Cool green
-                          ),
-                          disabled: _isLoading,
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: _AnimatedGradientButton(
-                          onPressed: (_isLoading || tempFiles.isEmpty)
-                              ? null
-                              : cleanTempFiles,
-                          label: 'Clean Files',
-                          icon: Icons.cleaning_services_rounded,
-                          gradient: const LinearGradient(
-                            colors: [
-                              Color(0xFFF59E0B),
-                              Color(0xFFEF4444)
-                            ], // Warm amber to red
-                          ),
-                          disabled: _isLoading || tempFiles.isEmpty,
                         ),
                       ),
                     ],
@@ -370,212 +97,443 @@ class _HomepageState extends State<Homepage> {
                 ],
               ),
             ),
-            const SizedBox(height: 20),
 
-            // 🎨 Progress section with cool colors
-            if (_isLoading) ...[
-              Container(
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: const Color(0xFFF8FAFC), // Cool light gray
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(
-                    color: const Color(0xFFE2E8F0),
-                    width: 1,
+            const SizedBox(height: 20), // Reduced from 32
+
+            // Action Buttons Container - Always visible with modern design
+            Container(
+              padding: const EdgeInsets.all(20), // Reduced from 32
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16), // Reduced from 20
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.06), // Reduced opacity
+                    blurRadius: 15, // Reduced from 20
+                    offset: const Offset(0, 4), // Reduced from 8
                   ),
-                ),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                            gradient: const LinearGradient(
-                              colors: [
-                                Color(0xFF6366F1), // Cool indigo
-                                Color(0xFF8B5CF6), // Warm purple
-                              ],
-                            ),
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: const Text(
-                            '⚡',
-                            style: TextStyle(fontSize: 16),
-                          ),
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.03), // Reduced opacity
+                    blurRadius: 4, // Reduced from 6
+                    offset: const Offset(0, 1), // Reduced from 2
+                  ),
+                ],
+              ),
+              child: Row(
+                children: [
+                  // Files Found - Modern card design
+                  Expanded(
+                    flex: 2,
+                    child: Container(
+                      padding: const EdgeInsets.all(16), // Reduced from 20
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [Color(0xFF4F46E5), Color(0xFF7C3AED)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
                         ),
-                        const SizedBox(width: 12),
-                        Expanded(
-                          child: Text(
-                            _loadingText,
+                        borderRadius:
+                            BorderRadius.circular(12), // Reduced from 16
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.folder_open,
+                                color: Colors.white.withOpacity(0.8),
+                                size: 16, // Reduced from 20
+                              ),
+                              const SizedBox(width: 6), // Reduced from 8
+                              const Text(
+                                'Files Found',
+                                style: TextStyle(
+                                  fontSize: 12, // Reduced from 14
+                                  color: Colors.white70,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 6), // Reduced from 8
+                          Text(
+                            '${_tempFiles.length}',
                             style: const TextStyle(
-                              color: Color(0xFF1F2937), // Cool dark gray
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
+                              fontSize: 22, // Reduced from 28
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 16), // Reduced from 20
+                  // Total Size - Modern card design
+                  Expanded(
+                    flex: 2,
+                    child: Container(
+                      padding: const EdgeInsets.all(16), // Reduced from 20
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [Color(0xFF059669), Color(0xFF10B981)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        borderRadius:
+                            BorderRadius.circular(12), // Reduced from 16
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.storage,
+                                color: Colors.white.withOpacity(0.8),
+                                size: 16, // Reduced from 20
+                              ),
+                              const SizedBox(width: 6), // Reduced from 8
+                              const Text(
+                                'Total Size',
+                                style: TextStyle(
+                                  fontSize: 12, // Reduced from 14
+                                  color: Colors.white70,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 6), // Reduced from 8
+                          Text(
+                            _formatFileSize(_totalSize),
+                            style: const TextStyle(
+                              fontSize: 22, // Reduced from 28
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 16), // Reduced from 20
+                  // Action Buttons - Always show Start Scan, Clean Now, Quick Clean
+                  Expanded(
+                    flex: 6,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: SizedBox(
+                            height: 40, // Reduced from 48
+                            child: _CleanButton(
+                              text: _isScanning ? 'Scanning...' : 'Start Scan',
+                              icon: Icons.search,
+                              isPrimary: true,
+                              onPressed: _isScanning ? null : _startScan,
                             ),
                           ),
                         ),
-                        Text(
-                          "${(_progress * 100).toStringAsFixed(0)}%",
-                          style: const TextStyle(
-                            color: Color(0xFF6366F1), // Cool indigo
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                        const SizedBox(width: 6), // Reduced from 8
+                        Expanded(
+                          child: SizedBox(
+                            height: 40, // Reduced from 48
+                            child: _CleanButton(
+                              text: 'Clean Now',
+                              icon: Icons.cleaning_services,
+                              isDestructive: true,
+                              onPressed: (_tempFiles.isNotEmpty && !_isScanning)
+                                  ? _cleanFiles
+                                  : null,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 6), // Reduced from 8
+                        Expanded(
+                          child: SizedBox(
+                            height: 40, // Reduced from 48
+                            child: _CleanButton(
+                              text: 'Quick Clean',
+                              icon: Icons.flash_on,
+                              onPressed: !_isScanning ? _quickClean : null,
+                            ),
                           ),
                         ),
                       ],
                     ),
-                    const SizedBox(height: 12),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: LinearProgressIndicator(
-                        minHeight: 8,
-                        backgroundColor: const Color(0xFFE5E7EB),
-                        valueColor: const AlwaysStoppedAnimation<Color>(
-                          Color(0xFF6366F1), // Cool indigo
+                  ),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 20), // Reduced from 32
+
+            // Scanning Status with modern design
+            if (_isScanning && _selectedFolder.isNotEmpty) ...[
+              Container(
+                padding: const EdgeInsets.all(20), // Reduced from 28
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(16), // Reduced from 20
+                  border: Border.all(
+                    color: const Color(0xFF3B82F6).withOpacity(0.2),
+                    width: 2,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF3B82F6).withOpacity(0.1),
+                      blurRadius: 15, // Reduced from 20
+                      offset: const Offset(0, 4), // Reduced from 8
+                    ),
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(6), // Reduced from 8
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF3B82F6).withOpacity(0.1),
+                            borderRadius:
+                                BorderRadius.circular(6), // Reduced from 8
+                          ),
+                          child: const Icon(
+                            Icons.search,
+                            color: Color(0xFF3B82F6),
+                            size: 16, // Reduced from 20
+                          ),
                         ),
-                        value: _progress,
+                        const SizedBox(width: 10), // Reduced from 12
+                        const Text(
+                          'Currently scanning',
+                          style: TextStyle(
+                            fontSize: 14, // Reduced from 16
+                            color: Color(0xFF1F2937),
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 12), // Reduced from 16
+                    Container(
+                      padding: const EdgeInsets.all(12), // Reduced from 16
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF8F9FA),
+                        borderRadius:
+                            BorderRadius.circular(8), // Reduced from 12
+                      ),
+                      child: Text(
+                        _selectedFolder,
+                        style: const TextStyle(
+                          fontSize: 12, // Reduced from 14
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xFF374151),
+                          fontFamily: 'monospace',
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16), // Reduced from 20
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(6), // Reduced from 8
+                      child: Container(
+                        height: 6, // Reduced from 8
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF3B82F6), Color(0xFF8B5CF6)],
+                          ),
+                        ),
+                        child: const LinearProgressIndicator(
+                          backgroundColor: Color(0xFFE5E7EB),
+                          valueColor:
+                              AlwaysStoppedAnimation<Color>(Colors.transparent),
+                          minHeight: 6, // Reduced from 8
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
+              const SizedBox(height: 20), // Reduced from 32
             ],
 
-            const SizedBox(height: 20),
-
-            // 🎨 Files list with cool background
-            Expanded(
-              child: Container(
+            // File List with modern design
+            if (_tempFiles.isNotEmpty) ...[
+              Container(
+                padding: const EdgeInsets.all(20), // Reduced from 28
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF8FAFC), // Cool light gray
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(
-                    color: const Color(0xFFE2E8F0),
-                    width: 1,
-                  ),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(16), // Reduced from 20
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.06), // Reduced opacity
+                      blurRadius: 15, // Reduced from 20
+                      offset: const Offset(0, 4), // Reduced from 8
+                    ),
+                  ],
                 ),
-                child: tempFiles.isEmpty
-                    ? Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
                           children: [
                             Container(
-                              padding: const EdgeInsets.all(20),
+                              padding:
+                                  const EdgeInsets.all(6), // Reduced from 8
                               decoration: BoxDecoration(
-                                color: const Color(0xFF6366F1).withOpacity(0.1),
-                                borderRadius: BorderRadius.circular(16),
+                                color: const Color(0xFF10B981).withOpacity(0.1),
+                                borderRadius:
+                                    BorderRadius.circular(6), // Reduced from 8
                               ),
-                              child: const Text(
-                                '🔍',
-                                style: TextStyle(fontSize: 48),
-                              ),
-                            ),
-                            const SizedBox(height: 16),
-                            const Text(
-                              'No files scanned yet',
-                              style: TextStyle(
-                                color: Color(0xFF1F2937), // Cool dark gray
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
+                              child: const Icon(
+                                Icons.folder_open,
+                                color: Color(0xFF10B981),
+                                size: 16, // Reduced from 20
                               ),
                             ),
-                            const SizedBox(height: 8),
+                            const SizedBox(width: 10), // Reduced from 12
                             const Text(
-                              'Click "Scan Files" to start cleaning!',
+                              'Files and Folders Found',
                               style: TextStyle(
-                                color: Color(0xFF6B7280), // Warm gray
-                                fontSize: 14,
+                                fontSize: 16, // Reduced from 20
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xFF1F2937),
                               ),
                             ),
                           ],
                         ),
-                      )
-                    : ListView.builder(
-                        padding: const EdgeInsets.all(16),
-                        itemCount: tempFiles.length,
+                        Container(
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF3B82F6).withOpacity(0.1),
+                            borderRadius:
+                                BorderRadius.circular(16), // Reduced from 20
+                          ),
+                          child: TextButton.icon(
+                            onPressed: () {
+                              setState(() {
+                                _showAllFiles = !_showAllFiles;
+                              });
+                            },
+                            icon: Icon(
+                              _showAllFiles
+                                  ? Icons.expand_less
+                                  : Icons.expand_more,
+                              color: const Color(0xFF3B82F6),
+                              size: 16, // Reduced from 18
+                            ),
+                            label: Text(
+                              _showAllFiles
+                                  ? 'Show Less'
+                                  : 'Show All (${_tempFiles.length})',
+                              style: const TextStyle(
+                                color: Color(0xFF3B82F6),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 12, // Reduced from 14
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 16), // Reduced from 24
+                    SizedBox(
+                      height: _showAllFiles ? 300 : 150, // Reduced from 400/200
+                      child: ListView.separated(
+                        itemCount: _showAllFiles
+                            ? _tempFiles.length
+                            : _tempFiles.length.clamp(0, 8),
+                        separatorBuilder: (context, index) =>
+                            const SizedBox(height: 8), // Reduced from 12
                         itemBuilder: (context, index) {
-                          bool isFile = tempFiles[index].startsWith('File: ');
+                          FileSystemEntity entity = _tempFiles[index];
+                          String fileName = entity.path.split('\\').last;
+                          String folderPath = entity.parent.path;
+                          bool isDirectory = entity is Directory;
+
                           return Container(
-                            margin: const EdgeInsets.only(bottom: 8),
-                            padding: const EdgeInsets.all(12),
+                            padding:
+                                const EdgeInsets.all(12), // Reduced from 16
                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(12),
+                              color: const Color(0xFFF8F9FA),
+                              borderRadius:
+                                  BorderRadius.circular(8), // Reduced from 12
                               border: Border.all(
-                                color: const Color(0xFFE5E7EB),
-                                width: 1,
+                                color: const Color(0xFFE5E7EB).withOpacity(0.5),
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.02),
-                                  blurRadius: 4,
-                                  offset: const Offset(0, 1),
+                                  color: Colors.black
+                                      .withOpacity(0.01), // Reduced opacity
+                                  blurRadius: 2, // Reduced from 4
+                                  offset: const Offset(0, 1), // Reduced from 2
                                 ),
                               ],
                             ),
-                            child: Row(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                // 🎨 Beautiful file/folder icons with cool/warm gradients
-                                Container(
-                                  padding: const EdgeInsets.all(8),
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      colors: isFile
-                                          ? [
-                                              const Color(0xFF3B82F6),
-                                              const Color(0xFF6366F1)
-                                            ] // Cool blue to indigo
-                                          : [
-                                              const Color(0xFFF59E0B),
-                                              const Color(0xFFEF4444)
-                                            ], // Warm amber to red
+                                Row(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(
+                                          6), // Reduced from 8
+                                      decoration: BoxDecoration(
+                                        color: isDirectory
+                                            ? const Color(0xFF3B82F6)
+                                                .withOpacity(0.1)
+                                            : const Color(0xFF6B7280)
+                                                .withOpacity(0.1),
+                                        borderRadius: BorderRadius.circular(
+                                            6), // Reduced from 8
+                                      ),
+                                      child: Icon(
+                                        isDirectory
+                                            ? Icons.folder
+                                            : Icons.insert_drive_file,
+                                        size: 14, // Reduced from 18
+                                        color: isDirectory
+                                            ? const Color(0xFF3B82F6)
+                                            : const Color(0xFF6B7280),
+                                      ),
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: Icon(
-                                    isFile
-                                        ? Icons.description_rounded
-                                        : Icons.folder_rounded,
-                                    color: Colors.white,
-                                    size: 16,
-                                  ),
-                                ),
-                                const SizedBox(width: 12),
-                                // File path text
-                                Expanded(
-                                  child: Text(
-                                    tempFiles[index].replaceFirst(
-                                        isFile ? 'File: ' : 'Folder: ', ''),
-                                    style: const TextStyle(
-                                      color:
-                                          Color(0xFF374151), // Cool dark gray
-                                      fontSize: 13,
+                                    const SizedBox(
+                                        width: 10), // Reduced from 12
+                                    Expanded(
+                                      child: Text(
+                                        fileName,
+                                        style: const TextStyle(
+                                          fontSize: 13, // Reduced from 15
+                                          fontWeight: FontWeight.w600,
+                                          color: Color(0xFF1F2937),
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
                                     ),
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
+                                  ],
                                 ),
-                                // File type indicator
+                                const SizedBox(height: 6), // Reduced from 8
                                 Container(
                                   padding: const EdgeInsets.symmetric(
-                                      horizontal: 8, vertical: 4),
+                                      horizontal: 8,
+                                      vertical: 4), // Reduced from 12, 6
                                   decoration: BoxDecoration(
-                                    color: isFile
-                                        ? const Color(0xFF3B82F6)
-                                            .withOpacity(0.1)
-                                        : const Color(0xFFF59E0B)
-                                            .withOpacity(0.1),
-                                    borderRadius: BorderRadius.circular(6),
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(
+                                        4), // Reduced from 6
                                   ),
                                   child: Text(
-                                    isFile ? 'FILE' : 'FOLDER',
-                                    style: TextStyle(
-                                      color: isFile
-                                          ? const Color(0xFF3B82F6)
-                                          : const Color(0xFFF59E0B),
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.w600,
+                                    folderPath,
+                                    style: const TextStyle(
+                                      fontSize: 10, // Reduced from 12
+                                      color: Color(0xFF6B7280),
+                                      fontFamily: 'monospace',
                                     ),
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
                               ],
@@ -583,138 +541,236 @@ class _HomepageState extends State<Homepage> {
                           );
                         },
                       ),
+                    ),
+                    if (!_showAllFiles && _tempFiles.length > 8)
+                      Padding(
+                        padding: const EdgeInsets.only(top: 12),
+                        child: Text(
+                          '... and ${_tempFiles.length - 8} more items',
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: Color(0xFF6B7280),
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
               ),
-            ),
+            ],
           ],
         ),
       ),
     );
   }
-}
 
-// Update your _AnimatedGradientButton to accept a disabled property:
-class _AnimatedGradientButton extends StatefulWidget {
-  final VoidCallback? onPressed;
-  final String label;
-  final IconData icon;
-  final Gradient gradient;
-  final bool disabled;
+  void _startScan() async {
+    setState(() {
+      _isScanning = true;
+      _tempFiles.clear();
+      _filesByFolder.clear();
+      _totalSize = 0;
+    });
 
-  const _AnimatedGradientButton({
-    required this.onPressed,
-    required this.label,
-    required this.icon,
-    required this.gradient,
-    this.disabled = false,
-  });
+    for (String folder in _scannedFolders) {
+      setState(() {
+        _selectedFolder = folder;
+      });
 
-  @override
-  State<_AnimatedGradientButton> createState() =>
-      _AnimatedGradientButtonState();
-}
+      try {
+        String actualFolder = folder.replaceAll(
+          '%USERNAME%',
+          Platform.environment['USERNAME'] ?? 'User',
+        );
 
-class _AnimatedGradientButtonState extends State<_AnimatedGradientButton> {
-  bool _hovering = false;
+        Directory directory = Directory(actualFolder);
+        if (await directory.exists()) {
+          await for (FileSystemEntity entity in directory.list()) {
+            if (entity is File) {
+              try {
+                int fileSize = await entity.length();
+                setState(() {
+                  _tempFiles.add(entity);
+                  _totalSize += fileSize;
 
-  @override
-  Widget build(BuildContext context) {
-    final bool isDisabled = widget.disabled || widget.onPressed == null;
-    return MouseRegion(
-      onEnter: (_) {
-        if (!isDisabled) setState(() => _hovering = true);
-      },
-      onExit: (_) {
-        if (!isDisabled) setState(() => _hovering = false);
-      },
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 180),
-        curve: Curves.easeOut,
-        transform: Matrix4.identity()
-          ..scale(_hovering && !isDisabled ? 1.08 : 1.0),
-        decoration: BoxDecoration(
-          boxShadow: _hovering && !isDisabled
-              ? [
-                  BoxShadow(
-                    color: Colors.white.withOpacity(0.18),
-                    blurRadius: 12,
-                    offset: const Offset(0, 2),
-                  ),
-                ]
-              : [],
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(
-            color: isDisabled
-                ? Colors.white.withOpacity(0.15)
-                : _hovering
-                    ? Colors.white.withOpacity(0.7)
-                    : Colors.white.withOpacity(0.4),
-            width: _hovering && !isDisabled ? 2 : 1,
-          ),
-        ),
-        child: ElevatedButton.icon(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-            side: BorderSide.none,
-          ),
-          onPressed: isDisabled ? null : widget.onPressed,
-          icon: ShaderMask(
-            shaderCallback: (Rect bounds) {
-              return widget.gradient
-                  .createShader(const Rect.fromLTWH(0, 0, 24, 24));
-            },
-            child: Icon(
-              widget.icon,
-              color: isDisabled ? Colors.white38 : Colors.white,
-            ),
-          ),
-          label: Text(
-            widget.label,
-            style: TextStyle(
-              color: isDisabled ? Colors.white38 : Colors.white,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        ),
+                  // Group files by folder for organized display
+                  String folderPath = entity.parent.path;
+                  if (!_filesByFolder.containsKey(folderPath)) {
+                    _filesByFolder[folderPath] = [];
+                  }
+                  _filesByFolder[folderPath]!.add(entity);
+                });
+              } catch (e) {
+                // Skip files we can't access
+              }
+            }
+          }
+        }
+      } catch (e) {
+        print('Error scanning folder $folder: $e');
+      }
+    }
+
+    setState(() {
+      _isScanning = false;
+      _selectedFolder = '';
+    });
+  }
+
+  void _cleanFiles() async {
+    if (_tempFiles.isEmpty) return;
+
+    int deletedCount = 0;
+    int deletedSize = 0;
+
+    for (int i = _tempFiles.length - 1; i >= 0; i--) {
+      try {
+        File file = _tempFiles[i] as File;
+        int fileSize = await file.length();
+        await file.delete();
+
+        setState(() {
+          _tempFiles.removeAt(i);
+          _totalSize -= fileSize;
+        });
+
+        deletedCount++;
+        deletedSize += fileSize;
+      } catch (e) {
+        print('Error deleting file: $e');
+        // Remove from list even if deletion failed to avoid retry
+        setState(() {
+          _tempFiles.removeAt(i);
+        });
+      }
+    }
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+            'Cleaned $deletedCount files (${_formatFileSize(deletedSize)})'),
+        backgroundColor: Colors.green,
       ),
     );
   }
+
+  void _quickClean() async {
+    _startScan();
+    // Wait for scan to complete, then clean
+    await Future.delayed(const Duration(seconds: 1));
+    if (_tempFiles.isNotEmpty) {
+      _cleanFiles();
+    }
+  }
+
+  String _formatFileSize(int bytes) {
+    if (bytes < 1024) return '$bytes B';
+    if (bytes < 1024 * 1024) return '${(bytes / 1024).toStringAsFixed(1)} KB';
+    if (bytes < 1024 * 1024 * 1024) {
+      return '${(bytes / (1024 * 1024)).toStringAsFixed(1)} MB';
+    }
+    return '${(bytes / (1024 * 1024 * 1024)).toStringAsFixed(1)} GB';
+  }
 }
 
-// Add this widget below your Homepage class in the same file:
-class _AnimatedCloseButton extends StatefulWidget {
+class _CleanButton extends StatefulWidget {
+  final String text;
+  final IconData icon;
+  final VoidCallback? onPressed;
+  final bool isPrimary;
+  final bool isDestructive;
+
+  const _CleanButton({
+    required this.text,
+    required this.icon,
+    this.onPressed,
+    this.isPrimary = false,
+    this.isDestructive = false,
+  });
+
   @override
-  State<_AnimatedCloseButton> createState() => _AnimatedCloseButtonState();
+  State<_CleanButton> createState() => _CleanButtonState();
 }
 
-class _AnimatedCloseButtonState extends State<_AnimatedCloseButton> {
-  bool _hovering = false;
+class _CleanButtonState extends State<_CleanButton> {
+  bool _isHovered = false;
 
   @override
   Widget build(BuildContext context) {
+    bool isDisabled = widget.onPressed == null;
+
+    Color getTextColor() {
+      if (isDisabled) {
+        return const Color(0xFF9CA3AF); // Disabled: muted gray
+      }
+      return Colors.white; // All buttons have white text for better contrast
+    }
+
     return MouseRegion(
-      onEnter: (_) => setState(() => _hovering = true),
-      onExit: (_) => setState(() => _hovering = false),
-      child: GestureDetector(
-        onTap: () => Navigator.of(context).pop(),
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 180),
-          curve: Curves.easeOut,
-          padding: const EdgeInsets.all(6),
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: _hovering
-                ? Colors.redAccent.withOpacity(0.18)
-                : Colors.transparent,
-          ),
-          child: Icon(
-            Icons.close,
-            color: _hovering ? Colors.redAccent : Colors.white70,
-            size: 24,
+      onEnter: isDisabled ? null : (_) => setState(() => _isHovered = true),
+      onExit: isDisabled ? null : (_) => setState(() => _isHovered = false),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        height: 40, // Reduced from 52
+        decoration: BoxDecoration(
+          gradient: isDisabled
+              ? null
+              : LinearGradient(
+                  colors: widget.isPrimary
+                      ? [const Color(0xFF3B82F6), const Color(0xFF8B5CF6)]
+                      : widget.isDestructive
+                          ? [const Color(0xFFEF4444), const Color(0xFFDC2626)]
+                          : [const Color(0xFF6366F1), const Color(0xFF8B5CF6)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+          color: isDisabled ? const Color(0xFFF3F4F6) : null,
+          borderRadius: BorderRadius.circular(8), // Reduced from 12
+          boxShadow: isDisabled || !_isHovered
+              ? []
+              : [
+                  BoxShadow(
+                    color: widget.isPrimary
+                        ? const Color(0xFF3B82F6)
+                            .withOpacity(0.3) // Reduced opacity
+                        : widget.isDestructive
+                            ? const Color(0xFFEF4444)
+                                .withOpacity(0.3) // Reduced opacity
+                            : const Color(0xFF6366F1)
+                                .withOpacity(0.3), // Reduced opacity
+                    blurRadius: 8, // Reduced from 12
+                    offset: const Offset(0, 2), // Reduced from 4
+                  ),
+                ],
+        ),
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: widget.onPressed,
+            borderRadius: BorderRadius.circular(8), // Reduced from 12
+            child: Container(
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 12, vertical: 8), // Reduced from 16, 12
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    widget.icon,
+                    size: 16, // Reduced from 20
+                    color: getTextColor(),
+                  ),
+                  const SizedBox(width: 6), // Reduced from 8
+                  Text(
+                    widget.text,
+                    style: TextStyle(
+                      fontSize: 13, // Reduced from 15
+                      fontWeight: FontWeight.w600,
+                      color: getTextColor(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
       ),

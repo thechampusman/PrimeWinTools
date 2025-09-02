@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "D:/PersonalProjects/cleaner/windows"
+    "cmake.sourceDirectory": "D:/PersonalProjects/cleaner/windows",
+    "chat.agent.maxRequests": 250000
 }

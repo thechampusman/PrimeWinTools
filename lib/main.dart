@@ -29,6 +29,9 @@ void main() async {
       backgroundColor: Colors.transparent,
       skipTaskbar: false,
       titleBarStyle: TitleBarStyle.hidden, // Hide the default title bar
+      minimumSize: Size(1000, 700), // Set minimum window size
+      maximumSize:
+          Size(2560, 1440), // Optional: set maximum size for very large screens
     );
     await windowManager.waitUntilReadyToShow(windowOptions, () async {
       await windowManager.show();
@@ -124,9 +127,8 @@ class _MyAppState extends State<MyApp> with WindowListener {
 
   @override
   Future<bool> onWindowMinimize() async {
-    // Hide to system tray when minimized
-    await windowManager.hide();
-    return false; // Prevent default minimize behavior
+    // Allow normal minimize behavior now that we have a separate tray button
+    return true; // Allow default minimize behavior
   }
 
   @override
