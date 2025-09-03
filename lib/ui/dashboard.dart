@@ -12,7 +12,6 @@ import 'clipboard_overlay.dart';
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
 
-  // Static method to show clipboard overlay from anywhere
   static void showClipboardOverlay() {
     if (_DashboardState._dashboardContext != null &&
         _DashboardState._dashboardContext!.mounted) {
@@ -28,48 +27,38 @@ class _DashboardState extends State<Dashboard> {
   int _selectedIndex = 0;
   final ClipboardManager clipboardManager = ClipboardManager();
 
-  // Static reference to dashboard context for global access
   static BuildContext? _dashboardContext;
 
   @override
   void initState() {
     super.initState();
     clipboardManager.monitorClipboard(() {
-      setState(() {}); // Update the UI when clipboard changes
+      setState(() {});
     });
     applyBlurEffect();
   }
 
   @override
   Widget build(BuildContext context) {
-    // Store the context for global access
     _dashboardContext = context;
 
     final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
 
-    // Enhanced responsive breakpoints
     final isVerySmallScreen = screenWidth < 600;
     final isSmallScreen = screenWidth < 800;
     final isMediumScreen = screenWidth >= 800 && screenWidth < 1200;
     final isLargeScreen = screenWidth >= 1200 && screenWidth < 1600;
-    final isExtraLargeScreen = screenWidth >= 1600;
 
-    // Adaptive sidebar width based on screen size
     final sidebarWidth = isVerySmallScreen
-        ? 60.0 // Very narrow for very small screens
+        ? 60.0
         : isSmallScreen
-            ? screenWidth * 0.12 // 12% for small screens
+            ? screenWidth * 0.12
             : isMediumScreen
-                ? screenWidth * 0.15 // 15% for medium screens
+                ? screenWidth * 0.15
                 : isLargeScreen
-                    ? screenWidth * 0.18 // 18% for large screens
-                    : screenWidth * 0.20; // 20% for extra large screens
+                    ? screenWidth * 0.18
+                    : screenWidth * 0.20;
 
-    // Show collapsed sidebar for very small screens
-    final isCollapsed = isVerySmallScreen;
-
-    // Responsive scaling factors with more granular control
     final titleFontSize = isVerySmallScreen
         ? 10.0
         : isSmallScreen
@@ -81,7 +70,7 @@ class _DashboardState extends State<Dashboard> {
                     : 18.0;
 
     final navFontSize = isVerySmallScreen
-        ? 0.0 // Hidden text for collapsed state
+        ? 0.0
         : isSmallScreen
             ? 10.0
             : isMediumScreen
@@ -120,7 +109,6 @@ class _DashboardState extends State<Dashboard> {
                     ? 20.0
                     : 22.0;
 
-    // Adaptive padding based on screen size
     final headerPadding = isVerySmallScreen
         ? 8.0
         : isSmallScreen
@@ -138,25 +126,19 @@ class _DashboardState extends State<Dashboard> {
                 : 16.0;
 
     return Scaffold(
-      backgroundColor: Colors.white.withOpacity(
-          0.2), // Make scaffold transparent for transparent toolbar
+      backgroundColor: Colors.white.withOpacity(0.2),
       body: Column(
         children: [
-          // 🎨 Custom macOS-style Title Bar
           _CustomTitleBar(titleBarFontSize: titleBarFontSize),
-          // Main Content
           Expanded(
             child: Container(
-              color: Colors
-                  .transparent, // Set background for main content area only
+              color: Colors.transparent,
               child: Padding(
                 padding: const EdgeInsets.all(16),
                 child: Container(
                   decoration: BoxDecoration(
-                    color:
-                        Colors.white, // Solid white background for normal app
-                    borderRadius:
-                        BorderRadius.circular(8), // Standard Windows corners
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withOpacity(0.1),
@@ -167,14 +149,11 @@ class _DashboardState extends State<Dashboard> {
                   ),
                   child: Row(
                     children: [
-                      // 🎨 Left Sidebar - Responsive Design
                       Container(
                         width: sidebarWidth,
                         decoration: BoxDecoration(
-                          color:
-                              const Color(0xFFF8F9FA), // Light gray background
-                          borderRadius:
-                              BorderRadius.circular(8), // All corners rounded
+                          color: const Color(0xFFF8F9FA),
+                          borderRadius: BorderRadius.circular(8),
                           border: Border(
                             right: BorderSide(
                               color: Colors.grey.withOpacity(0.2),
@@ -184,25 +163,22 @@ class _DashboardState extends State<Dashboard> {
                         ),
                         child: Column(
                           children: [
-                            // Header - Adaptive based on screen size
                             Container(
                               width: double.infinity,
                               padding: EdgeInsets.all(headerPadding),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  // App icon
                                   ClipRRect(
                                     borderRadius: BorderRadius.circular(
                                         isVerySmallScreen ? 8 : 16),
                                     child: Image.asset(
-                                      'assets/app_icon.ico',
+                                      'assets/logo.png',
                                       width: iconSize,
                                       height: iconSize,
-                                      fit: BoxFit.cover,
+                                      fit: BoxFit.contain,
                                     ),
                                   ),
-                                  // App title - hidden on very small screens
                                   if (!isVerySmallScreen) ...[
                                     SizedBox(height: isSmallScreen ? 8 : 16),
                                     Container(
@@ -210,8 +186,7 @@ class _DashboardState extends State<Dashboard> {
                                           horizontal: isSmallScreen ? 8 : 12,
                                           vertical: isSmallScreen ? 4 : 6),
                                       decoration: BoxDecoration(
-                                        color: const Color(
-                                            0xFF6366F1), // Purple background
+                                        color: const Color(0xFF6366F1),
                                         borderRadius: BorderRadius.circular(
                                             isSmallScreen ? 6 : 8),
                                       ),
@@ -232,7 +207,6 @@ class _DashboardState extends State<Dashboard> {
                                 ],
                               ),
                             ),
-                            // Navigation buttons - Responsive layout
                             Expanded(
                               child: Padding(
                                 padding: EdgeInsets.all(navPadding),
@@ -283,20 +257,18 @@ class _DashboardState extends State<Dashboard> {
                           ],
                         ),
                       ),
-                      // 🎨 Right Content Area (85%) - Normal Windows Content
                       Expanded(
                         child: Container(
-                          margin: const EdgeInsets.only(
-                              left: 16), // Gap between sidebar and content
+                          margin: const EdgeInsets.only(left: 16),
                           decoration: const BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.all(
-                              Radius.circular(8), // All corners rounded
+                              Radius.circular(8),
                             ),
                           ),
                           child: ClipRRect(
                             borderRadius: const BorderRadius.all(
-                              Radius.circular(8), // All corners rounded
+                              Radius.circular(8),
                             ),
                             child: AnimatedSwitcher(
                               duration: const Duration(milliseconds: 500),
@@ -308,8 +280,7 @@ class _DashboardState extends State<Dashboard> {
                                 );
                               },
                               child: _selectedIndex == 0
-                                  ? const Cleaner(
-                                      key: ValueKey<int>(0)) // System Cleaner
+                                  ? const Cleaner(key: ValueKey<int>(0))
                                   : _selectedIndex == 1
                                       ? ClipboardScreen(
                                           copiedItems:
@@ -333,7 +304,6 @@ class _DashboardState extends State<Dashboard> {
   }
 }
 
-// 🎨 Custom macOS-style Title Bar Widget
 class _CustomTitleBar extends StatefulWidget {
   final double titleBarFontSize;
 
@@ -376,16 +346,14 @@ class _CustomTitleBarState extends State<_CustomTitleBar> {
           height: 32,
           width: double.infinity,
           decoration: const BoxDecoration(
-            color: Colors.transparent, // Make toolbar fully transparent
+            color: Colors.transparent,
           ),
           child: Row(
             children: [
-              // 🎨 macOS-style Traffic Light Buttons (Left side)
               Padding(
                 padding: const EdgeInsets.only(left: 12),
                 child: Row(
                   children: [
-                    // Close Button (Red)
                     Tooltip(
                       message: 'Close',
                       child: _TrafficLightButton(
@@ -398,7 +366,6 @@ class _CustomTitleBarState extends State<_CustomTitleBar> {
                       ),
                     ),
                     const SizedBox(width: 8),
-                    // Minimize Button (Yellow) - Now actually minimizes
                     Tooltip(
                       message: 'Minimize',
                       child: _TrafficLightButton(
@@ -411,7 +378,6 @@ class _CustomTitleBarState extends State<_CustomTitleBar> {
                       ),
                     ),
                     const SizedBox(width: 8),
-                    // System Tray Button (Purple) - New button for hiding to tray
                     Tooltip(
                       message: 'Hide to System Tray',
                       child: _TrafficLightButton(
@@ -424,7 +390,6 @@ class _CustomTitleBarState extends State<_CustomTitleBar> {
                       ),
                     ),
                     const SizedBox(width: 8),
-                    // Maximize Button (Green)
                     Tooltip(
                       message: _isMaximized ? 'Restore' : 'Maximize',
                       child: _TrafficLightButton(
@@ -445,7 +410,6 @@ class _CustomTitleBarState extends State<_CustomTitleBar> {
                   ],
                 ),
               ),
-              // 🎨 Center Title Area (Draggable)
               Expanded(
                 child: GestureDetector(
                   onPanStart: (details) async {
@@ -457,21 +421,18 @@ class _CustomTitleBarState extends State<_CustomTitleBar> {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          // App Icon
                           Image.asset(
                             'assets/app_icon.ico',
                             width: 16,
                             height: 16,
                           ),
                           const SizedBox(width: 8),
-                          // App Title
                           Text(
                             'PrimeWinTools',
                             style: TextStyle(
                               fontSize: widget.titleBarFontSize,
                               fontWeight: FontWeight.bold,
-                              color: const Color(
-                                  0xFF1F2937), // Dark gray for visibility
+                              color: const Color(0xFF1F2937),
                               letterSpacing: 0.3,
                             ),
                           ),
@@ -481,7 +442,6 @@ class _CustomTitleBarState extends State<_CustomTitleBar> {
                   ),
                 ),
               ),
-              // Right side spacer to balance the layout (increased for 4 buttons)
               const SizedBox(width: 100),
             ],
           ),
@@ -491,7 +451,6 @@ class _CustomTitleBarState extends State<_CustomTitleBar> {
   }
 }
 
-// 🎨 macOS Traffic Light Button Widget
 class _TrafficLightButton extends StatefulWidget {
   final Color color;
   final Color hoverColor;
@@ -547,7 +506,6 @@ class _TrafficLightButtonState extends State<_TrafficLightButton> {
   }
 }
 
-// Navigation Button Widget - Responsive Design
 class _NavButton extends StatefulWidget {
   final IconData icon;
   final String label;
@@ -590,10 +548,10 @@ class _NavButtonState extends State<_NavButton> {
               vertical: widget.isCollapsed ? 8 : 12),
           decoration: BoxDecoration(
             color: widget.selected
-                ? const Color(0xFF3B82F6) // Selected: blue
+                ? const Color(0xFF3B82F6)
                 : _hovering
-                    ? const Color(0xFFE5E7EB) // Hover: light gray
-                    : Colors.transparent, // Default: transparent
+                    ? const Color(0xFFE5E7EB)
+                    : Colors.transparent,
             borderRadius: BorderRadius.circular(widget.isCollapsed ? 8 : 6),
           ),
           child: widget.isCollapsed
