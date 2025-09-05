@@ -9,27 +9,23 @@ PrimeWinTools is a versatile utility for Windows users, combining powerful clipb
 ### Main Application Views
 <div align="center">
   <img src="assets/ss/1.png" alt="Main Dashboard" width="45%" style="margin: 10px;">
-  <img src="assets/ss/2.png" alt="Clipboard Manager" width="45%" style="margin: 10px;">
+  <img src="assets/ss/2.png" alt="Application Overview" width="45%" style="margin: 10px;">
 </div>
 
 <div align="center">
-  <img src="assets/ss/3.png" alt="System Cleaner" width="45%" style="margin: 10px;">
+  <img src="assets/ss/3.png" alt="User Interface" width="45%" style="margin: 10px;">
   <img src="assets/ss/4.png" alt="Settings & Features" width="45%" style="margin: 10px;">
 </div>
 
-### Additional Screenshots
+### Feature-Specific Views
 <div align="center">
-  <img src="assets/ss/Screenshot 2025-09-03 000951.png" alt="Application Interface" width="45%" style="margin: 10px;">
-  <img src="assets/ss/Screenshot 2025-09-03 002001.png" alt="Clipboard History" width="45%" style="margin: 10px;">
+  <img src="assets/ss/clipboard.png" alt="Clipboard Manager" width="45%" style="margin: 10px;">
+  <img src="assets/ss/system clear.png" alt="System Cleaner" width="45%" style="margin: 10px;">
 </div>
 
 <div align="center">
-  <img src="assets/ss/Screenshot 2025-09-03 002211.png" alt="System Cleanup" width="45%" style="margin: 10px;">
-  <img src="assets/ss/Screenshot 2025-09-03 002608.png" alt="User Interface" width="45%" style="margin: 10px;">
-</div>
-
-<div align="center">
-  <img src="assets/ss/Screenshot 2025-09-03 004351.png" alt="Advanced Features" width="80%" style="margin: 10px;">
+  <img src="assets/ss/localhost.png" alt="Localhost Manager" width="45%" style="margin: 10px;">
+  <img src="assets/ss/about.png" alt="About Page" width="45%" style="margin: 10px;">
 </div>
 
 ---
