@@ -8,19 +8,19 @@ PrimeWinTools is a versatile utility for Windows users, combining powerful clipb
 
 ### Main Application Views
 <div align="center">
-  <img src="assets/ss/1.png" alt="Main Dashboard" width="80%" style="margin: 10px;">
+  <img src="assets/ss/1.png" alt="Main Dashboard" width="45%" style="margin: 10px;">
 </div>
 
 <div align="center">
-  <img src="assets/ss/2.png" alt="Application Overview" width="80%" style="margin: 10px;">
+  <img src="assets/ss/2.png" alt="Application Overview" width="45%" style="margin: 10px;">
 </div>
 
 <div align="center">
-  <img src="assets/ss/3.png" alt="User Interface" width="80%" style="margin: 10px;">
+  <img src="assets/ss/3.png" alt="User Interface" width="45%" style="margin: 10px;">
 </div>
 
 <div align="center">
-  <img src="assets/ss/4.png" alt="Settings & Features" width="80%" style="margin: 10px;">
+  <img src="assets/ss/4.png" alt="Settings & Features" width="45%" style="margin: 10px;">
 </div>
 
 ### Feature-Specific Views
