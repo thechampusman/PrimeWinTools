@@ -8,6 +8,7 @@ import 'package:window_manager/window_manager.dart';
 import '../clipboard/ClipBoardManager.dart';
 import '../clipboard/clipboard.dart';
 import 'clipboard_overlay.dart';
+import 'localhost_manager.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -241,14 +242,26 @@ class _DashboardState extends State<Dashboard> {
                                     ),
                                     SizedBox(height: isVerySmallScreen ? 4 : 8),
                                     _NavButton(
-                                      icon: Icons.info_outline,
-                                      label: isVerySmallScreen ? '' : 'About',
+                                      icon: Icons.router,
+                                      label:
+                                          isVerySmallScreen ? '' : 'Localhost',
                                       selected: _selectedIndex == 2,
                                       fontSize: navFontSize,
                                       iconSize: navIconSize,
                                       isCollapsed: isVerySmallScreen,
                                       onTap: () =>
                                           setState(() => _selectedIndex = 2),
+                                    ),
+                                    SizedBox(height: isVerySmallScreen ? 4 : 8),
+                                    _NavButton(
+                                      icon: Icons.info_outline,
+                                      label: isVerySmallScreen ? '' : 'About',
+                                      selected: _selectedIndex == 3,
+                                      fontSize: navFontSize,
+                                      iconSize: navIconSize,
+                                      isCollapsed: isVerySmallScreen,
+                                      onTap: () =>
+                                          setState(() => _selectedIndex = 3),
                                     ),
                                   ],
                                 ),
@@ -259,35 +272,44 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       Expanded(
                         child: Container(
-                          margin: const EdgeInsets.only(left: 16),
                           decoration: const BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(8),
-                            ),
+                            color: Colors.transparent,
                           ),
-                          child: ClipRRect(
-                            borderRadius: const BorderRadius.all(
-                              Radius.circular(8),
+                          child: Container(
+                            margin: const EdgeInsets.only(left: 16),
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
                             ),
-                            child: AnimatedSwitcher(
-                              duration: const Duration(milliseconds: 500),
-                              transitionBuilder:
-                                  (Widget child, Animation<double> animation) {
-                                return FadeTransition(
-                                  opacity: animation,
-                                  child: child,
-                                );
-                              },
-                              child: _selectedIndex == 0
-                                  ? const Cleaner(key: ValueKey<int>(0))
-                                  : _selectedIndex == 1
-                                      ? ClipboardScreen(
-                                          copiedItems:
-                                              clipboardManager.copiedItems,
-                                          key: const ValueKey<int>(1),
-                                        )
-                                      : const About(key: ValueKey<int>(2)),
+                            child: ClipRRect(
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                              child: AnimatedSwitcher(
+                                duration: const Duration(milliseconds: 500),
+                                transitionBuilder: (Widget child,
+                                    Animation<double> animation) {
+                                  return FadeTransition(
+                                    opacity: animation,
+                                    child: child,
+                                  );
+                                },
+                                child: _selectedIndex == 0
+                                    ? const Cleaner(key: ValueKey<int>(0))
+                                    : _selectedIndex == 1
+                                        ? ClipboardScreen(
+                                            copiedItems:
+                                                clipboardManager.copiedItems,
+                                            key: const ValueKey<int>(1),
+                                          )
+                                        : _selectedIndex == 2
+                                            ? const LocalhostManager(
+                                                key: ValueKey<int>(2))
+                                            : const About(
+                                                key: ValueKey<int>(3)),
+                              ),
                             ),
                           ),
                         ),
@@ -555,8 +577,7 @@ class _NavButtonState extends State<_NavButton> {
             borderRadius: BorderRadius.circular(widget.isCollapsed ? 8 : 6),
           ),
           child: widget.isCollapsed
-              ? // Collapsed state - icon only, centered
-              Center(
+              ? Center(
                   child: Icon(
                     widget.icon,
                     color: widget.selected
@@ -565,8 +586,7 @@ class _NavButtonState extends State<_NavButton> {
                     size: widget.iconSize,
                   ),
                 )
-              : // Expanded state - icon + text
-              Row(
+              : Row(
                   children: [
                     Icon(
                       widget.icon,

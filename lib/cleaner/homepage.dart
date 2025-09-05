@@ -24,29 +24,28 @@ class _CleanerState extends State<Cleaner> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFFF8F9FA), // Clean light background
+      color: const Color(0xFFF8F9FA),
       width: double.infinity,
       height: double.infinity,
       child: SingleChildScrollView(
-        padding: const EdgeInsets.all(24), // Reduced from 40
+        padding: const EdgeInsets.all(24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Clean Header with gradient background
             Container(
-              padding: const EdgeInsets.all(20), // Reduced from 32
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
                   colors: [Color(0xFF667EEA), Color(0xFF764BA2)],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
-                borderRadius: BorderRadius.circular(12), // Reduced from 16
+                borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
                     color: const Color(0xFF667EEA).withOpacity(0.3),
-                    blurRadius: 15, // Reduced from 20
-                    offset: const Offset(0, 6), // Reduced from 10
+                    blurRadius: 15,
+                    offset: const Offset(0, 6),
                   ),
                 ],
               ),
@@ -56,19 +55,18 @@ class _CleanerState extends State<Cleaner> {
                   Row(
                     children: [
                       Container(
-                        padding: const EdgeInsets.all(8), // Reduced from 12
+                        padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
                           color: Colors.white.withOpacity(0.2),
-                          borderRadius:
-                              BorderRadius.circular(8), // Reduced from 12
+                          borderRadius: BorderRadius.circular(8),
                         ),
                         child: const Icon(
                           Icons.cleaning_services,
                           color: Colors.white,
-                          size: 24, // Reduced from 32
+                          size: 24,
                         ),
                       ),
-                      const SizedBox(width: 12), // Reduced from 16
+                      const SizedBox(width: 12),
                       const Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,16 +74,16 @@ class _CleanerState extends State<Cleaner> {
                             Text(
                               'System Cleaner',
                               style: TextStyle(
-                                fontSize: 24, // Reduced from 32
+                                fontSize: 24,
                                 fontWeight: FontWeight.w700,
                                 color: Colors.white,
                               ),
                             ),
-                            SizedBox(height: 2), // Reduced from 4
+                            SizedBox(height: 2),
                             Text(
                               'Clean temporary files and optimize your system',
                               style: TextStyle(
-                                fontSize: 14, // Reduced from 16
+                                fontSize: 14,
                                 color: Colors.white70,
                               ),
                             ),
@@ -97,43 +95,38 @@ class _CleanerState extends State<Cleaner> {
                 ],
               ),
             ),
-
-            const SizedBox(height: 20), // Reduced from 32
-
-            // Action Buttons Container - Always visible with modern design
+            const SizedBox(height: 20),
             Container(
-              padding: const EdgeInsets.all(20), // Reduced from 32
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(16), // Reduced from 20
+                borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.06), // Reduced opacity
-                    blurRadius: 15, // Reduced from 20
-                    offset: const Offset(0, 4), // Reduced from 8
+                    color: Colors.black.withOpacity(0.06),
+                    blurRadius: 15,
+                    offset: const Offset(0, 4),
                   ),
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.03), // Reduced opacity
-                    blurRadius: 4, // Reduced from 6
-                    offset: const Offset(0, 1), // Reduced from 2
+                    color: Colors.black.withOpacity(0.03),
+                    blurRadius: 4,
+                    offset: const Offset(0, 1),
                   ),
                 ],
               ),
               child: Row(
                 children: [
-                  // Files Found - Modern card design
                   Expanded(
                     flex: 2,
                     child: Container(
-                      padding: const EdgeInsets.all(16), // Reduced from 20
+                      padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
                         gradient: const LinearGradient(
                           colors: [Color(0xFF4F46E5), Color(0xFF7C3AED)],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
-                        borderRadius:
-                            BorderRadius.circular(12), // Reduced from 16
+                        borderRadius: BorderRadius.circular(12),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -143,24 +136,24 @@ class _CleanerState extends State<Cleaner> {
                               Icon(
                                 Icons.folder_open,
                                 color: Colors.white.withOpacity(0.8),
-                                size: 16, // Reduced from 20
+                                size: 16,
                               ),
-                              const SizedBox(width: 6), // Reduced from 8
+                              const SizedBox(width: 6),
                               const Text(
                                 'Files Found',
                                 style: TextStyle(
-                                  fontSize: 12, // Reduced from 14
+                                  fontSize: 12,
                                   color: Colors.white70,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
                             ],
                           ),
-                          const SizedBox(height: 6), // Reduced from 8
+                          const SizedBox(height: 6),
                           Text(
                             '${_tempFiles.length}',
                             style: const TextStyle(
-                              fontSize: 22, // Reduced from 28
+                              fontSize: 22,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
                             ),
@@ -169,20 +162,18 @@ class _CleanerState extends State<Cleaner> {
                       ),
                     ),
                   ),
-                  const SizedBox(width: 16), // Reduced from 20
-                  // Total Size - Modern card design
+                  const SizedBox(width: 16),
                   Expanded(
                     flex: 2,
                     child: Container(
-                      padding: const EdgeInsets.all(16), // Reduced from 20
+                      padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
                         gradient: const LinearGradient(
                           colors: [Color(0xFF059669), Color(0xFF10B981)],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
-                        borderRadius:
-                            BorderRadius.circular(12), // Reduced from 16
+                        borderRadius: BorderRadius.circular(12),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -192,24 +183,24 @@ class _CleanerState extends State<Cleaner> {
                               Icon(
                                 Icons.storage,
                                 color: Colors.white.withOpacity(0.8),
-                                size: 16, // Reduced from 20
+                                size: 16,
                               ),
-                              const SizedBox(width: 6), // Reduced from 8
+                              const SizedBox(width: 6),
                               const Text(
                                 'Total Size',
                                 style: TextStyle(
-                                  fontSize: 12, // Reduced from 14
+                                  fontSize: 12,
                                   color: Colors.white70,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
                             ],
                           ),
-                          const SizedBox(height: 6), // Reduced from 8
+                          const SizedBox(height: 6),
                           Text(
                             _formatFileSize(_totalSize),
                             style: const TextStyle(
-                              fontSize: 22, // Reduced from 28
+                              fontSize: 22,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
                             ),
@@ -218,15 +209,14 @@ class _CleanerState extends State<Cleaner> {
                       ),
                     ),
                   ),
-                  const SizedBox(width: 16), // Reduced from 20
-                  // Action Buttons - Always show Start Scan, Clean Now, Quick Clean
+                  const SizedBox(width: 16),
                   Expanded(
                     flex: 6,
                     child: Row(
                       children: [
                         Expanded(
                           child: SizedBox(
-                            height: 40, // Reduced from 48
+                            height: 40,
                             child: _CleanButton(
                               text: _isScanning ? 'Scanning...' : 'Start Scan',
                               icon: Icons.search,
@@ -235,10 +225,10 @@ class _CleanerState extends State<Cleaner> {
                             ),
                           ),
                         ),
-                        const SizedBox(width: 6), // Reduced from 8
+                        const SizedBox(width: 6),
                         Expanded(
                           child: SizedBox(
-                            height: 40, // Reduced from 48
+                            height: 40,
                             child: _CleanButton(
                               text: 'Clean Now',
                               icon: Icons.cleaning_services,
@@ -249,10 +239,10 @@ class _CleanerState extends State<Cleaner> {
                             ),
                           ),
                         ),
-                        const SizedBox(width: 6), // Reduced from 8
+                        const SizedBox(width: 6),
                         Expanded(
                           child: SizedBox(
-                            height: 40, // Reduced from 48
+                            height: 40,
                             child: _CleanButton(
                               text: 'Quick Clean',
                               icon: Icons.flash_on,
@@ -266,16 +256,13 @@ class _CleanerState extends State<Cleaner> {
                 ],
               ),
             ),
-
-            const SizedBox(height: 20), // Reduced from 32
-
-            // Scanning Status with modern design
+            const SizedBox(height: 20),
             if (_isScanning && _selectedFolder.isNotEmpty) ...[
               Container(
-                padding: const EdgeInsets.all(20), // Reduced from 28
+                padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(16), // Reduced from 20
+                  borderRadius: BorderRadius.circular(16),
                   border: Border.all(
                     color: const Color(0xFF3B82F6).withOpacity(0.2),
                     width: 2,
@@ -283,8 +270,8 @@ class _CleanerState extends State<Cleaner> {
                   boxShadow: [
                     BoxShadow(
                       color: const Color(0xFF3B82F6).withOpacity(0.1),
-                      blurRadius: 15, // Reduced from 20
-                      offset: const Offset(0, 4), // Reduced from 8
+                      blurRadius: 15,
+                      offset: const Offset(0, 4),
                     ),
                   ],
                 ),
@@ -294,52 +281,50 @@ class _CleanerState extends State<Cleaner> {
                     Row(
                       children: [
                         Container(
-                          padding: const EdgeInsets.all(6), // Reduced from 8
+                          padding: const EdgeInsets.all(6),
                           decoration: BoxDecoration(
                             color: const Color(0xFF3B82F6).withOpacity(0.1),
-                            borderRadius:
-                                BorderRadius.circular(6), // Reduced from 8
+                            borderRadius: BorderRadius.circular(6),
                           ),
                           child: const Icon(
                             Icons.search,
                             color: Color(0xFF3B82F6),
-                            size: 16, // Reduced from 20
+                            size: 16,
                           ),
                         ),
-                        const SizedBox(width: 10), // Reduced from 12
+                        const SizedBox(width: 10),
                         const Text(
                           'Currently scanning',
                           style: TextStyle(
-                            fontSize: 14, // Reduced from 16
+                            fontSize: 14,
                             color: Color(0xFF1F2937),
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                       ],
                     ),
-                    const SizedBox(height: 12), // Reduced from 16
+                    const SizedBox(height: 12),
                     Container(
-                      padding: const EdgeInsets.all(12), // Reduced from 16
+                      padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
                         color: const Color(0xFFF8F9FA),
-                        borderRadius:
-                            BorderRadius.circular(8), // Reduced from 12
+                        borderRadius: BorderRadius.circular(8),
                       ),
                       child: Text(
                         _selectedFolder,
                         style: const TextStyle(
-                          fontSize: 12, // Reduced from 14
+                          fontSize: 12,
                           fontWeight: FontWeight.w500,
                           color: Color(0xFF374151),
                           fontFamily: 'monospace',
                         ),
                       ),
                     ),
-                    const SizedBox(height: 16), // Reduced from 20
+                    const SizedBox(height: 16),
                     ClipRRect(
-                      borderRadius: BorderRadius.circular(6), // Reduced from 8
+                      borderRadius: BorderRadius.circular(6),
                       child: Container(
-                        height: 6, // Reduced from 8
+                        height: 6,
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
                             colors: [Color(0xFF3B82F6), Color(0xFF8B5CF6)],
@@ -349,28 +334,26 @@ class _CleanerState extends State<Cleaner> {
                           backgroundColor: Color(0xFFE5E7EB),
                           valueColor:
                               AlwaysStoppedAnimation<Color>(Colors.transparent),
-                          minHeight: 6, // Reduced from 8
+                          minHeight: 6,
                         ),
                       ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 20), // Reduced from 32
+              const SizedBox(height: 20),
             ],
-
-            // File List with modern design
             if (_tempFiles.isNotEmpty) ...[
               Container(
-                padding: const EdgeInsets.all(20), // Reduced from 28
+                padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(16), // Reduced from 20
+                  borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.06), // Reduced opacity
-                      blurRadius: 15, // Reduced from 20
-                      offset: const Offset(0, 4), // Reduced from 8
+                      color: Colors.black.withOpacity(0.06),
+                      blurRadius: 15,
+                      offset: const Offset(0, 4),
                     ),
                   ],
                 ),
@@ -383,24 +366,22 @@ class _CleanerState extends State<Cleaner> {
                         Row(
                           children: [
                             Container(
-                              padding:
-                                  const EdgeInsets.all(6), // Reduced from 8
+                              padding: const EdgeInsets.all(6),
                               decoration: BoxDecoration(
                                 color: const Color(0xFF10B981).withOpacity(0.1),
-                                borderRadius:
-                                    BorderRadius.circular(6), // Reduced from 8
+                                borderRadius: BorderRadius.circular(6),
                               ),
                               child: const Icon(
                                 Icons.folder_open,
                                 color: Color(0xFF10B981),
-                                size: 16, // Reduced from 20
+                                size: 16,
                               ),
                             ),
-                            const SizedBox(width: 10), // Reduced from 12
+                            const SizedBox(width: 10),
                             const Text(
                               'Files and Folders Found',
                               style: TextStyle(
-                                fontSize: 16, // Reduced from 20
+                                fontSize: 16,
                                 fontWeight: FontWeight.w700,
                                 color: Color(0xFF1F2937),
                               ),
@@ -410,8 +391,7 @@ class _CleanerState extends State<Cleaner> {
                         Container(
                           decoration: BoxDecoration(
                             color: const Color(0xFF3B82F6).withOpacity(0.1),
-                            borderRadius:
-                                BorderRadius.circular(16), // Reduced from 20
+                            borderRadius: BorderRadius.circular(16),
                           ),
                           child: TextButton.icon(
                             onPressed: () {
@@ -424,7 +404,7 @@ class _CleanerState extends State<Cleaner> {
                                   ? Icons.expand_less
                                   : Icons.expand_more,
                               color: const Color(0xFF3B82F6),
-                              size: 16, // Reduced from 18
+                              size: 16,
                             ),
                             label: Text(
                               _showAllFiles
@@ -433,22 +413,22 @@ class _CleanerState extends State<Cleaner> {
                               style: const TextStyle(
                                 color: Color(0xFF3B82F6),
                                 fontWeight: FontWeight.w600,
-                                fontSize: 12, // Reduced from 14
+                                fontSize: 12,
                               ),
                             ),
                           ),
                         ),
                       ],
                     ),
-                    const SizedBox(height: 16), // Reduced from 24
+                    const SizedBox(height: 16),
                     SizedBox(
-                      height: _showAllFiles ? 300 : 150, // Reduced from 400/200
+                      height: _showAllFiles ? 300 : 150,
                       child: ListView.separated(
                         itemCount: _showAllFiles
                             ? _tempFiles.length
                             : _tempFiles.length.clamp(0, 8),
                         separatorBuilder: (context, index) =>
-                            const SizedBox(height: 8), // Reduced from 12
+                            const SizedBox(height: 8),
                         itemBuilder: (context, index) {
                           FileSystemEntity entity = _tempFiles[index];
                           String fileName = entity.path.split('\\').last;
@@ -456,21 +436,18 @@ class _CleanerState extends State<Cleaner> {
                           bool isDirectory = entity is Directory;
 
                           return Container(
-                            padding:
-                                const EdgeInsets.all(12), // Reduced from 16
+                            padding: const EdgeInsets.all(12),
                             decoration: BoxDecoration(
                               color: const Color(0xFFF8F9FA),
-                              borderRadius:
-                                  BorderRadius.circular(8), // Reduced from 12
+                              borderRadius: BorderRadius.circular(8),
                               border: Border.all(
                                 color: const Color(0xFFE5E7EB).withOpacity(0.5),
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black
-                                      .withOpacity(0.01), // Reduced opacity
-                                  blurRadius: 2, // Reduced from 4
-                                  offset: const Offset(0, 1), // Reduced from 2
+                                  color: Colors.black.withOpacity(0.01),
+                                  blurRadius: 2,
+                                  offset: const Offset(0, 1),
                                 ),
                               ],
                             ),
@@ -480,34 +457,31 @@ class _CleanerState extends State<Cleaner> {
                                 Row(
                                   children: [
                                     Container(
-                                      padding: const EdgeInsets.all(
-                                          6), // Reduced from 8
+                                      padding: const EdgeInsets.all(6),
                                       decoration: BoxDecoration(
                                         color: isDirectory
                                             ? const Color(0xFF3B82F6)
                                                 .withOpacity(0.1)
                                             : const Color(0xFF6B7280)
                                                 .withOpacity(0.1),
-                                        borderRadius: BorderRadius.circular(
-                                            6), // Reduced from 8
+                                        borderRadius: BorderRadius.circular(6),
                                       ),
                                       child: Icon(
                                         isDirectory
                                             ? Icons.folder
                                             : Icons.insert_drive_file,
-                                        size: 14, // Reduced from 18
+                                        size: 14,
                                         color: isDirectory
                                             ? const Color(0xFF3B82F6)
                                             : const Color(0xFF6B7280),
                                       ),
                                     ),
-                                    const SizedBox(
-                                        width: 10), // Reduced from 12
+                                    const SizedBox(width: 10),
                                     Expanded(
                                       child: Text(
                                         fileName,
                                         style: const TextStyle(
-                                          fontSize: 13, // Reduced from 15
+                                          fontSize: 13,
                                           fontWeight: FontWeight.w600,
                                           color: Color(0xFF1F2937),
                                         ),
@@ -516,20 +490,18 @@ class _CleanerState extends State<Cleaner> {
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 6), // Reduced from 8
+                                const SizedBox(height: 6),
                                 Container(
                                   padding: const EdgeInsets.symmetric(
-                                      horizontal: 8,
-                                      vertical: 4), // Reduced from 12, 6
+                                      horizontal: 8, vertical: 4),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    borderRadius: BorderRadius.circular(
-                                        4), // Reduced from 6
+                                    borderRadius: BorderRadius.circular(4),
                                   ),
                                   child: Text(
                                     folderPath,
                                     style: const TextStyle(
-                                      fontSize: 10, // Reduced from 12
+                                      fontSize: 10,
                                       color: Color(0xFF6B7280),
                                       fontFamily: 'monospace',
                                     ),
@@ -593,16 +565,13 @@ class _CleanerState extends State<Cleaner> {
                   _tempFiles.add(entity);
                   _totalSize += fileSize;
 
-                  // Group files by folder for organized display
                   String folderPath = entity.parent.path;
                   if (!_filesByFolder.containsKey(folderPath)) {
                     _filesByFolder[folderPath] = [];
                   }
                   _filesByFolder[folderPath]!.add(entity);
                 });
-              } catch (e) {
-                // Skip files we can't access
-              }
+              } catch (e) {}
             }
           }
         }
@@ -638,7 +607,6 @@ class _CleanerState extends State<Cleaner> {
         deletedSize += fileSize;
       } catch (e) {
         print('Error deleting file: $e');
-        // Remove from list even if deletion failed to avoid retry
         setState(() {
           _tempFiles.removeAt(i);
         });
@@ -656,7 +624,6 @@ class _CleanerState extends State<Cleaner> {
 
   void _quickClean() async {
     _startScan();
-    // Wait for scan to complete, then clean
     await Future.delayed(const Duration(seconds: 1));
     if (_tempFiles.isNotEmpty) {
       _cleanFiles();
@@ -701,9 +668,9 @@ class _CleanButtonState extends State<_CleanButton> {
 
     Color getTextColor() {
       if (isDisabled) {
-        return const Color(0xFF9CA3AF); // Disabled: muted gray
+        return const Color(0xFF9CA3AF);
       }
-      return Colors.white; // All buttons have white text for better contrast
+      return Colors.white;
     }
 
     return MouseRegion(
@@ -711,7 +678,7 @@ class _CleanButtonState extends State<_CleanButton> {
       onExit: isDisabled ? null : (_) => setState(() => _isHovered = false),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
-        height: 40, // Reduced from 52
+        height: 40,
         decoration: BoxDecoration(
           gradient: isDisabled
               ? null
@@ -725,21 +692,18 @@ class _CleanButtonState extends State<_CleanButton> {
                   end: Alignment.bottomRight,
                 ),
           color: isDisabled ? const Color(0xFFF3F4F6) : null,
-          borderRadius: BorderRadius.circular(8), // Reduced from 12
+          borderRadius: BorderRadius.circular(8),
           boxShadow: isDisabled || !_isHovered
               ? []
               : [
                   BoxShadow(
                     color: widget.isPrimary
-                        ? const Color(0xFF3B82F6)
-                            .withOpacity(0.3) // Reduced opacity
+                        ? const Color(0xFF3B82F6).withOpacity(0.3)
                         : widget.isDestructive
-                            ? const Color(0xFFEF4444)
-                                .withOpacity(0.3) // Reduced opacity
-                            : const Color(0xFF6366F1)
-                                .withOpacity(0.3), // Reduced opacity
-                    blurRadius: 8, // Reduced from 12
-                    offset: const Offset(0, 2), // Reduced from 4
+                            ? const Color(0xFFEF4444).withOpacity(0.3)
+                            : const Color(0xFF6366F1).withOpacity(0.3),
+                    blurRadius: 8,
+                    offset: const Offset(0, 2),
                   ),
                 ],
         ),
@@ -747,23 +711,22 @@ class _CleanButtonState extends State<_CleanButton> {
           color: Colors.transparent,
           child: InkWell(
             onTap: widget.onPressed,
-            borderRadius: BorderRadius.circular(8), // Reduced from 12
+            borderRadius: BorderRadius.circular(8),
             child: Container(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 12, vertical: 8), // Reduced from 16, 12
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
                     widget.icon,
-                    size: 16, // Reduced from 20
+                    size: 16,
                     color: getTextColor(),
                   ),
-                  const SizedBox(width: 6), // Reduced from 8
+                  const SizedBox(width: 6),
                   Text(
                     widget.text,
                     style: TextStyle(
-                      fontSize: 13, // Reduced from 15
+                      fontSize: 13,
                       fontWeight: FontWeight.w600,
                       color: getTextColor(),
                     ),

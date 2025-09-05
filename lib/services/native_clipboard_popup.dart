@@ -15,10 +15,8 @@ class NativeClipboardPopup {
   static List<Map<String, dynamic>> _clipboardData = [];
 
   static Future<void> showPopup() async {
-    // Load clipboard data first
     await _loadClipboardData();
 
-    // Create native Windows popup
     _createNativeWindow();
   }
 
@@ -26,7 +24,7 @@ class NativeClipboardPopup {
     try {
       final dbHelper = ClipboardDatabase();
       _clipboardData = await dbHelper.getClipboardHistory();
-      _clipboardData = _clipboardData.take(10).toList(); // Limit to 10 items
+      _clipboardData = _clipboardData.take(10).toList();
     } catch (e) {
       print('Error loading clipboard data: $e');
       _clipboardData = [];
@@ -34,7 +32,6 @@ class NativeClipboardPopup {
   }
 
   static void _createNativeWindow() {
-    // Register window class
     final className = 'ClipboardPopupClass'.toNativeUtf16();
 
     final wc = calloc<WNDCLASS>();
@@ -50,16 +47,15 @@ class NativeClipboardPopup {
       return;
     }
 
-    // Create the popup window
     _hWnd = CreateWindowEx(
-      WS_EX_TOPMOST | WS_EX_TOOLWINDOW, // Always on top, no taskbar
+      WS_EX_TOPMOST | WS_EX_TOOLWINDOW,
       className,
       'Clipboard History'.toNativeUtf16(),
       WS_POPUP | WS_BORDER,
-      100, // x
-      100, // y
-      400, // width
-      500, // height
+      100,
+      100,
+      400,
+      500,
       NULL,
       NULL,
       GetModuleHandle(nullptr),
@@ -71,7 +67,6 @@ class NativeClipboardPopup {
       UpdateWindow(_hWnd!);
       SetForegroundWindow(_hWnd!);
 
-      // Message loop for the popup
       _messageLoop();
     }
 
@@ -102,21 +97,17 @@ class NativeClipboardPopup {
     final ps = calloc<PAINTSTRUCT>();
     final hdc = BeginPaint(hWnd, ps);
 
-    // Set background color
     final rect = calloc<RECT>();
     GetClientRect(hWnd, rect);
-    final hBrush = CreateSolidBrush(RGB(45, 45, 45)); // Dark background
+    final hBrush = CreateSolidBrush(RGB(45, 45, 45));
     FillRect(hdc, rect, hBrush);
 
-    // Set text color to white
     SetTextColor(hdc, RGB(255, 255, 255));
     SetBkMode(hdc, TRANSPARENT);
 
-    // Draw header
     final headerText = 'Clipboard History'.toNativeUtf16();
     TextOut(hdc, 20, 20, headerText, 16);
 
-    // Draw clipboard items
     int yPos = 60;
     for (int i = 0; i < _clipboardData.length && i < 8; i++) {
       final item = _clipboardData[i];
@@ -147,15 +138,12 @@ class NativeClipboardPopup {
   }
 
   static void _handleClick(int hWnd, int x, int y) {
-    // Calculate which item was clicked based on y position
     if (y >= 60 && _clipboardData.isNotEmpty) {
       int itemIndex = (y - 60) ~/ 40;
       if (itemIndex >= 0 && itemIndex < _clipboardData.length) {
-        // Copy the selected item to clipboard
         final text = _clipboardData[itemIndex]['text'] as String? ?? '';
         _copyToClipboard(text);
 
-        // Close the popup
         if (_hWnd != null) {
           DestroyWindow(_hWnd!);
           _hWnd = null;
@@ -171,13 +159,12 @@ class NativeClipboardPopup {
       final hMem = GlobalAlloc(GPTR, text.length * 2 + 2);
       final pMem = GlobalLock(hMem);
 
-      // Copy text using memory operations
       final textBytes = Uint16List.fromList(text.codeUnits);
       final memPtr = pMem.cast<Uint16>();
       for (int i = 0; i < textBytes.length; i++) {
         memPtr.elementAt(i).value = textBytes[i];
       }
-      memPtr.elementAt(textBytes.length).value = 0; // Null terminator
+      memPtr.elementAt(textBytes.length).value = 0;
 
       GlobalUnlock(hMem);
       SetClipboardData(CF_UNICODETEXT, hMem.address);
@@ -192,7 +179,6 @@ class NativeClipboardPopup {
   static void _messageLoop() {
     final msg = calloc<MSG>();
 
-    // Simple message loop - not ideal for production, but works for demo
     Future.delayed(Duration.zero, () async {
       for (int i = 0; i < 1000 && _hWnd != null; i++) {
         if (PeekMessage(msg, _hWnd ?? 0, 0, 0, PM_REMOVE) != 0) {

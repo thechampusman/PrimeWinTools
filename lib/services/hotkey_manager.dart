@@ -9,14 +9,10 @@ class GlobalHotKeyManager {
     if (_isInitialized) return;
 
     try {
-      // Register Win+Alt+V hotkey
       HotKey winAltV = HotKey(
         key: LogicalKeyboardKey.keyV,
-        modifiers: [
-          HotKeyModifier.alt,
-          HotKeyModifier.meta
-        ], // meta = Windows key
-        scope: HotKeyScope.system, // Global hotkey
+        modifiers: [HotKeyModifier.alt, HotKeyModifier.meta],
+        scope: HotKeyScope.system,
       );
 
       await hotKeyManager.register(

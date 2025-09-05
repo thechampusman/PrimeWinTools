@@ -13,18 +13,14 @@ class ClipboardManager {
 
   final ClipboardDatabase dbHelper = ClipboardDatabase();
 
-  // Enhanced background monitoring with optimized polling
   void monitorClipboard(Function onClipboardUpdate) {
-    // Stop any existing timers
     _monitorTimer?.cancel();
     _cleanupTimer?.cancel();
 
-    // Start monitoring with more efficient approach
     _monitorTimer =
         Timer.periodic(const Duration(milliseconds: 500), (timer) async {
       final clipboardText = _getClipboardText();
 
-      // Only process if clipboard content has actually changed
       if (clipboardText != null &&
           clipboardText.isNotEmpty &&
           clipboardText != _lastClipboardContent &&
@@ -32,45 +28,37 @@ class ClipboardManager {
         _lastClipboardContent = clipboardText;
         copiedItems.add(clipboardText);
 
-        // Save to the database, avoiding duplicates
         await dbHelper.saveClipboardItem(clipboardText);
 
-        onClipboardUpdate(); // Call the callback to update UI
+        onClipboardUpdate();
       }
     });
 
-    // Clean up old items every 5 minutes instead of every second (single timer)
     _cleanupTimer = Timer.periodic(const Duration(minutes: 5), (timer) async {
       await dbHelper.deleteOldItems();
     });
   }
 
-  // Stop monitoring when app is minimized/hidden
   void stopMonitoring() {
     _monitorTimer?.cancel();
     _cleanupTimer?.cancel();
   }
 
-  // Resume monitoring when app is shown
   void resumeMonitoring(Function onClipboardUpdate) {
     if (_monitorTimer == null || !_monitorTimer!.isActive) {
       monitorClipboard(onClipboardUpdate);
     }
   }
 
-  // Method to get text from clipboard
   String? _getClipboardText() {
     String? result;
     try {
       if (win32.OpenClipboard(0) != 0) {
-        // Ensure OpenClipboard returns success
         final handle =
             win32.GetClipboardData(win32.CLIPBOARD_FORMAT.CF_UNICODETEXT);
         if (handle != 0) {
-          // Lock the handle and retrieve the text
           final pointer = win32.GlobalLock(Pointer.fromAddress(handle));
           if (pointer != nullptr) {
-            // Convert the pointer to a Dart string
             result = pointer.cast<Utf16>().toDartString();
             win32.GlobalUnlock(Pointer.fromAddress(handle));
           }
@@ -83,7 +71,7 @@ class ClipboardManager {
     } catch (e) {
       print('Error accessing clipboard: $e');
     } finally {
-      win32.CloseClipboard(); // Always close the clipboard in a finally block
+      win32.CloseClipboard();
     }
     return result;
   }
@@ -92,13 +80,11 @@ class ClipboardManager {
     copiedItems.remove(item);
   }
 
-  // Clean up resources when app is closed
   void dispose() {
     _monitorTimer?.cancel();
     _cleanupTimer?.cancel();
   }
 
-  // Get current clipboard content for immediate access
   String? getCurrentClipboardContent() {
     return _getClipboardText();
   }

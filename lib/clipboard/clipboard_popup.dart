@@ -20,7 +20,6 @@ class _ClipboardPopupState extends State<ClipboardPopup> {
     _configureWindow();
     _loadClipboardHistory();
 
-    // Auto-close after 30 seconds like Windows clipboard
     Timer(const Duration(seconds: 30), () async {
       if (mounted) {
         await windowManager.close();
@@ -70,7 +69,6 @@ class _ClipboardPopupState extends State<ClipboardPopup> {
         ),
         child: Column(
           children: [
-            // Header
             Container(
               padding: const EdgeInsets.all(16),
               decoration: const BoxDecoration(
@@ -120,7 +118,6 @@ class _ClipboardPopupState extends State<ClipboardPopup> {
                 ],
               ),
             ),
-            // Content
             Expanded(
               child: clipboardHistory.isEmpty
                   ? const Center(
@@ -182,15 +179,13 @@ class _ClipboardPopupState extends State<ClipboardPopup> {
                               ),
                             ),
                             onTap: () async {
-                              // Copy to clipboard and close popup
                               await _copyToClipboard(item['text'] ?? '');
                             },
                             trailing: IconButton(
                               onPressed: () async {
-                                // Delete item from database
                                 final dbHelper = ClipboardDatabase();
                                 await dbHelper.deleteClipboardEntry(item['id']);
-                                await _loadClipboardHistory(); // Reload the list
+                                await _loadClipboardHistory();
                               },
                               icon: Icon(
                                 Icons.delete_outline,

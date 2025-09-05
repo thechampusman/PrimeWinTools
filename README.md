@@ -47,7 +47,14 @@ PrimeWinTools is a versatile utility for Windows users, combining powerful clipb
 - Helps to improve overall system performance by removing unnecessary temporary files.
 - **Log history** feature to track past cleanup operations for transparency.
 
-### 3. User-Friendly Interface:
+### 3. Localhost Manager:
+- Real-time monitoring of active localhost ports and services.
+- Automatic detection of running processes and their associated ports.
+- Service identification for common development frameworks (React, Node.js, Angular, etc.).
+- Quick access to open services in browser or copy URLs to clipboard.
+- Advanced port scanning with process identification and PID tracking.
+
+### 4. User-Friendly Interface:
 - Clean and simple UI like Acrylic material blur for ease of use and look appealing.
 - Efficient background operation without interrupting your workflow.
 - Built with Flutter, ensuring a smooth native Windows experience.
@@ -78,6 +85,13 @@ PrimeWinTools is a versatile utility for Windows users, combining powerful clipb
 1. Go to the **System Cleaner** tab.
 2. Click "Clean" to remove unnecessary files from key system directories.
 3. Check the log history to track past cleanups.
+
+### Localhost Manager:
+1. Navigate to the **Localhost** tab.
+2. Click "Refresh" to scan for active localhost ports and services.
+3. View detailed information about each port including process name, PID, and service type.
+4. Use the action buttons to open services in browser or copy URLs to clipboard.
+5. Monitor development servers and identify what's running on each port.
 
 ---
 

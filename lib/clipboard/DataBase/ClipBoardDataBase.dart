@@ -22,7 +22,7 @@ class ClipboardDatabase {
     String path = join(await getDatabasesPath(), 'clipboard_history.db');
     return await openDatabase(
       path,
-      version: 2, // <-- Bump version to 2
+      version: 2,
       onCreate: (db, version) {
         return db.execute(
           'CREATE TABLE clipboard(id INTEGER PRIMARY KEY AUTOINCREMENT, text TEXT, timestamp INTEGER, pinned INTEGER DEFAULT 0)',
@@ -40,14 +40,12 @@ class ClipboardDatabase {
   Future<void> saveClipboardItem(String text) async {
     final db = await database;
 
-    // First, check if this clipboard text already exists in the database
     final List<Map<String, dynamic>> existing = await db.query(
       'clipboard',
       where: 'text = ?',
       whereArgs: [text],
     );
 
-    // If no existing records, then insert the new clipboard item
     if (existing.isEmpty) {
       await db.insert(
         'clipboard',
@@ -68,13 +66,11 @@ class ClipboardDatabase {
   Future<void> deleteOldItems() async {
     final db = await database;
     int currentTime = DateTime.now().millisecondsSinceEpoch;
-    int twentyDaysAgo =
-        currentTime - (20 * 24 * 60 * 60 * 1000); // 20 days in milliseconds
+    int twentyDaysAgo = currentTime - (20 * 24 * 60 * 60 * 1000);
     await db.delete('clipboard',
         where: 'timestamp < ?', whereArgs: [twentyDaysAgo]);
   }
 
-  // Update pin status for an entry
   Future<void> updatePinStatus(int id, int pinned) async {
     final db = await database;
     await db.update(
@@ -85,7 +81,6 @@ class ClipboardDatabase {
     );
   }
 
-  // Delete a single clipboard entry by id
   Future<void> deleteClipboardEntry(int id) async {
     final db = await database;
     await db.delete(
@@ -95,13 +90,11 @@ class ClipboardDatabase {
     );
   }
 
-  // Clear all clipboard history
   Future<void> clearClipboardHistory() async {
     final db = await database;
     await db.delete('clipboard');
   }
 
-  // Update clipboard entry text
   Future<void> updateClipboardEntry(int id, String newText) async {
     final db = await database;
     await db.update(

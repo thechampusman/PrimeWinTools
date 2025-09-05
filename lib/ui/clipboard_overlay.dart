@@ -10,7 +10,6 @@ class ClipboardOverlay {
   static void show(BuildContext context) {
     if (_isShowing) return;
 
-    // Find the nearest overlay
     final overlay = Overlay.maybeOf(context);
     if (overlay == null) {
       print('❌ No Overlay found in context');
@@ -87,7 +86,7 @@ class _ClipboardPopupOverlayState extends State<ClipboardPopupOverlay>
     final dbHelper = ClipboardDatabase();
     List<Map<String, dynamic>> history = await dbHelper.getClipboardHistory();
     setState(() {
-      clipboardHistory = history.take(10).toList(); // Show only last 10 items
+      clipboardHistory = history.take(10).toList();
     });
   }
 
@@ -117,7 +116,7 @@ class _ClipboardPopupOverlayState extends State<ClipboardPopupOverlay>
                 child: Opacity(
                   opacity: _opacityAnimation.value,
                   child: GestureDetector(
-                    onTap: () {}, // Prevent closing when tapping on the popup
+                    onTap: () {},
                     child: Material(
                       color: Colors.transparent,
                       child: Container(
@@ -138,7 +137,6 @@ class _ClipboardPopupOverlayState extends State<ClipboardPopupOverlay>
                         ),
                         child: Column(
                           children: [
-                            // Header
                             Container(
                               padding: const EdgeInsets.all(20),
                               decoration: const BoxDecoration(
@@ -186,7 +184,6 @@ class _ClipboardPopupOverlayState extends State<ClipboardPopupOverlay>
                                 ],
                               ),
                             ),
-                            // Content
                             Expanded(
                               child: clipboardHistory.isEmpty
                                   ? const Center(
@@ -296,7 +293,6 @@ class _ClipboardPopupOverlayState extends State<ClipboardPopupOverlay>
   String _formatTimestamp(dynamic timestamp) {
     if (timestamp == null) return '';
 
-    // Convert timestamp to DateTime
     DateTime dateTime;
     if (timestamp is int) {
       dateTime = DateTime.fromMillisecondsSinceEpoch(timestamp);

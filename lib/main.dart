@@ -9,7 +9,6 @@ import 'package:window_manager/window_manager.dart';
 import 'clipboard/DataBase/ClipBoardDataBase.dart';
 import 'services/hotkey_manager.dart';
 
-// Global navigator key to access overlay from anywhere
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 void main() async {
@@ -21,17 +20,15 @@ void main() async {
     databaseFactory = databaseFactoryFfi;
   }
 
-  // Configure window for custom title bar
   if (Platform.isWindows) {
     WindowOptions windowOptions = const WindowOptions(
       size: Size(1280, 720),
       center: true,
       backgroundColor: Colors.transparent,
       skipTaskbar: false,
-      titleBarStyle: TitleBarStyle.hidden, // Hide the default title bar
-      minimumSize: Size(1000, 700), // Set minimum window size
-      maximumSize:
-          Size(2560, 1440), // Optional: set maximum size for very large screens
+      titleBarStyle: TitleBarStyle.hidden,
+      minimumSize: Size(1000, 700),
+      maximumSize: Size(2560, 1440),
     );
     await windowManager.waitUntilReadyToShow(windowOptions, () async {
       await windowManager.show();
@@ -43,7 +40,6 @@ void main() async {
   final clipboardDb = ClipboardDatabase();
   await clipboardDb.database;
 
-  // Initialize global hotkeys
   await GlobalHotKeyManager.initialize();
 
   runApp(const MyApp());
@@ -70,7 +66,6 @@ void main() async {
 }
 
 void removeWindowTitle() async {
-  // Remove window title
   await windowManager.setTitle('PrimeWinTool');
 }
 
@@ -86,7 +81,6 @@ class MyTrayListener with TrayListener {
       _showAndFocusWindow();
     } else if (menuItem.key == 'clipboard') {
       _showAndFocusWindow();
-      // TODO: Navigate directly to clipboard history
     } else if (menuItem.key == 'exit') {
       windowManager.destroy();
     }
@@ -120,15 +114,13 @@ class _MyAppState extends State<MyApp> with WindowListener {
 
   @override
   Future<bool> onWindowClose() async {
-    // Hide window to system tray instead of closing
     await windowManager.hide();
-    return false; // Prevent app from closing
+    return false;
   }
 
   @override
   Future<bool> onWindowMinimize() async {
-    // Allow normal minimize behavior now that we have a separate tray button
-    return true; // Allow default minimize behavior
+    return true;
   }
 
   @override

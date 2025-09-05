@@ -223,7 +223,6 @@ class _ClipboardScreenState extends State<ClipboardScreen> {
       color: Colors.white,
       child: Column(
         children: [
-          // Header with title and clear button
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
@@ -284,7 +283,6 @@ class _ClipboardScreenState extends State<ClipboardScreen> {
               ],
             ),
           ),
-          // Search bar
           Container(
             padding: const EdgeInsets.all(16),
             child: TextField(
@@ -305,7 +303,6 @@ class _ClipboardScreenState extends State<ClipboardScreen> {
               onChanged: _onSearchChanged,
             ),
           ),
-          // Content area
           Expanded(
             child: clipboardHistory.isEmpty
                 ? Center(
