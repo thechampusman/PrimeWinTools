@@ -47,6 +47,8 @@ installer_output/
 *.exe
 build_installer.ps1
 build_installer_fixed.ps1
+build_installer_simple.bat
+INSTALLER_README.md
 installer_simple.iss
 temp_installer/
 Output/
