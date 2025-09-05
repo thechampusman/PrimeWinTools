@@ -6,6 +6,10 @@ PrimeWinTools is a versatile utility for Windows users, combining powerful clipb
 
 ## 📸 Screenshots
 
+<div align="center">
+  <img src="assets/ss/web.png" alt="Main Dashboard" width="80%" style="margin: 10px;">
+</div>
+
 ### Main Application Views
 <div align="center">
   <img src="assets/ss/1.png" alt="Main Dashboard" width="45%" style="margin: 10px;">
