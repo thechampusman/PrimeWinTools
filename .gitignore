@@ -48,7 +48,12 @@ installer_output/
 build_installer.ps1
 build_installer_fixed.ps1
 build_installer_simple.bat
-INSTALLER_README.md
+build_installer.bat
+installer.iss
 installer_simple.iss
+INSTALLER_README.md
 temp_installer/
 Output/
+
+# Website files (moved to separate project)
+index.html
