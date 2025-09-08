@@ -1,3 +1,7 @@
+![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=thechampusman.flutter_unicornCLI)
+
+
+
 # PrimeWinTools
 
 PrimeWinTools is a versatile utility for Windows users, combining powerful clipboard management with system cleanup features. Whether you're a power user who frequently handles large amounts of copied content or someone looking to optimize your system performance by cleaning unnecessary files, PrimeWinTools makes it simple and efficient.
