@@ -47,6 +47,8 @@ class _CleanerState extends State<Cleaner> {
                     blurRadius: 15,
                     offset: const Offset(0, 6),
                   ),
+
+                  // Subtle inner shadow
                 ],
               ),
               child: Column(
