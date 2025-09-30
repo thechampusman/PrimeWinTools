@@ -1,12 +1,15 @@
 import 'package:PrimeWinTool/ui/about.dart';
 import 'package:PrimeWinTool/cleaner/homepage.dart';
 import 'package:PrimeWinTool/cleaner/win32_blur.dart';
+import 'package:PrimeWinTool/qr_tool/qr_tool.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:window_manager/window_manager.dart';
 
 import '../clipboard/ClipBoardManager.dart';
 import '../clipboard/clipboard.dart';
+import '../udrive/udrive_page.dart';
+import '../services/app_service_manager.dart';
 import 'clipboard_overlay.dart';
 import 'localhost_manager.dart';
 
@@ -26,17 +29,32 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   int _selectedIndex = 0;
-  final ClipboardManager clipboardManager = ClipboardManager();
+  late final AppServiceManager _serviceManager;
+  late final ClipboardManager clipboardManager;
 
   static BuildContext? _dashboardContext;
 
   @override
   void initState() {
     super.initState();
-    clipboardManager.monitorClipboard(() {
-      setState(() {});
+    _serviceManager = AppServiceManager();
+    clipboardManager = _serviceManager.clipboardManager;
+
+    // Start clipboard monitoring
+    _serviceManager.startClipboardMonitoring(() {
+      if (mounted) {
+        setState(() {});
+      }
     });
+
     applyBlurEffect();
+  }
+
+  @override
+  void dispose() {
+    // Don't dispose services here - they should persist
+    // Only dispose on app exit
+    super.dispose();
   }
 
   @override
@@ -254,14 +272,36 @@ class _DashboardState extends State<Dashboard> {
                                     ),
                                     SizedBox(height: isVerySmallScreen ? 4 : 8),
                                     _NavButton(
-                                      icon: Icons.info_outline,
-                                      label: isVerySmallScreen ? '' : 'About',
+                                      icon: Icons.cloud,
+                                      label: isVerySmallScreen ? '' : 'UDrive',
                                       selected: _selectedIndex == 3,
                                       fontSize: navFontSize,
                                       iconSize: navIconSize,
                                       isCollapsed: isVerySmallScreen,
                                       onTap: () =>
                                           setState(() => _selectedIndex = 3),
+                                    ),
+                                    SizedBox(height: isVerySmallScreen ? 4 : 8),
+                                    _NavButton(
+                                      icon: Icons.qr_code,
+                                      label: isVerySmallScreen ? '' : 'QR Code',
+                                      selected: _selectedIndex == 4,
+                                      fontSize: navFontSize,
+                                      iconSize: navIconSize,
+                                      isCollapsed: isVerySmallScreen,
+                                      onTap: () =>
+                                          setState(() => _selectedIndex = 4),
+                                    ),
+                                    SizedBox(height: isVerySmallScreen ? 4 : 8),
+                                    _NavButton(
+                                      icon: Icons.info_outline,
+                                      label: isVerySmallScreen ? '' : 'About',
+                                      selected: _selectedIndex == 5,
+                                      fontSize: navFontSize,
+                                      iconSize: navIconSize,
+                                      isCollapsed: isVerySmallScreen,
+                                      onTap: () =>
+                                          setState(() => _selectedIndex = 5),
                                     ),
                                   ],
                                 ),
@@ -296,19 +336,22 @@ class _DashboardState extends State<Dashboard> {
                                     child: child,
                                   );
                                 },
-                                child: _selectedIndex == 0
-                                    ? const Cleaner(key: ValueKey<int>(0))
-                                    : _selectedIndex == 1
-                                        ? ClipboardScreen(
-                                            copiedItems:
-                                                clipboardManager.copiedItems,
-                                            key: const ValueKey<int>(1),
-                                          )
-                                        : _selectedIndex == 2
-                                            ? const LocalhostManager(
-                                                key: ValueKey<int>(2))
-                                            : const About(
-                                                key: ValueKey<int>(3)),
+                                child: IndexedStack(
+                                  index: _selectedIndex,
+                                  children: [
+                                    const Cleaner(key: ValueKey<int>(0)),
+                                    ClipboardScreen(
+                                      copiedItems:
+                                          _serviceManager.clipboardItems,
+                                      key: const ValueKey<int>(1),
+                                    ),
+                                    const LocalhostManager(
+                                        key: ValueKey<int>(2)),
+                                    const UDrivePage(key: ValueKey<int>(3)),
+                                    const QRCodeTool(key: ValueKey<int>(4)),
+                                    const About(key: ValueKey<int>(5)),
+                                  ],
+                                ),
                               ),
                             ),
                           ),

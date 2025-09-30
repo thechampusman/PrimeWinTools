@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDrive - Personal Cloud Storage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/gdrive-style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="material-icons">cloud</span>
+            </div>
+            <div class="loading-text">UDrive</div>
+            <div class="loading-subtitle">Personal Cloud Storage</div>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Main Application -->
+    <div class="app-container" id="appContainer" style="display: none;">
+        <!-- Top Navigation Bar -->
+        <header class="top-nav">
+            <div class="nav-left">
+                <button class="menu-btn" id="menuToggle" aria-label="Main menu">
+                    <span class="material-icons">menu</span>
+                </button>
+                
+                <div class="logo-section">
+                    <div class="logo">
+                        <span class="material-icons">cloud</span>
+                        <span class="logo-text">UDrive</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-center">
+                <div class="search-container">
+                    <div class="search-box">
+                        <button class="search-icon">
+                            <span class="material-icons">search</span>
+                        </button>
+                        <input type="text" id="searchInput" placeholder="Search in UDrive" class="search-input">
+                        <button class="search-options">
+                            <span class="material-icons">tune</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <button class="nav-btn" id="settingsBtn" title="Settings">
+                    <span class="material-icons">settings</span>
+                </button>
+                <button class="nav-btn" id="helpBtn" title="Help">
+                    <span class="material-icons">help_outline</span>
+                </button>
+                <div class="user-avatar">
+                    <span class="material-icons">account_circle</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-content">
+                    <!-- New Button -->
+                    <div class="new-button-container">
+                        <button class="new-btn" id="newBtn">
+                            <span class="material-icons">add</span>
+                            <span class="btn-text">New</span>
+                        </button>
+                    </div>
+
+                    <!-- Navigation Menu -->
+                    <nav class="nav-menu">
+                        <ul class="nav-list">
+                            <li class="nav-item active" data-section="my-drive">
+                                <span class="material-icons">folder</span>
+                                <span class="nav-text">My Drive</span>
+                            </li>
+                            <li class="nav-item" data-section="recent">
+                                <span class="material-icons">schedule</span>
+                                <span class="nav-text">Recent</span>
+                            </li>
+                            <li class="nav-item" data-section="starred">
+                                <span class="material-icons">star_border</span>
+                                <span class="nav-text">Starred</span>
+                            </li>
+                            <li class="nav-item" data-section="shared">
+                                <span class="material-icons">people</span>
+                                <span class="nav-text">Shared with me</span>
+                            </li>
+                            <li class="nav-item" data-section="trash">
+                                <span class="material-icons">delete</span>
+                                <span class="nav-text">Trash</span>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- Storage Info -->
+                    <div class="storage-info">
+                        <div class="storage-header">
+                            <span class="material-icons">storage</span>
+                            <span>Storage</span>
+                        </div>
+                        <div class="storage-bar">
+                            <div class="storage-used" style="width: 45%"></div>
+                        </div>
+                        <div class="storage-text">
+                            <span id="storageUsed">2.1 GB</span> of <span id="storageTotal">15 GB</span> used
+                        </div>
+                        <button class="storage-upgrade">Buy storage</button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content Panel -->
+            <main class="content-panel" id="contentPanel">
+                <!-- Toolbar -->
+                <div class="toolbar">
+                    <div class="toolbar-left">
+                        <div class="breadcrumb" id="breadcrumb">
+                            <button class="breadcrumb-item active">
+                                <span class="material-icons">folder</span>
+                                <span>My Drive</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="toolbar-right">
+                        <div class="view-options">
+                            <button class="view-btn active" data-view="grid" title="Grid view">
+                                <span class="material-icons">grid_view</span>
+                            </button>
+                            <button class="view-btn" data-view="list" title="List view">
+                                <span class="material-icons">view_list</span>
+                            </button>
+                        </div>
+                        
+                        <button class="toolbar-btn" id="sortBtn" title="Sort">
+                            <span class="material-icons">sort</span>
+                        </button>
+                        
+                        <button class="toolbar-btn" id="infoBtn" title="Details">
+                            <span class="material-icons">info</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- File Content Area -->
+                <div class="file-content" id="fileContent">
+                    <!-- Quick Access Section -->
+                    <div class="quick-access" id="quickAccess">
+                        <h3 class="section-title">Quick access</h3>
+                        <div class="quick-access-grid" id="quickAccessGrid">
+                            <!-- Quick access items will be populated here -->
+                        </div>
+                    </div>
+
+                    <!-- Main Files Section -->
+                    <div class="files-section">
+                        <div class="section-header">
+                            <h3 class="section-title">Files</h3>
+                            <div class="section-actions">
+                                <button class="text-btn" id="selectAllBtn">Select all</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Grid View -->
+                        <div class="files-grid" id="filesGrid">
+                            <!-- Files will be populated here -->
+                        </div>
+
+                        <!-- List View -->
+                        <div class="files-list" id="filesList" style="display: none;">
+                            <table class="files-table">
+                                <thead>
+                                    <tr>
+                                        <th class="name-col">Name</th>
+                                        <th class="owner-col">Owner</th>
+                                        <th class="modified-col">Last modified</th>
+                                        <th class="size-col">File size</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="filesTableBody">
+                                    <!-- Table rows will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    <div class="empty-content">
+                        <div class="empty-icon">
+                            <span class="material-icons">folder_open</span>
+                        </div>
+                        <h3>Welcome to UDrive</h3>
+                        <p>Drop files here or use the "New" button to upload</p>
+                        <button class="primary-btn" id="uploadFirstFile">
+                            <span class="material-icons">cloud_upload</span>
+                            Upload files
+                        </button>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Details Panel -->
+            <aside class="details-panel" id="detailsPanel" style="display: none;">
+                <div class="details-content">
+                    <div class="details-header">
+                        <h3>Details</h3>
+                        <button class="close-details">
+                            <span class="material-icons">close</span>
+                        </button>
+                    </div>
+                    <div class="details-body" id="detailsBody">
+                        <!-- Details content will be populated here -->
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Context Menus -->
+    <div class="context-menu" id="contextMenu" style="display: none;">
+        <ul class="context-menu-list">
+            <li class="context-menu-item" data-action="open">
+                <span class="material-icons">open_in_new</span>
+                <span>Open</span>
+            </li>
+            <li class="context-menu-item" data-action="download">
+                <span class="material-icons">download</span>
+                <span>Download</span>
+            </li>
+            <li class="context-menu-item" data-action="share">
+                <span class="material-icons">share</span>
+                <span>Share</span>
+            </li>
+            <li class="context-menu-separator"></li>
+            <li class="context-menu-item" data-action="rename">
+                <span class="material-icons">edit</span>
+                <span>Rename</span>
+            </li>
+            <li class="context-menu-item" data-action="star">
+                <span class="material-icons">star_border</span>
+                <span>Add to starred</span>
+            </li>
+            <li class="context-menu-separator"></li>
+            <li class="context-menu-item" data-action="move">
+                <span class="material-icons">drive_file_move</span>
+                <span>Move</span>
+            </li>
+            <li class="context-menu-item" data-action="copy">
+                <span class="material-icons">content_copy</span>
+                <span>Make a copy</span>
+            </li>
+            <li class="context-menu-separator"></li>
+            <li class="context-menu-item danger" data-action="delete">
+                <span class="material-icons">delete</span>
+                <span>Remove</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- New Item Menu -->
+    <div class="new-menu" id="newMenu" style="display: none;">
+        <ul class="new-menu-list">
+            <li class="new-menu-item" data-action="folder">
+                <span class="material-icons">folder</span>
+                <span>Folder</span>
+            </li>
+            <li class="new-menu-separator"></li>
+            <li class="new-menu-item" data-action="upload">
+                <span class="material-icons">upload_file</span>
+                <span>File upload</span>
+            </li>
+            <li class="new-menu-item" data-action="folder-upload">
+                <span class="material-icons">drive_folder_upload</span>
+                <span>Folder upload</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Modals -->
+    <!-- Upload Modal -->
+    <div class="modal-overlay" id="uploadModal" style="display: none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Upload files</h3>
+                <button class="modal-close">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <span class="material-icons upload-icon">cloud_upload</span>
+                        <h4>Drag files here or click to browse</h4>
+                        <p>Maximum file size: 100MB</p>
+                        <button class="primary-btn" id="browseFiles">Browse files</button>
+                    </div>
+                    <input type="file" id="fileInput" multiple style="display: none;">
+                </div>
+                <div class="upload-progress" id="uploadProgress" style="display: none;">
+                    <div class="progress-header">
+                        <span>Uploading files...</span>
+                        <span class="progress-text">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rename Modal -->
+    <div class="modal-overlay" id="renameModal" style="display: none;">
+        <div class="modal small">
+            <div class="modal-header">
+                <h3>Rename</h3>
+                <button class="modal-close">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="renameInput" class="text-input" placeholder="Enter name">
+            </div>
+            <div class="modal-footer">
+                <button class="secondary-btn" id="cancelRename">Cancel</button>
+                <button class="primary-btn" id="confirmRename">Rename</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Folder Modal -->
+    <div class="modal-overlay" id="folderModal" style="display: none;">
+        <div class="modal small">
+            <div class="modal-header">
+                <h3>New folder</h3>
+                <button class="modal-close">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="folderNameInput" class="text-input" placeholder="Untitled folder">
+            </div>
+            <div class="modal-footer">
+                <button class="secondary-btn" id="cancelFolder">Cancel</button>
+                <button class="primary-btn" id="createFolder">Create</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="/js/udrive-main.js"></script>
+    <script src="/js/udrive-api.js"></script>
+    <script src="/js/udrive-ui.js"></script>
+</body>
+</html>

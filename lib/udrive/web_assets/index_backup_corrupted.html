@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDrive - Personal Cloud Storage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/gdrive-style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="material-icons">cloud</span>
+            </div>
+            <div class="loading-text">UDrive</div>
+            <div class="loading-subtitle">Personal Cloud Storage</div>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Main Application -->
+    <div class="app-container" id="appContainer" style="display: none;">
+        <!-- Top Navigation Bar -->
+        <header class="top-nav">
+            <div class="nav-left">
+                <button class="menu-btn" id="menuToggle" aria-label="Main menu">
+                    <span class="material-icons">menu</span>
+                </button>
+                
+                <div class="logo-section">
+                    <div class="logo">
+                        <span class="material-icons">cloud</span>
+                        <span class="logo-text">UDrive</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-center">
+                <div class="search-container">
+                    <div class="search-box">
+                        <button class="search-icon">
+                            <span class="material-icons">search</span>
+                        </button>
+                        <input type="text" id="searchInput" placeholder="Search in UDrive" class="search-input">
+                        <button class="search-options">
+                            <span class="material-icons">tune</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <button class="nav-btn" title="Help">
+                    <span class="material-icons">help_outline</span>
+                </button>
+                <button class="nav-btn" title="Settings">
+                    <span class="material-icons">settings</span>
+                </button>
+                <button class="nav-btn" title="Apps">
+                    <span class="material-icons">apps</span>
+                </button>
+                <div class="user-avatar" title="Account">
+                    <span>U</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-content">
+                    <div class="new-section" style="position: relative;">
+                        <button class="new-btn" id="newBtn">
+                            <span class="material-icons">add</span>
+                            New
+                        </button>
+                        
+                        <!-- New Menu -->
+                        <div class="new-menu" id="newMenu" style="display: none;">
+                            <ul class="new-menu-list">
+                                <li class="new-menu-item" data-action="folder">
+                                    <span class="material-icons">folder</span>
+                                    <span>New folder</span>
+                                </li>
+                                <div class="new-menu-separator"></div>
+                                <li class="new-menu-item" data-action="upload">
+                                    <span class="material-icons">upload</span>
+                                    <span>File upload</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <nav class="nav-menu">
+                        <ul class="nav-list">
+                            <li class="nav-item active" data-path="/">
+                                <span class="material-icons">folder</span>
+                                <span>My Drive</span>
+                            </li>
+                            <li class="nav-item" data-path="/shared">
+                                <span class="material-icons">people</span>
+                                <span>Shared with me</span>
+                            </li>
+                            <li class="nav-item" data-path="/recent">
+                                <span class="material-icons">schedule</span>
+                                <span>Recent</span>
+                            </li>
+                            <li class="nav-item" data-path="/starred">
+                                <span class="material-icons">star</span>
+                                <span>Starred</span>
+                            </li>
+                            <li class="nav-item" data-path="/trash">
+                                <span class="material-icons">delete</span>
+                                <span>Trash</span>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="storage-info">
+                        <div class="storage-header">
+                            <span class="material-icons">storage</span>
+                            <span>Storage</span>
+                        </div>
+                        <div class="storage-bar">
+                            <div class="storage-used" style="width: 65%;"></div>
+                        </div>
+                        <div class="storage-text">15 GB of 15 GB used</div>
+                        <button class="storage-upgrade">Get more storage</button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Content Panel -->
+            <section class="content-panel">
+                <!-- Toolbar -->
+                <div class="toolbar">
+                    <div class="toolbar-left">
+                        <nav class="breadcrumb" id="breadcrumb">
+                            <button class="breadcrumb-item active" data-path="/">
+                                <span class="material-icons">folder</span>
+                                My Drive
+                            </button>
+                        </nav>
+                    </div>
+
+                    <div class="toolbar-right">
+                        <div class="view-options">
+                            <button class="view-btn active" data-view="grid" title="Grid view">
+                                <span class="material-icons">grid_view</span>
+                            </button>
+                            <button class="view-btn" data-view="list" title="List view">
+                                <span class="material-icons">view_list</span>
+                            </button>
+                        </div>
+                        
+                        <button class="toolbar-btn" data-sort="name" title="Sort">
+                            <span class="material-icons">sort</span>
+                        </button>
+                        
+                        <button class="toolbar-btn" title="View details">
+                            <span class="material-icons">info</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- File Content Area -->
+                <div class="file-content" id="fileContent">
+                    <!-- Quick Access Section -->
+                    <section class="quick-access">
+                        <h3 class="section-title">Quick access</h3>
+                        <div class="quick-access-grid" id="quickAccessGrid">
+                            <!-- Quick access items will be populated here -->
+                        </div>
+                    </section>
+
+                    <!-- Files Section -->
+                    <section class="files-section" id="filesSection">
+                        <div class="section-header">
+                            <h3 class="section-title">My Drive</h3>
+                            <div class="section-actions">
+                                <button class="text-btn" onclick="app.selectAll()">Select all</button>
+                            </div>
+                        </div>
+
+                        <!-- Files will be rendered here by JavaScript -->
+                        <div class="empty-state">
+                            <div class="empty-content">
+                                <span class="material-icons empty-icon">folder_open</span>
+                                <h3>Your UDrive is empty</h3>
+                                <p>Upload files or create folders to get started</p>
+                                <button class="primary-btn" onclick="app.triggerUpload()">
+                                    <span class="material-icons">upload</span>
+                                    Upload files
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="/js/udrive-api.js"></script>
+    <script src="/js/udrive-ui.js"></script>
+    <script src="/js/udrive-main.js"></script>
+    <!-- Version Banner -->
+    <div class="version-banner">
+        <div class="version-info">
+            <span class="app-version">
+                <i class="fas fa-cog"></i>
+                PrimeWinTools V1.0.4
+            </span>
+            <span class="divider">|</span>
+            <span class="udrive-version">
+                <i class="fas fa-cloud"></i>
+                UDrive 1.0
+            </span>
+        </div>
+        <button class="banner-close" aria-label="Close banner">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <div class="app-container">
+        <!-- Modern Header -->
+        <header class="modern-header">
+                <div class="header-content">
+                <div class="brand-section">
+                    <button class="mobile-menu-btn" aria-label="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="brand-logo">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="brand-info">
+                        <h1 class="brand-title">UDrive</h1>
+                        <p class="brand-subtitle">Personal Cloud Storage</p>
+                    </div>
+                </div>                <div class="header-search">
+                    <div class="search-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="searchInput" placeholder="Search your files..." class="search-input">
+                        <button id="searchBtn" class="search-btn">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="view-toggle">
+                        <button id="gridViewBtn" class="view-btn active" title="Grid View">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button id="listViewBtn" class="view-btn" title="List View">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Network Access Link -->
+                    <div class="network-link-container">
+                        <button id="networkLinkBtn" class="network-link-btn" title="Copy Network Link">
+                            <i class="fas fa-link"></i>
+                            <span id="networkLinkText">Network Link</span>
+                        </button>
+                        <div class="network-dropdown" id="networkDropdown">
+                            <div class="network-header">
+                                <i class="fas fa-wifi"></i>
+                                <span>Network Access</span>
+                            </div>
+                            <div class="network-links">
+                                <div class="network-link-item">
+                                    <label>Local Network IP:</label>
+                                    <div class="link-copy-container">
+                                        <input type="text" id="localNetworkLink" class="network-input" readonly>
+                                        <button class="copy-btn" onclick="app.copyNetworkLink('local')" title="Copy Link">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <small class="network-hint" id="localNetworkHint">Auto-detecting your network IP...</small>
+                                </div>
+                                <div class="network-link-item">
+                                    <label>Current URL:</label>
+                                    <div class="link-copy-container">
+                                        <input type="text" id="currentNetworkLink" class="network-input" readonly>
+                                        <button class="copy-btn" onclick="app.copyNetworkLink('current')" title="Copy Link">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <small class="network-hint">The URL you're currently using</small>
+                                </div>
+                                <div class="network-instructions">
+                                    <p><i class="fas fa-info-circle"></i> Share these links with others on your network to give them access to your files.</p>
+                                    <div class="network-steps">
+                                        <p><strong>To find your IP manually:</strong></p>
+                                        <p>• Windows: Open Command Prompt → type <code>ipconfig</code></p>
+                                        <p>• Mac/Linux: Open Terminal → type <code>ifconfig</code></p>
+                                        <p>• Look for your local IP (usually starts with 192.168.x.x)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button id="uploadBtn" class="primary-btn">
+                        <i class="fas fa-plus"></i>
+                        <span>Upload</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <!-- Sidebar Overlay for Mobile -->
+            <div class="sidebar-overlay"></div>
+            
+            <!-- Beautiful Sidebar -->
+            <aside class="modern-sidebar">
+                <nav class="sidebar-nav">
+                    <div class="nav-section">
+                        <h3 class="nav-title">Browse</h3>
+                        <div class="nav-items">
+                            <a href="#" class="nav-item active" data-view="files">
+                                <div class="nav-icon">
+                                    <i class="fas fa-folder"></i>
+                                </div>
+                                <span class="nav-text">All Files</span>
+                                <div class="nav-indicator"></div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </nav>
+                
+            </aside>
+
+            <!-- Modern Main Content -->
+            <main class="main-content">
+                <!-- Breadcrumb Navigation -->
+                <div class="breadcrumb-nav">
+                    <div class="breadcrumb-path">
+                        <button class="breadcrumb-item active">
+                            <i class="fas fa-home"></i>
+                        </button>
+                        <span class="breadcrumb-separator">/</span>
+                        <span id="currentPath" class="current-path">Home</span>
+                        <!-- Storage path indicator -->
+                        <div class="storage-indicator" id="storageIndicator" style="margin-left: auto; font-size: 12px; color: #666; background: #f0f0f0; padding: 4px 8px; border-radius: 4px;">
+                            <i class="fas fa-folder"></i> <span id="storagePathDisplay">Loading...</span>
+                        </div>
+                    </div>
+                    <div class="content-actions">
+                        <button id="refreshBtn" class="action-btn secondary">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                        <div class="sort-dropdown">
+                            <button class="sort-trigger">
+                                <i class="fas fa-sort"></i>
+                                <span>Sort</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="sort-menu">
+                                <button class="sort-option active" data-sort="name">
+                                    <i class="fas fa-font"></i> Name
+                                </button>
+                                <button class="sort-option" data-sort="modified">
+                                    <i class="fas fa-calendar"></i> Modified
+                                </button>
+                                <button class="sort-option" data-sort="size">
+                                    <i class="fas fa-weight-hanging"></i> Size
+                                </button>
+                                <button class="sort-option" data-sort="type">
+                                    <i class="fas fa-tags"></i> Type
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- File Browser -->
+                <div id="fileView" class="content-view active">
+                    <div class="file-container">
+                        <div id="fileList" class="file-grid modern-grid">
+                            <!-- Files will be loaded here -->
+                        </div>
+                        
+                        <!-- Empty State -->
+                        <div class="empty-state" style="display: none;">
+                            <div class="empty-icon">
+                                <i class="fas fa-folder-open"></i>
+                            </div>
+                            <h3 class="empty-title">This folder is empty</h3>
+                            <p class="empty-description">No files found in this directory</p>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    <div id="uploadModal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Upload Files</h3>
+                </div>
+                <button class="modal-close" id="closeUpload">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-zone" id="uploadArea">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h4 class="upload-title">Drop files here to upload</h4>
+                    <p class="upload-subtitle">or click to browse your computer</p>
+                    <input type="file" id="fileInput" multiple hidden>
+                    <button class="browse-btn">
+                        <i class="fas fa-folder-open"></i>
+                        Browse Files
+                    </button>
+                </div>
+                <div class="upload-progress-section" id="uploadProgress" style="display: none;">
+                    <div class="progress-header">
+                        <span class="progress-label">Uploading files...</span>
+                        <span class="progress-percentage" id="progressText">0%</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progressFill"></div>
+                    </div>
+                    <div class="upload-details">
+                        <span id="uploadSpeed">0 MB/s</span>
+                        <span id="uploadETA">Calculating...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Context Menu -->
+    <div id="contextMenu" class="context-menu">
+        <div class="context-header">
+            <span class="context-title">Actions</span>
+        </div>
+        <div class="context-items">
+            <button class="context-item" data-action="download">
+                <i class="fas fa-download"></i>
+                <span>Download</span>
+                <span class="context-shortcut">Ctrl+D</span>
+            </button>
+            <button class="context-item" data-action="rename">
+                <i class="fas fa-edit"></i>
+                <span>Rename</span>
+                <span class="context-shortcut">F2</span>
+            </button>
+            <button class="context-item" data-action="copy">
+                <i class="fas fa-copy"></i>
+                <span>Copy</span>
+                <span class="context-shortcut">Ctrl+C</span>
+            </button>
+            <div class="context-separator"></div>
+            <button class="context-item" data-action="share">
+                <i class="fas fa-share-alt"></i>
+                <span>Share</span>
+            </button>
+            <div class="context-separator"></div>
+            <button class="context-item danger" data-action="delete">
+                <i class="fas fa-trash"></i>
+                <span>Delete</span>
+                <span class="context-shortcut">Del</span>
+            </button>
+        </div>
+        <div class="context-footer">
+            <button class="context-item" data-action="info">
+                <i class="fas fa-info-circle"></i>
+                <span>Properties</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Universal Media Player Modal -->
+    <div id="mediaPlayerModal" class="media-modal-overlay" style="display: none;">
+        <div class="media-modal-container">
+            <div class="media-modal-header">
+                <div class="media-file-info">
+                    <div class="media-file-icon">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div class="media-file-details">
+                        <h3 id="mediaFileName" class="media-file-name">Media File</h3>
+                        <p id="mediaFileSize" class="media-file-size">0 MB</p>
+                    </div>
+                </div>
+                <div class="media-header-controls">
+                    <button id="mediaFullscreenBtn" class="media-control-btn" title="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                    <button id="mediaDownloadBtn" class="media-control-btn" title="Download">
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <button id="mediaCloseBtn" class="media-control-btn" title="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="media-player-container">
+                <!-- Video Player -->
+                <div id="videoPlayerContainer" class="media-player-wrapper" style="display: none;">
+                    <video id="videoPlayer" class="media-player" controls preload="metadata">
+                        <p>Your browser doesn't support video playback.</p>
+                    </video>
+                    <div class="video-overlay">
+                        <button id="videoPlayBtn" class="play-overlay-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Audio Player -->
+                <div id="audioPlayerContainer" class="media-player-wrapper" style="display: none;">
+                    <div class="audio-visualizer">
+                        <div class="audio-artwork">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <canvas id="audioCanvas" class="audio-canvas"></canvas>
+                    </div>
+                    <audio id="audioPlayer" class="media-player" controls preload="metadata">
+                        <p>Your browser doesn't support audio playback.</p>
+                    </audio>
+                </div>
+                
+                <!-- Unsupported Media -->
+                <div id="unsupportedMediaContainer" class="media-player-wrapper" style="display: none;">
+                    <div class="unsupported-media">
+                        <div class="unsupported-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Media format not supported</h3>
+                        <p>This media format cannot be played in the browser.</p>
+                        <button id="unsupportedDownloadBtn" class="primary-btn">
+                            <i class="fas fa-download"></i>
+                            Download File
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Media Controls -->
+            <div class="media-controls">
+                <div class="playback-controls">
+                    <button id="mediaPrevBtn" class="control-btn" title="Previous">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button id="mediaPlayPauseBtn" class="control-btn play-pause" title="Play/Pause">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button id="mediaNextBtn" class="control-btn" title="Next">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                </div>
+                
+                <div class="progress-container">
+                    <span id="currentTime" class="time-display">0:00</span>
+                    <div class="progress-bar">
+                        <div id="mediaProgressFill" class="progress-fill"></div>
+                        <input type="range" id="progressSlider" class="progress-slider" min="0" max="100" value="0">
+                    </div>
+                    <span id="totalTime" class="time-display">0:00</span>
+                </div>
+                
+                <div class="volume-controls">
+                    <button id="muteBtn" class="control-btn" title="Mute">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <div class="volume-slider-container">
+                        <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="100">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Media Playlist (for multiple media files) -->
+            <div class="media-playlist" id="mediaPlaylist" style="display: none;">
+                <div class="playlist-header">
+                    <h4><i class="fas fa-list"></i> Playlist</h4>
+                    <button id="togglePlaylist" class="playlist-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="playlist-items" id="playlistItems">
+                    <!-- Playlist items will be added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Viewer Modal -->
+    <div id="imageViewerModal" class="image-modal-overlay" style="display: none;">
+        <div class="image-modal-container">
+            <div class="image-modal-header">
+                <div class="image-file-info">
+                    <div class="image-file-icon">🖼️</div>
+                    <div class="image-file-details">
+                        <div class="image-file-name">Image Name</div>
+                        <div class="image-file-meta">
+                            <span class="image-file-size">0 MB</span>
+                            <span class="image-file-resolution">0 x 0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-modal-controls">
+                    <button class="image-control-btn" id="downloadImageBtn" title="Download Image">
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <button class="image-control-btn" id="closeImageViewer" title="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="image-modal-body">
+                <button class="image-nav-btn image-nav-prev" id="prevImageBtn" title="Previous Image">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="image-viewer-container">
+                    <div class="image-viewer-content">
+                        <img id="currentImage" class="current-image" alt="Current Image">
+                        <div class="image-loader" id="imageLoader">
+                            <div class="image-spinner"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="image-counter">
+                        <span id="currentImageIndex">1</span> / <span id="totalImages">1</span>
+                    </div>
+                </div>
+                
+                <button class="image-nav-btn image-nav-next" id="nextImageBtn" title="Next Image">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="image-modal-footer">
+                <div class="image-thumbnails" id="imageThumbnails">
+                    <!-- Thumbnails will be generated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modern Loading Overlay -->
+    <div id="loadingSpinner" class="loading-overlay" style="display: none;">
+        <div class="loading-container">
+            <div class="loading-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <p class="loading-text">Loading your files...</p>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>

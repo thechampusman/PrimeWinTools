@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Studio - Modern QR Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qr-scanner@1.4.2/qr-scanner.umd.min.js"></script>
+    <script>
+        // Global error handler
+        window.onerror = function(msg, url, lineNo, columnNo, error) {
+            console.error('JavaScript Error:', msg, 'at', url, ':', lineNo, ':', columnNo);
+            return false;
+        };
+        
+        // Promise rejection handler
+        window.addEventListener('unhandledrejection', function(event) {
+            console.error('Unhandled promise rejection:', event.reason);
+        });
+    </script>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #f1f5f9;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border: #e2e8f0;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 50%, #f0f4ff 100%);
+            min-height: 100vh;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .tabs {
+            display: flex;
+            background: var(--bg-primary);
+            border-radius: var(--radius);
+            padding: 0.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .tab {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            background: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .tab.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        .tab:hover:not(.active) {
+            background: var(--secondary);
+            color: var(--text-primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+
+        .card {
+            background: var(--bg-primary);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-secondary);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-description {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+        }
+
+        .input, .textarea, .select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+            background: var(--bg-primary);
+        }
+
+        .input:focus, .textarea:focus, .select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgb(99 102 241 / 0.1);
+        }
+
+        .textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: #e2e8f0;
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #059669;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #dc2626;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .qr-display {
+            background: var(--bg-secondary);
+            border: 2px dashed var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .qr-placeholder {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .qr-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .scanner-container {
+            position: relative;
+            background: #000;
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        #scanner-video {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .scanner-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
+        }
+
+        .result {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .result-content {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.75rem;
+            font-family: monospace;
+            font-size: 0.875rem;
+            word-break: break-all;
+            margin-top: 0.5rem;
+        }
+
+        .file-drop {
+            border: 2px dashed var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        .file-drop:hover, .file-drop.dragover {
+            border-color: var(--primary);
+            background: rgb(99 102 241 / 0.05);
+        }
+
+        .file-drop input {
+            display: none;
+        }
+
+        .toast {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1rem 1.5rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            max-width: 400px;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast.success { border-left: 4px solid var(--success); }
+        .toast.error { border-left: 4px solid var(--danger); }
+        .toast.warning { border-left: 4px solid var(--warning); }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .templates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-qrcode"></i>
+                </div>
+                <h1>QR Studio</h1>
+            </div>
+            <div style="font-size: 0.875rem; color: var(--text-secondary);">
+                <i class="fas fa-circle" style="color: var(--success); font-size: 0.5rem;"></i>
+                Ready to use
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('generator')">
+                <i class="fas fa-magic"></i>
+                Generator
+            </button>
+            <button class="tab" onclick="switchTab('scanner')">
+                <i class="fas fa-camera"></i>
+                Scanner
+            </button>
+            <button class="tab" onclick="switchTab('templates')">
+                <i class="fas fa-layer-group"></i>
+                Templates
+            </button>
+        </div>
+
+        <!-- Generator Tab -->
+        <div id="generator" class="tab-content active">
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-edit"></i>
+                            Generate QR Code
+                        </h2>
+                        <p class="card-description">Create custom QR codes with various options</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="form-group">
+                            <label class="label">Content Type</label>
+                            <select class="select" id="contentType" onchange="updateFields()">
+                                <option value="text">Plain Text</option>
+                                <option value="url">Website URL</option>
+                                <option value="email">Email</option>
+                                <option value="phone">Phone</option>
+                                <option value="sms">SMS</option>
+                                <option value="wifi">WiFi</option>
+                                <option value="vcard">Contact</option>
+                            </select>
+                        </div>
+
+                        <div id="inputFields">
+                            <div class="form-group">
+                                <label class="label">Content</label>
+                                <textarea class="textarea" id="textContent" placeholder="Enter your text..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label class="label">Size</label>
+                                <select class="select" id="qrSize">
+                                    <option value="256">256×256</option>
+                                    <option value="512" selected>512×512</option>
+                                    <option value="1024">1024×1024</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="label">Error Correction</label>
+                                <select class="select" id="errorLevel">
+                                    <option value="L">Low (7%)</option>
+                                    <option value="M" selected>Medium (15%)</option>
+                                    <option value="Q">Quartile (25%)</option>
+                                    <option value="H">High (30%)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label class="label">Foreground Color</label>
+                                <input type="color" class="input" id="fgColor" value="#000000">
+                            </div>
+                            <div class="form-group">
+                                <label class="label">Background Color</label>
+                                <input type="color" class="input" id="bgColor" value="#ffffff">
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary" style="width: 100%;" onclick="generateQR()">
+                            <i class="fas fa-magic"></i>
+                            Generate QR Code
+                        </button>
+                        
+                        <button class="btn btn-secondary" style="width: 100%; margin-top: 0.5rem;" onclick="testLibraries()">
+                            <i class="fas fa-bug"></i>
+                            Test Libraries
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-eye"></i>
+                            Preview
+                        </h2>
+                        <p class="card-description">Your QR code will appear here</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="qr-display" id="qrDisplay">
+                            <div class="qr-placeholder">
+                                <i class="fas fa-qrcode"></i>
+                                <div>Generate a QR code to see preview</div>
+                            </div>
+                        </div>
+
+                        <div class="btn-group">
+                            <button class="btn btn-success" onclick="downloadQR()" id="downloadBtn" disabled>
+                                <i class="fas fa-download"></i>
+                                Download
+                            </button>
+                            <button class="btn btn-secondary" onclick="copyQR()" id="copyBtn" disabled>
+                                <i class="fas fa-copy"></i>
+                                Copy
+                            </button>
+                            <button class="btn btn-secondary" onclick="shareQR()" id="shareBtn" disabled>
+                                <i class="fas fa-share"></i>
+                                Share
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scanner Tab -->
+        <div id="scanner" class="tab-content">
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-camera"></i>
+                            Camera Scanner
+                        </h2>
+                        <p class="card-description">Scan QR codes using your device camera</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="scanner-container" id="scannerContainer" style="display: none;">
+                            <video id="scanner-video" playsinline></video>
+                            <div class="scanner-overlay"></div>
+                        </div>
+
+                        <div id="scannerPlaceholder" class="qr-display">
+                            <div class="qr-placeholder">
+                                <i class="fas fa-camera"></i>
+                                <div>Start camera to scan QR codes</div>
+                            </div>
+                        </div>
+
+                        <div class="btn-group">
+                            <button class="btn btn-primary" onclick="startCamera()" id="startBtn">
+                                <i class="fas fa-play"></i>
+                                Start Camera
+                            </button>
+                            <button class="btn btn-danger" onclick="stopCamera()" id="stopBtn" disabled>
+                                <i class="fas fa-stop"></i>
+                                Stop Camera
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-upload"></i>
+                            File Scanner
+                        </h2>
+                        <p class="card-description">Upload an image to scan QR codes</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="file-drop" onclick="document.getElementById('fileInput').click()">
+                            <input type="file" id="fileInput" accept="image/*" onchange="scanFile(this)">
+                            <div style="font-size: 2rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <div>
+                                <strong>Click to upload</strong> or drag and drop<br>
+                                <small>PNG, JPG, GIF up to 10MB</small>
+                            </div>
+                        </div>
+
+                        <div id="scanResult" class="result" style="display: none;">
+                            <strong>Scan Result:</strong>
+                            <div class="result-content" id="scanContent"></div>
+                            <div class="btn-group" style="margin-top: 1rem;">
+                                <button class="btn btn-secondary" onclick="copyResult()">
+                                    <i class="fas fa-copy"></i>
+                                    Copy
+                                </button>
+                                <button class="btn btn-secondary" onclick="openResult()" id="openBtn" style="display: none;">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Open
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Templates Tab -->
+        <div id="templates" class="tab-content">
+            <div class="templates-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-wifi"></i>
+                            WiFi Network
+                        </h3>
+                        <p class="card-description">Share WiFi credentials</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="form-group">
+                            <label class="label">Network Name (SSID)</label>
+                            <input type="text" class="input" id="wifiSSID" placeholder="MyNetwork">
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Password</label>
+                            <input type="password" class="input" id="wifiPassword" placeholder="password123">
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Security</label>
+                            <select class="select" id="wifiSecurity">
+                                <option value="WPA">WPA/WPA2</option>
+                                <option value="WEP">WEP</option>
+                                <option value="nopass">Open</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="generateWiFi()">
+                            <i class="fas fa-wifi"></i>
+                            Generate WiFi QR
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-user"></i>
+                            Contact Card
+                        </h3>
+                        <p class="card-description">Share contact information</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="form-group">
+                            <label class="label">Full Name</label>
+                            <input type="text" class="input" id="contactName" placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Phone</label>
+                            <input type="tel" class="input" id="contactPhone" placeholder="+1234567890">
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Email</label>
+                            <input type="email" class="input" id="contactEmail" placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Organization</label>
+                            <input type="text" class="input" id="contactOrg" placeholder="Company Inc.">
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="generateContact()">
+                            <i class="fas fa-user"></i>
+                            Generate Contact QR
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-sms"></i>
+                            SMS Message
+                        </h3>
+                        <p class="card-description">Pre-composed SMS</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="form-group">
+                            <label class="label">Phone Number</label>
+                            <input type="tel" class="input" id="smsPhone" placeholder="+1234567890">
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Message</label>
+                            <textarea class="textarea" id="smsMessage" placeholder="Hello! This is a pre-composed message..."></textarea>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="generateSMS()">
+                            <i class="fas fa-sms"></i>
+                            Generate SMS QR
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentQR = null;
+        let scanner = null;
+        let scanStream = null;
+        let lastScanResult = '';
+
+        // Tab switching
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+
+            if (tabName !== 'scanner' && scanner) {
+                stopCamera();
+            }
+        }
+
+        // Update input fields based on content type
+        function updateFields() {
+            const type = document.getElementById('contentType').value;
+            const container = document.getElementById('inputFields');
+            
+            let html = '';
+            switch(type) {
+                case 'text':
+                    html = '<div class="form-group"><label class="label">Content</label><textarea class="textarea" id="textContent" placeholder="Enter your text..."></textarea></div>';
+                    break;
+                case 'url':
+                    html = '<div class="form-group"><label class="label">Website URL</label><input type="url" class="input" id="textContent" placeholder="https://example.com"></div>';
+                    break;
+                case 'email':
+                    html = '<div class="form-group"><label class="label">Email Address</label><input type="email" class="input" id="emailAddr" placeholder="user@example.com"></div><div class="form-group"><label class="label">Subject (optional)</label><input type="text" class="input" id="emailSubject" placeholder="Email subject"></div><div class="form-group"><label class="label">Body (optional)</label><textarea class="textarea" id="emailBody" placeholder="Email message..."></textarea></div>';
+                    break;
+                case 'phone':
+                    html = '<div class="form-group"><label class="label">Phone Number</label><input type="tel" class="input" id="textContent" placeholder="+1234567890"></div>';
+                    break;
+                case 'sms':
+                    html = '<div class="form-group"><label class="label">Phone Number</label><input type="tel" class="input" id="smsPhoneNum" placeholder="+1234567890"></div><div class="form-group"><label class="label">Message</label><textarea class="textarea" id="smsMsg" placeholder="SMS message..."></textarea></div>';
+                    break;
+                case 'wifi':
+                    html = '<div class="form-group"><label class="label">Network Name (SSID)</label><input type="text" class="input" id="wifiName" placeholder="MyNetwork"></div><div class="form-group"><label class="label">Password</label><input type="password" class="input" id="wifiPass" placeholder="password123"></div><div class="form-group"><label class="label">Security</label><select class="select" id="wifiSec"><option value="WPA">WPA/WPA2</option><option value="WEP">WEP</option><option value="nopass">Open</option></select></div>';
+                    break;
+                case 'vcard':
+                    html = '<div class="form-group"><label class="label">Full Name</label><input type="text" class="input" id="vName" placeholder="John Doe"></div><div class="form-group"><label class="label">Phone</label><input type="tel" class="input" id="vPhone" placeholder="+1234567890"></div><div class="form-group"><label class="label">Email</label><input type="email" class="input" id="vEmail" placeholder="john@example.com"></div><div class="form-group"><label class="label">Organization</label><input type="text" class="input" id="vOrg" placeholder="Company Inc."></div>';
+                    break;
+            }
+            container.innerHTML = html;
+        }
+
+        // Generate QR Code
+        function generateQR() {
+            console.log('generateQR function called');
+            
+            // Check if QRCode library is loaded
+            if (typeof QRCode === 'undefined') {
+                showToast('QR Code library not loaded. Please refresh the page.', 'error');
+                console.error('QRCode library not found');
+                return;
+            }
+
+            try {
+                const type = document.getElementById('contentType').value;
+                console.log('Content type:', type);
+                let text = '';
+
+                switch(type) {
+                    case 'text':
+                    case 'url':
+                    case 'phone':
+                        const textElement = document.getElementById('textContent');
+                        if (!textElement) {
+                            showToast('Text input field not found', 'error');
+                            return;
+                        }
+                        text = textElement.value;
+                        if (type === 'phone') text = `tel:${text}`;
+                        break;
+                    case 'email':
+                        const emailElement = document.getElementById('emailAddr');
+                        const subjectElement = document.getElementById('emailSubject');
+                        const bodyElement = document.getElementById('emailBody');
+                        if (!emailElement) {
+                            showToast('Email fields not found', 'error');
+                            return;
+                        }
+                        const email = emailElement.value;
+                        const subject = subjectElement ? subjectElement.value : '';
+                        const body = bodyElement ? bodyElement.value : '';
+                        text = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                        break;
+                    case 'sms':
+                        const phoneElement = document.getElementById('smsPhoneNum');
+                        const msgElement = document.getElementById('smsMsg');
+                        if (!phoneElement || !msgElement) {
+                            showToast('SMS fields not found', 'error');
+                            return;
+                        }
+                        const phone = phoneElement.value;
+                        const msg = msgElement.value;
+                        text = `sms:${phone}?body=${encodeURIComponent(msg)}`;
+                        break;
+                    case 'wifi':
+                        const ssidElement = document.getElementById('wifiName');
+                        const passElement = document.getElementById('wifiPass');
+                        const secElement = document.getElementById('wifiSec');
+                        if (!ssidElement || !passElement || !secElement) {
+                            showToast('WiFi fields not found', 'error');
+                            return;
+                        }
+                        const ssid = ssidElement.value;
+                        const pass = passElement.value;
+                        const sec = secElement.value;
+                        text = `WIFI:T:${sec};S:${ssid};P:${pass};;`;
+                        break;
+                    case 'vcard':
+                        const nameElement = document.getElementById('vName');
+                        const vphoneElement = document.getElementById('vPhone');
+                        const vemailElement = document.getElementById('vEmail');
+                        const orgElement = document.getElementById('vOrg');
+                        if (!nameElement) {
+                            showToast('Contact fields not found', 'error');
+                            return;
+                        }
+                        const name = nameElement.value;
+                        const vphone = vphoneElement ? vphoneElement.value : '';
+                        const vemail = vemailElement ? vemailElement.value : '';
+                        const org = orgElement ? orgElement.value : '';
+                        text = `BEGIN:VCARD\nVERSION:3.0\nFN:${name}\nTEL:${vphone}\nEMAIL:${vemail}\nORG:${org}\nEND:VCARD`;
+                        break;
+                }
+
+                console.log('Generated text:', text);
+
+                if (!text.trim()) {
+                    showToast('Please enter content to generate QR code', 'error');
+                    return;
+                }
+
+                const sizeElement = document.getElementById('qrSize');
+                const errorLevelElement = document.getElementById('errorLevel');
+                const fgColorElement = document.getElementById('fgColor');
+                const bgColorElement = document.getElementById('bgColor');
+
+                if (!sizeElement || !errorLevelElement || !fgColorElement || !bgColorElement) {
+                    showToast('QR configuration elements not found', 'error');
+                    return;
+                }
+
+                const size = parseInt(sizeElement.value) || 512;
+                const errorLevel = errorLevelElement.value || 'M';
+                const fgColor = fgColorElement.value || '#000000';
+                const bgColor = bgColorElement.value || '#ffffff';
+
+                console.log('QR options:', { size, errorLevel, fgColor, bgColor });
+
+                const canvas = document.createElement('canvas');
+                console.log('Canvas created, calling QRCode.toCanvas...');
+                
+                QRCode.toCanvas(canvas, text, {
+                    width: size,
+                    errorCorrectionLevel: errorLevel,
+                    color: { dark: fgColor, light: bgColor },
+                    margin: 2
+                }, function(error) {
+                    if (error) {
+                        console.error('QRCode generation error:', error);
+                        showToast('Error generating QR code: ' + error.message, 'error');
+                        return;
+                    }
+
+                    console.log('QR code generated successfully');
+                    const display = document.getElementById('qrDisplay');
+                    if (!display) {
+                        showToast('QR display element not found', 'error');
+                        return;
+                    }
+
+                    display.innerHTML = '';
+                    display.appendChild(canvas);
+
+                    currentQR = canvas;
+                    
+                    const downloadBtn = document.getElementById('downloadBtn');
+                    const copyBtn = document.getElementById('copyBtn');
+                    const shareBtn = document.getElementById('shareBtn');
+                    
+                    if (downloadBtn) downloadBtn.disabled = false;
+                    if (copyBtn) copyBtn.disabled = false;
+                    if (shareBtn) shareBtn.disabled = false;
+
+                    showToast('QR code generated successfully!', 'success');
+                });
+            } catch (error) {
+                console.error('Exception in generateQR:', error);
+                showToast('Unexpected error: ' + error.message, 'error');
+            }
+        }
+
+        // Download QR Code
+        function downloadQR() {
+            if (!currentQR) return;
+            const link = document.createElement('a');
+            link.download = 'qrcode.png';
+            link.href = currentQR.toDataURL();
+            link.click();
+            showToast('QR code downloaded!', 'success');
+        }
+
+        // Copy QR Code
+        async function copyQR() {
+            if (!currentQR) return;
+            try {
+                currentQR.toBlob(async (blob) => {
+                    await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+                    showToast('QR code copied to clipboard!', 'success');
+                });
+            } catch (error) {
+                showToast('Failed to copy QR code', 'error');
+            }
+        }
+
+        // Share QR Code
+        async function shareQR() {
+            if (!currentQR || !navigator.share) {
+                showToast('Sharing not supported', 'error');
+                return;
+            }
+            try {
+                currentQR.toBlob(async (blob) => {
+                    const file = new File([blob], 'qrcode.png', { type: 'image/png' });
+                    await navigator.share({
+                        title: 'QR Code',
+                        files: [file]
+                    });
+                });
+            } catch (error) {
+                showToast('Failed to share QR code', 'error');
+            }
+        }
+
+        // Start Camera
+        async function startCamera() {
+            try {
+                const video = document.getElementById('scanner-video');
+                scanner = new QrScanner(video, result => {
+                    lastScanResult = result.data;
+                    document.getElementById('scanContent').textContent = result.data;
+                    document.getElementById('scanResult').style.display = 'block';
+                    document.getElementById('openBtn').style.display = isURL(result.data) ? 'inline-flex' : 'none';
+                    showToast('QR code detected!', 'success');
+                }, { highlightScanRegion: true });
+
+                await scanner.start();
+                document.getElementById('scannerContainer').style.display = 'block';
+                document.getElementById('scannerPlaceholder').style.display = 'none';
+                document.getElementById('startBtn').disabled = true;
+                document.getElementById('stopBtn').disabled = false;
+                showToast('Camera started', 'success');
+            } catch (error) {
+                showToast('Camera access denied or not available', 'error');
+            }
+        }
+
+        // Stop Camera
+        function stopCamera() {
+            if (scanner) {
+                scanner.stop();
+                scanner = null;
+            }
+            document.getElementById('scannerContainer').style.display = 'none';
+            document.getElementById('scannerPlaceholder').style.display = 'flex';
+            document.getElementById('startBtn').disabled = false;
+            document.getElementById('stopBtn').disabled = true;
+        }
+
+        // Scan from File
+        async function scanFile(input) {
+            const file = input.files[0];
+            if (!file) return;
+            
+            try {
+                const result = await QrScanner.scanImage(file);
+                lastScanResult = result;
+                document.getElementById('scanContent').textContent = result;
+                document.getElementById('scanResult').style.display = 'block';
+                document.getElementById('openBtn').style.display = isURL(result) ? 'inline-flex' : 'none';
+                showToast('QR code found in image!', 'success');
+            } catch (error) {
+                showToast('No QR code found in image', 'error');
+            }
+        }
+
+        // Copy Result
+        function copyResult() {
+            if (lastScanResult) {
+                navigator.clipboard.writeText(lastScanResult);
+                showToast('Result copied to clipboard!', 'success');
+            }
+        }
+
+        // Open Result
+        function openResult() {
+            if (lastScanResult && isURL(lastScanResult)) {
+                window.open(lastScanResult, '_blank');
+            }
+        }
+
+        // Check if string is URL
+        function isURL(str) {
+            try {
+                new URL(str);
+                return true;
+            } catch {
+                return false;
+            }
+        }
+
+        // Template Functions
+        function generateWiFi() {
+            const ssid = document.getElementById('wifiSSID').value;
+            const pass = document.getElementById('wifiPassword').value;
+            const sec = document.getElementById('wifiSecurity').value;
+            
+            if (!ssid) {
+                showToast('Please enter network name', 'error');
+                return;
+            }
+            
+            const text = `WIFI:T:${sec};S:${ssid};P:${pass};;`;
+            generateFromText(text);
+        }
+
+        function generateContact() {
+            const name = document.getElementById('contactName').value;
+            const phone = document.getElementById('contactPhone').value;
+            const email = document.getElementById('contactEmail').value;
+            const org = document.getElementById('contactOrg').value;
+            
+            if (!name) {
+                showToast('Please enter a name', 'error');
+                return;
+            }
+            
+            const text = `BEGIN:VCARD\nVERSION:3.0\nFN:${name}\nTEL:${phone}\nEMAIL:${email}\nORG:${org}\nEND:VCARD`;
+            generateFromText(text);
+        }
+
+        function generateSMS() {
+            const phone = document.getElementById('smsPhone').value;
+            const msg = document.getElementById('smsMessage').value;
+            
+            if (!phone) {
+                showToast('Please enter phone number', 'error');
+                return;
+            }
+            
+            const text = `sms:${phone}?body=${encodeURIComponent(msg)}`;
+            generateFromText(text);
+        }
+
+        function generateFromText(text) {
+            const canvas = document.createElement('canvas');
+            QRCode.toCanvas(canvas, text, {
+                width: 512,
+                errorCorrectionLevel: 'M',
+                color: { dark: '#000000', light: '#ffffff' },
+                margin: 2
+            }, function(error) {
+                if (error) {
+                    showToast('Error generating QR code: ' + error.message, 'error');
+                    return;
+                }
+
+                switchTab('generator');
+                setTimeout(() => {
+                    const display = document.getElementById('qrDisplay');
+                    display.innerHTML = '';
+                    display.appendChild(canvas);
+
+                    currentQR = canvas;
+                    document.getElementById('downloadBtn').disabled = false;
+                    document.getElementById('copyBtn').disabled = false;
+                    document.getElementById('shareBtn').disabled = false;
+
+                    showToast('QR code generated successfully!', 'success');
+                }, 100);
+            });
+        }
+
+        // Toast Notification
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = `toast ${type} show`;
+            toast.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    if (document.body.contains(toast)) {
+                        document.body.removeChild(toast);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        // File drag and drop
+        const fileDrop = document.querySelector('.file-drop');
+        
+        fileDrop.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            fileDrop.classList.add('dragover');
+        });
+        
+        fileDrop.addEventListener('dragleave', () => {
+            fileDrop.classList.remove('dragover');
+        });
+        
+        fileDrop.addEventListener('drop', (e) => {
+            e.preventDefault();
+            fileDrop.classList.remove('dragover');
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0 && files[0].type.startsWith('image/')) {
+                scanFile({ files: [files[0]] });
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM Content Loaded');
+            updateFields();
+            
+            // Check if libraries are loaded
+            setTimeout(() => {
+                if (typeof QRCode === 'undefined') {
+                    console.error('QRCode library failed to load');
+                    showToast('QR Code library failed to load. Please refresh the page.', 'error');
+                } else {
+                    console.log('QRCode library loaded successfully');
+                }
+                
+                if (typeof QrScanner === 'undefined') {
+                    console.error('QrScanner library failed to load');
+                } else {
+                    console.log('QrScanner library loaded successfully');
+                }
+            }, 1000);
+        });
+
+        // Test function for debugging
+        function testLibraries() {
+            console.log('QRCode available:', typeof QRCode !== 'undefined');
+            console.log('QrScanner available:', typeof QrScanner !== 'undefined');
+            
+            if (typeof QRCode !== 'undefined') {
+                showToast('Libraries loaded successfully!', 'success');
+            } else {
+                showToast('Libraries not loaded!', 'error');
+            }
+        }
+    </script>
+</body>
+</html>
