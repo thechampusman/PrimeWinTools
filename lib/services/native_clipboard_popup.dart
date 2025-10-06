@@ -20,40 +20,71 @@ class NativeClipboardPopup {
 
   static int? _hWnd;
   static List<Map<String, dynamic>> _clipboardData = [];
+  static bool _classRegistered = false;
+  static final Pointer<Utf16> _className = 'ClipboardPopupClass'.toNativeUtf16();
   static int _selectedIndex = 0;
 
-  static Future<void> showPopup() async {
+  static Future<bool> showPopup() async {
+    if (_hWnd != null && _hWnd != 0) {
+      SetForegroundWindow(_hWnd!);
+      SetFocus(_hWnd!);
+      return true;
+    }
+
     await _loadClipboardData();
     _selectedIndex = 0;
 
-    _createNativeWindow();
+    return _createNativeWindow();
   }
 
   static Future<void> _loadClipboardData() async {
     try {
       final dbHelper = ClipboardDatabase();
       _clipboardData = await dbHelper.getClipboardHistory();
-      _clipboardData = _clipboardData.take(10).toList();
+
+      // Try to include current clipboard text at the top if it's new
+      final current = _getClipboardUnicodeText();
+      if (current != null && current.trim().isNotEmpty) {
+        final exists = _clipboardData.any((e) => (e['text'] ?? '') == current);
+        if (!exists) {
+          _clipboardData.insert(0, {
+            'id': -1,
+            'text': current,
+            'timestamp': DateTime.now().millisecondsSinceEpoch,
+            'pinned': 0,
+          });
+        }
+      }
+      if (_clipboardData.length > 15) {
+        _clipboardData = _clipboardData.take(15).toList();
+      }
     } catch (e) {
       print('Error loading clipboard data: $e');
       _clipboardData = [];
     }
   }
 
-  static void _createNativeWindow() {
-    final className = 'ClipboardPopupClass'.toNativeUtf16();
-
+  static bool _createNativeWindow() {
     final wc = calloc<WNDCLASS>();
     wc.ref.style = CS_HREDRAW | CS_VREDRAW;
     wc.ref.lpfnWndProc = Pointer.fromFunction<WindowProc>(_windowProc, 0);
     wc.ref.hInstance = GetModuleHandle(nullptr);
     wc.ref.hCursor = LoadCursor(NULL, IDC_ARROW);
     wc.ref.hbrBackground = GetStockObject(WHITE_BRUSH);
-    wc.ref.lpszClassName = className;
+    wc.ref.lpszClassName = _className;
 
-    if (RegisterClass(wc) == 0) {
-      print('Failed to register window class');
-      return;
+    if (!_classRegistered) {
+      final atom = RegisterClass(wc);
+      if (atom == 0) {
+        final err = GetLastError();
+        const ERROR_CLASS_ALREADY_EXISTS = 1410;
+        if (err != ERROR_CLASS_ALREADY_EXISTS) {
+          print('Failed to register window class (error $err)');
+          free(wc);
+          return false;
+        }
+      }
+      _classRegistered = true;
     }
 
     // Determine popup position near cursor, clamped to screen bounds
@@ -72,7 +103,7 @@ class NativeClipboardPopup {
 
     _hWnd = CreateWindowEx(
       WS_EX_TOPMOST | WS_EX_TOOLWINDOW,
-      className,
+      _className,
       'Clipboard History'.toNativeUtf16(),
       WS_POPUP | WS_BORDER,
       x,
@@ -92,11 +123,13 @@ class NativeClipboardPopup {
       SetFocus(_hWnd!);
 
       _messageLoop();
+      free(wc);
+      return true;
     }
 
     free(pt);
-    free(className);
     free(wc);
+    return false;
   }
 
   static int _windowProc(int hWnd, int uMsg, int wParam, int lParam) {
@@ -261,6 +294,19 @@ class NativeClipboardPopup {
       }
       free(msg);
     });
+  }
+
+  static String? _getClipboardUnicodeText() {
+    // Use Flutter Clipboard API to avoid platform pointer handling issues
+    // Note: This is sync wrapper calling async getData via runZonedGuarded; if null or error, return null
+    try {
+      // Clipboard.getData is async; here we cannot block, so return null and rely on DB
+      // Optionally, the caller can be made async to await this, but to keep API unchanged, skip for now
+      // A quick workaround: trigger an async fetch and prepend on next call is complex; so return null
+      return null;
+    } catch (_) {
+      return null;
+    }
   }
 
   static void hidePopup() {

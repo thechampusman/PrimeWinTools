@@ -90,7 +90,6 @@ class MyTrayListener with TrayListener {
         ClipboardOverlay.show(ctx);
       });
     } else if (menuItem.key == 'exit') {
-      
       await AppServiceManager().disposeAll();
       windowManager.destroy();
     }

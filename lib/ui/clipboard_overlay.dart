@@ -171,19 +171,29 @@ class _ClipboardPopupOverlayState extends State<ClipboardPopupOverlay>
                           child: Focus(
                             autofocus: true,
                             onKeyEvent: (node, event) {
-                              if (event is! KeyDownEvent) return KeyEventResult.ignored;
-                              if (displayed.isEmpty) return KeyEventResult.ignored;
-                              if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
-                                setState(() => _selectedIndex = (_selectedIndex + 1) % displayed.length);
+                              if (event is! KeyDownEvent)
+                                return KeyEventResult.ignored;
+                              if (displayed.isEmpty)
+                                return KeyEventResult.ignored;
+                              if (event.logicalKey ==
+                                  LogicalKeyboardKey.arrowDown) {
+                                setState(() => _selectedIndex =
+                                    (_selectedIndex + 1) % displayed.length);
                                 return KeyEventResult.handled;
                               }
-                              if (event.logicalKey == LogicalKeyboardKey.arrowUp) {
-                                setState(() => _selectedIndex = (_selectedIndex - 1 + displayed.length) % displayed.length);
+                              if (event.logicalKey ==
+                                  LogicalKeyboardKey.arrowUp) {
+                                setState(() => _selectedIndex =
+                                    (_selectedIndex - 1 + displayed.length) %
+                                        displayed.length);
                                 return KeyEventResult.handled;
                               }
-                              if (event.logicalKey == LogicalKeyboardKey.delete) {
+                              if (event.logicalKey ==
+                                  LogicalKeyboardKey.delete) {
                                 final item = displayed[_selectedIndex];
-                                ClipboardDatabase().deleteClipboardEntry(item['id'] as int).then((_) => _loadClipboardHistory());
+                                ClipboardDatabase()
+                                    .deleteClipboardEntry(item['id'] as int)
+                                    .then((_) => _loadClipboardHistory());
                                 return KeyEventResult.handled;
                               }
                               return KeyEventResult.ignored;
@@ -255,30 +265,46 @@ class _ClipboardPopupOverlayState extends State<ClipboardPopupOverlay>
                                   ),
                                   // Search bar
                                   Container(
-                                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+                                    padding: const EdgeInsets.fromLTRB(
+                                        16, 12, 16, 8),
                                     child: TextField(
                                       controller: _searchController,
                                       autofocus: true,
                                       onChanged: (_) => setState(() {}),
-                                      style: const TextStyle(color: Colors.white),
+                                      style:
+                                          const TextStyle(color: Colors.white),
                                       decoration: InputDecoration(
-                                        hintText: 'Search clips (Esc to close, Enter to copy)',
-                                        hintStyle: TextStyle(color: Colors.white.withOpacity(0.6)),
-                                        prefixIcon: const Icon(Icons.search, color: Colors.white70),
+                                        hintText:
+                                            'Search clips (Esc to close, Enter to copy)',
+                                        hintStyle: TextStyle(
+                                            color:
+                                                Colors.white.withOpacity(0.6)),
+                                        prefixIcon: const Icon(Icons.search,
+                                            color: Colors.white70),
                                         filled: true,
                                         fillColor: const Color(0xFF3A3A3A),
-                                        contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                                        contentPadding:
+                                            const EdgeInsets.symmetric(
+                                                vertical: 10, horizontal: 12),
                                         border: OutlineInputBorder(
-                                          borderRadius: BorderRadius.circular(10),
-                                          borderSide: BorderSide(color: Colors.white.withOpacity(0.1)),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          borderSide: BorderSide(
+                                              color: Colors.white
+                                                  .withOpacity(0.1)),
                                         ),
                                         enabledBorder: OutlineInputBorder(
-                                          borderRadius: BorderRadius.circular(10),
-                                          borderSide: BorderSide(color: Colors.white.withOpacity(0.1)),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          borderSide: BorderSide(
+                                              color: Colors.white
+                                                  .withOpacity(0.1)),
                                         ),
                                         focusedBorder: OutlineInputBorder(
-                                          borderRadius: BorderRadius.circular(10),
-                                          borderSide: const BorderSide(color: Color(0xFF6366F1)),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          borderSide: const BorderSide(
+                                              color: Color(0xFF6366F1)),
                                         ),
                                       ),
                                     ),
@@ -287,7 +313,8 @@ class _ClipboardPopupOverlayState extends State<ClipboardPopupOverlay>
                                     child: displayed.isEmpty
                                         ? const Center(
                                             child: Column(
-                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
                                               children: [
                                                 Icon(
                                                   Icons.content_paste_off,
@@ -311,19 +338,23 @@ class _ClipboardPopupOverlayState extends State<ClipboardPopupOverlay>
                                             itemBuilder: (context, index) {
                                               final item = displayed[index];
                                               return Container(
-                                                margin: const EdgeInsets.only(bottom: 8),
+                                                margin: const EdgeInsets.only(
+                                                    bottom: 8),
                                                 decoration: BoxDecoration(
                                                   color: _selectedIndex == index
                                                       ? const Color(0xFF474B7A)
                                                       : const Color(0xFF3D3D3D),
-                                                  borderRadius: BorderRadius.circular(12),
+                                                  borderRadius:
+                                                      BorderRadius.circular(12),
                                                   border: Border.all(
-                                                    color: Colors.grey.withOpacity(0.2),
+                                                    color: Colors.grey
+                                                        .withOpacity(0.2),
                                                     width: 1,
                                                   ),
                                                 ),
                                                 child: ListTile(
-                                                  contentPadding: const EdgeInsets.all(12),
+                                                  contentPadding:
+                                                      const EdgeInsets.all(12),
                                                   leading: const Icon(
                                                     Icons.text_snippet,
                                                     color: Color(0xFF6366F1),
@@ -336,47 +367,87 @@ class _ClipboardPopupOverlayState extends State<ClipboardPopupOverlay>
                                                       fontSize: 14,
                                                     ),
                                                     maxLines: 2,
-                                                    overflow: TextOverflow.ellipsis,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
                                                   ),
                                                   subtitle: Row(
                                                     children: [
-                                                      if ((item['pinned'] ?? 0) == 1)
+                                                      if ((item['pinned'] ??
+                                                              0) ==
+                                                          1)
                                                         Container(
-                                                          margin: const EdgeInsets.only(right: 8),
-                                                          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                                                          decoration: BoxDecoration(
-                                                            color: const Color(0xFFFFD166).withOpacity(0.15),
-                                                            borderRadius: BorderRadius.circular(6),
-                                                            border: Border.all(color: const Color(0xFFFFD166).withOpacity(0.4)),
+                                                          margin:
+                                                              const EdgeInsets
+                                                                  .only(
+                                                                  right: 8),
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .symmetric(
+                                                                  horizontal: 6,
+                                                                  vertical: 2),
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: const Color(
+                                                                    0xFFFFD166)
+                                                                .withOpacity(
+                                                                    0.15),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        6),
+                                                            border: Border.all(
+                                                                color: const Color(
+                                                                        0xFFFFD166)
+                                                                    .withOpacity(
+                                                                        0.4)),
                                                           ),
                                                           child: const Row(
-                                                            mainAxisSize: MainAxisSize.min,
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
                                                             children: [
-                                                              Icon(Icons.push_pin, size: 12, color: Color(0xFFFFD166)),
-                                                              SizedBox(width: 4),
-                                                              Text('Pinned', style: TextStyle(color: Color(0xFFFFD166), fontSize: 11)),
+                                                              Icon(
+                                                                  Icons
+                                                                      .push_pin,
+                                                                  size: 12,
+                                                                  color: Color(
+                                                                      0xFFFFD166)),
+                                                              SizedBox(
+                                                                  width: 4),
+                                                              Text('Pinned',
+                                                                  style: TextStyle(
+                                                                      color: Color(
+                                                                          0xFFFFD166),
+                                                                      fontSize:
+                                                                          11)),
                                                             ],
                                                           ),
                                                         ),
                                                       Text(
-                                                        _formatTimestamp(item['timestamp']),
+                                                        _formatTimestamp(
+                                                            item['timestamp']),
                                                         style: TextStyle(
-                                                          color: Colors.grey.withOpacity(0.7),
+                                                          color: Colors.grey
+                                                              .withOpacity(0.7),
                                                           fontSize: 12,
                                                         ),
                                                       ),
                                                     ],
                                                   ),
                                                   onTap: () async {
-                                                    await _copyToClipboard(item['text'] ?? '');
+                                                    await _copyToClipboard(
+                                                        item['text'] ?? '');
                                                   },
                                                   trailing: Wrap(
                                                     spacing: 4,
                                                     children: [
                                                       IconButton(
-                                                        tooltip: 'Copy as plain text',
+                                                        tooltip:
+                                                            'Copy as plain text',
                                                         onPressed: () async {
-                                                          await _copyPlainAndClose(item['text'] ?? '');
+                                                          await _copyPlainAndClose(
+                                                              item['text'] ??
+                                                                  '');
                                                         },
                                                         icon: const Icon(
                                                           Icons.text_format,
@@ -385,29 +456,61 @@ class _ClipboardPopupOverlayState extends State<ClipboardPopupOverlay>
                                                         ),
                                                       ),
                                                       IconButton(
-                                                        tooltip: (item['pinned'] ?? 0) == 1 ? 'Unpin' : 'Pin',
+                                                        tooltip:
+                                                            (item['pinned'] ??
+                                                                        0) ==
+                                                                    1
+                                                                ? 'Unpin'
+                                                                : 'Pin',
                                                         onPressed: () async {
-                                                          final dbHelper = ClipboardDatabase();
-                                                          final newVal = (item['pinned'] ?? 0) == 1 ? 0 : 1;
-                                                          await dbHelper.updatePinStatus(item['id'] as int, newVal);
+                                                          final dbHelper =
+                                                              ClipboardDatabase();
+                                                          final newVal =
+                                                              (item['pinned'] ??
+                                                                          0) ==
+                                                                      1
+                                                                  ? 0
+                                                                  : 1;
+                                                          await dbHelper
+                                                              .updatePinStatus(
+                                                                  item['id']
+                                                                      as int,
+                                                                  newVal);
                                                           await _loadClipboardHistory();
                                                         },
                                                         icon: Icon(
-                                                          (item['pinned'] ?? 0) == 1 ? Icons.push_pin : Icons.push_pin_outlined,
-                                                          color: (item['pinned'] ?? 0) == 1 ? const Color(0xFFFFD166) : Colors.white70,
+                                                          (item['pinned'] ??
+                                                                      0) ==
+                                                                  1
+                                                              ? Icons.push_pin
+                                                              : Icons
+                                                                  .push_pin_outlined,
+                                                          color:
+                                                              (item['pinned'] ??
+                                                                          0) ==
+                                                                      1
+                                                                  ? const Color(
+                                                                      0xFFFFD166)
+                                                                  : Colors
+                                                                      .white70,
                                                           size: 18,
                                                         ),
                                                       ),
                                                       IconButton(
                                                         tooltip: 'Delete',
                                                         onPressed: () async {
-                                                          final dbHelper = ClipboardDatabase();
-                                                          await dbHelper.deleteClipboardEntry(item['id'] as int);
+                                                          final dbHelper =
+                                                              ClipboardDatabase();
+                                                          await dbHelper
+                                                              .deleteClipboardEntry(
+                                                                  item['id']
+                                                                      as int);
                                                           await _loadClipboardHistory();
                                                         },
                                                         icon: Icon(
                                                           Icons.delete_outline,
-                                                          color: Colors.red.withOpacity(0.7),
+                                                          color: Colors.red
+                                                              .withOpacity(0.7),
                                                           size: 18,
                                                         ),
                                                       ),

@@ -35,9 +35,9 @@ class GlobalHotKeyManager {
     print('🚀 Showing clipboard popup (native) ...');
 
     try {
-      // Always show native popup to avoid bringing app window to front
-      await NativeClipboardPopup.showPopup();
-      print('✅ Native clipboard popup shown!');
+  // Always show native popup to avoid bringing app window to front
+  final ok = await NativeClipboardPopup.showPopup();
+  print(ok ? '✅ Native clipboard popup shown!' : '❌ Failed to show native popup');
     } catch (e) {
       print('❌ Error showing clipboard overlay: $e');
     }
