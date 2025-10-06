@@ -2755,6 +2755,18 @@ class _ScanOptionsDialogState extends State<ScanOptionsDialog> {
                                     style: TextStyle(color: Colors.grey[700], fontSize: 12),
                                   ),
                                 ),
+                                const SizedBox(width: 8),
+                                TextButton.icon(
+                                  onPressed: _addCommonPaths,
+                                  icon: const Icon(Icons.auto_awesome, size: 16),
+                                  label: const Text('Add Common Locations'),
+                                  style: TextButton.styleFrom(
+                                    foregroundColor: const Color(0xFF306998),
+                                    backgroundColor: const Color(0xFF306998).withOpacity(0.08),
+                                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                                  ),
+                                ),
                               ],
                             )
                           : ConstrainedBox(
@@ -2764,6 +2776,20 @@ class _ScanOptionsDialogState extends State<ScanOptionsDialog> {
                                   spacing: 8,
                                   runSpacing: 8,
                                   children: [
+                                    Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: TextButton.icon(
+                                        onPressed: _addCommonPaths,
+                                        icon: const Icon(Icons.auto_awesome, size: 16),
+                                        label: const Text('Add Common Locations'),
+                                        style: TextButton.styleFrom(
+                                          foregroundColor: const Color(0xFF306998),
+                                          backgroundColor: const Color(0xFF306998).withOpacity(0.08),
+                                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                                        ),
+                                      ),
+                                    ),
                                     for (final p in _customPaths)
                                       Chip(
                                         avatar: const Icon(Icons.folder, size: 16, color: Color(0xFF306998)),
@@ -2869,6 +2895,27 @@ class _ScanOptionsDialogState extends State<ScanOptionsDialog> {
         _customPaths.add(result);
       });
     }
+  }
+
+  void _addCommonPaths() {
+    final userProfile = Platform.environment['USERPROFILE'] ?? '';
+    final candidates = [
+      if (userProfile.isNotEmpty) '$userProfile\\anaconda3',
+      if (userProfile.isNotEmpty) '$userProfile\\miniconda3',
+      if (userProfile.isNotEmpty) '$userProfile\\Documents',
+      if (userProfile.isNotEmpty) '$userProfile\\Desktop',
+      'C:\\Projects',
+      'D:\\Projects',
+      'C:\\Development',
+      'D:\\Development',
+      'C:\\Code',
+      'D:\\Code',
+    ];
+    final toAdd = candidates.where((p) => !_customPaths.contains(p)).toList();
+    if (toAdd.isEmpty) return;
+    setState(() {
+      _customPaths.addAll(toAdd);
+    });
   }
 }
 
