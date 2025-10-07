@@ -15,7 +15,6 @@ class _CleanerState extends State<Cleaner> {
   String _selectedFolder = '';
   int _totalSize = 0;
 
-  
   Map<String, bool> _cleaningCategories = {
     'temp_files': true,
     'thumbnail_cache': true,
@@ -24,10 +23,8 @@ class _CleanerState extends State<Cleaner> {
     'download_history': false,
   };
 
-  
   Map<String, bool> _expandedCategories = {};
 
-  
   Map<String, List<FileSystemEntity>> _categoryFiles = {};
   Map<String, int> _categorySizes = {};
   Map<String, int> _categoryFileCounts = {};
@@ -69,19 +66,23 @@ class _CleanerState extends State<Cleaner> {
                   for (final p in _scannedFolders)
                     Container(
                       margin: const EdgeInsets.only(right: 6),
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 6),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(999),
-                        border: Border.all(color: const Color(0xFF4CAF50).withOpacity(0.3)),
+                        border: Border.all(
+                            color: const Color(0xFF4CAF50).withOpacity(0.3)),
                       ),
                       child: Row(
                         children: [
-                          const Icon(Icons.chevron_right, size: 16, color: Color(0xFF4CAF50)),
+                          const Icon(Icons.chevron_right,
+                              size: 16, color: Color(0xFF4CAF50)),
                           const SizedBox(width: 4),
                           Text(
                             p,
-                            style: const TextStyle(fontSize: 11, fontFamily: 'monospace'),
+                            style: const TextStyle(
+                                fontSize: 11, fontFamily: 'monospace'),
                           ),
                         ],
                       ),
@@ -502,7 +503,6 @@ class _CleanerState extends State<Cleaner> {
       _categoryFileCounts.clear();
     });
 
-    
     for (String category in _cleaningCategories.keys) {
       if (_cleaningCategories[category] == true) {
         await _scanCategory(category);
@@ -542,7 +542,6 @@ class _CleanerState extends State<Cleaner> {
           break;
       }
 
-      
       for (FileSystemEntity file in categoryFileList) {
         if (file is File) {
           try {
@@ -557,7 +556,7 @@ class _CleanerState extends State<Cleaner> {
         _categorySizes[category] = categorySize;
         _categoryFileCounts[category] = categoryFileList.length;
         _totalSize += categorySize;
-        _tempFiles.addAll(categoryFileList); 
+        _tempFiles.addAll(categoryFileList);
       });
     } catch (e) {
       print('Error scanning category $category: $e');
@@ -681,14 +680,12 @@ class _CleanerState extends State<Cleaner> {
               const SizedBox(height: 12),
               SizedBox(
                 height: (_expandedCategories[category] == true)
-                    ? (files.length * 50.0)
-                        .clamp(120, 300) 
-                    : 120, 
+                    ? (files.length * 50.0).clamp(120, 300)
+                    : 120,
                 child: ListView.separated(
                   itemCount: (_expandedCategories[category] == true)
-                      ? files.length 
-                      : files.length
-                          .clamp(0, 5), 
+                      ? files.length
+                      : files.length.clamp(0, 5),
                   separatorBuilder: (context, index) =>
                       const SizedBox(height: 6),
                   itemBuilder: (context, index) {
@@ -858,13 +855,11 @@ class _CleanerState extends State<Cleaner> {
     for (String path in thumbnailPaths) {
       try {
         if (path.endsWith('.db')) {
-          
           File file = File(path);
           if (await file.exists()) {
             categoryFileList.add(file);
           }
         } else {
-          
           Directory directory = Directory(path);
           if (await directory.exists()) {
             await for (FileSystemEntity entity
@@ -920,7 +915,6 @@ class _CleanerState extends State<Cleaner> {
         Directory directory = Directory(path);
         if (await directory.exists()) {
           if (path.contains('Firefox')) {
-            
             await for (FileSystemEntity profileEntity in directory.list()) {
               if (profileEntity is Directory) {
                 Directory cacheDir = Directory('${profileEntity.path}\\cache2');
@@ -935,7 +929,6 @@ class _CleanerState extends State<Cleaner> {
               }
             }
           } else {
-            
             await for (FileSystemEntity entity in directory.list()) {
               if (entity is File) {
                 categoryFileList.add(entity);

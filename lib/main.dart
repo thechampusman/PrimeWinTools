@@ -7,10 +7,12 @@ import 'package:tray_manager/tray_manager.dart';
 import 'package:window_manager/window_manager.dart';
 
 import 'clipboard/DataBase/ClipBoardDataBase.dart';
+import 'app/navigation_service.dart';
 import 'services/hotkey_manager.dart';
 import 'services/app_service_manager.dart';
+import 'ui/clipboard_overlay.dart';
 
-final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+// navigatorKey moved to app/navigation_service.dart to be shared across services
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -82,6 +84,11 @@ class MyTrayListener with TrayListener {
       _showAndFocusWindow();
     } else if (menuItem.key == 'clipboard') {
       _showAndFocusWindow();
+      // Attempt to show clipboard overlay after focusing the app
+      Future.delayed(const Duration(milliseconds: 120), () {
+        final ctx = navigatorKey.currentContext;
+        ClipboardOverlay.show(ctx);
+      });
     } else if (menuItem.key == 'exit') {
       
       await AppServiceManager().disposeAll();
