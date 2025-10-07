@@ -10,12 +10,21 @@ class NativeClipboardPopup {
   static const int WM_PAINT = 0x000F;
   static const int WM_DESTROY = 0x0002;
   static const int WM_LBUTTONDOWN = 0x0201;
+  static const int WM_KEYDOWN = 0x0100;
+  static const int WM_ACTIVATE = 0x0006;
+  static const int WA_INACTIVE = 0;
+  static const int VK_ESCAPE = 0x1B;
+  static const int VK_RETURN = 0x0D;
+  static const int VK_UP = 0x26;
+  static const int VK_DOWN = 0x28;
 
   static int? _hWnd;
   static List<Map<String, dynamic>> _clipboardData = [];
+  static int _selectedIndex = 0;
 
   static Future<void> showPopup() async {
     await _loadClipboardData();
+    _selectedIndex = 0;
 
     _createNativeWindow();
   }
@@ -47,15 +56,29 @@ class NativeClipboardPopup {
       return;
     }
 
+    // Determine popup position near cursor, clamped to screen bounds
+    final pt = calloc<POINT>();
+    GetCursorPos(pt);
+    final screenW = GetSystemMetrics(SM_CXSCREEN);
+    final screenH = GetSystemMetrics(SM_CYSCREEN);
+    final winW = 400;
+    final winH = 500;
+    int x = pt.ref.x - (winW ~/ 2);
+    int y = pt.ref.y + 16; // below cursor
+    if (x < 8) x = 8;
+    if (y < 8) y = 8;
+    if (x + winW > screenW - 8) x = screenW - winW - 8;
+    if (y + winH > screenH - 8) y = screenH - winH - 8;
+
     _hWnd = CreateWindowEx(
       WS_EX_TOPMOST | WS_EX_TOOLWINDOW,
       className,
       'Clipboard History'.toNativeUtf16(),
       WS_POPUP | WS_BORDER,
-      100,
-      100,
-      400,
-      500,
+      x,
+      y,
+      winW,
+      winH,
       NULL,
       NULL,
       GetModuleHandle(nullptr),
@@ -66,10 +89,12 @@ class NativeClipboardPopup {
       ShowWindow(_hWnd!, SW_SHOW);
       UpdateWindow(_hWnd!);
       SetForegroundWindow(_hWnd!);
+      SetFocus(_hWnd!);
 
       _messageLoop();
     }
 
+    free(pt);
     free(className);
     free(wc);
   }
@@ -81,6 +106,17 @@ class NativeClipboardPopup {
         break;
       case WM_LBUTTONDOWN:
         _handleClick(hWnd, LOWORD(lParam), HIWORD(lParam));
+        break;
+      case WM_KEYDOWN:
+        _handleKey(hWnd, wParam);
+        break;
+      case WM_ACTIVATE:
+        // Close when window becomes inactive (focus lost)
+        if (LOWORD(wParam) == WA_INACTIVE) {
+          DestroyWindow(hWnd);
+          _hWnd = null;
+          return 0;
+        }
         break;
       case WM_CLOSE:
       case WM_DESTROY:
@@ -99,8 +135,8 @@ class NativeClipboardPopup {
 
     final rect = calloc<RECT>();
     GetClientRect(hWnd, rect);
-    final hBrush = CreateSolidBrush(RGB(45, 45, 45));
-    FillRect(hdc, rect, hBrush);
+    final bgBrush = CreateSolidBrush(RGB(45, 45, 45));
+    FillRect(hdc, rect, bgBrush);
 
     SetTextColor(hdc, RGB(255, 255, 255));
     SetBkMode(hdc, TRANSPARENT);
@@ -116,6 +152,19 @@ class NativeClipboardPopup {
           (item['text'] as String? ?? '').length > 50
               ? 50
               : (item['text'] as String? ?? '').length);
+      // Highlight selected row
+      if (i == _selectedIndex) {
+        final selRect = calloc<RECT>();
+        selRect.ref.left = 12;
+        selRect.ref.top = yPos - 6;
+        selRect.ref.right = rect.ref.right - 12;
+        selRect.ref.bottom = yPos + 26;
+        final selBrush = CreateSolidBrush(RGB(71, 75, 122));
+        FillRect(hdc, selRect, selBrush);
+        DeleteObject(selBrush);
+        free(selRect);
+      }
+
       final itemText = '${i + 1}. $text'.toNativeUtf16();
 
       TextOut(hdc, 20, yPos, itemText, itemText.length ~/ 2);
@@ -131,7 +180,7 @@ class NativeClipboardPopup {
     }
 
     free(headerText);
-    DeleteObject(hBrush);
+    DeleteObject(bgBrush);
     free(rect);
     EndPaint(hWnd, ps);
     free(ps);
@@ -149,6 +198,30 @@ class NativeClipboardPopup {
           _hWnd = null;
         }
       }
+    }
+  }
+
+  static void _handleKey(int hWnd, int vk) {
+    if (_clipboardData.isEmpty) return;
+    switch (vk) {
+      case VK_ESCAPE:
+        DestroyWindow(hWnd);
+        _hWnd = null;
+        return;
+      case VK_UP:
+        if (_selectedIndex > 0) _selectedIndex--;
+        InvalidateRect(hWnd, nullptr, TRUE);
+        return;
+      case VK_DOWN:
+        if (_selectedIndex < _clipboardData.length - 1) _selectedIndex++;
+        InvalidateRect(hWnd, nullptr, TRUE);
+        return;
+      case VK_RETURN:
+        final text = _clipboardData[_selectedIndex]['text'] as String? ?? '';
+        _copyToClipboard(text);
+        DestroyWindow(hWnd);
+        _hWnd = null;
+        return;
     }
   }
 
@@ -178,18 +251,16 @@ class NativeClipboardPopup {
 
   static void _messageLoop() {
     final msg = calloc<MSG>();
-
-    Future.delayed(Duration.zero, () async {
-      for (int i = 0; i < 1000 && _hWnd != null; i++) {
+    Future(() async {
+      while (_hWnd != null) {
         if (PeekMessage(msg, _hWnd ?? 0, 0, 0, PM_REMOVE) != 0) {
           TranslateMessage(msg);
           DispatchMessage(msg);
         }
         await Future.delayed(const Duration(milliseconds: 10));
       }
+      free(msg);
     });
-
-    free(msg);
   }
 
   static void hidePopup() {

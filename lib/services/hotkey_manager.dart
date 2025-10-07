@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:hotkey_manager/hotkey_manager.dart';
-import '../app/navigation_service.dart';
-import '../ui/clipboard_overlay.dart';
+import 'dart:async';
+import 'native_clipboard_popup.dart';
 
 class GlobalHotKeyManager {
   static bool _isInitialized = false;
@@ -32,15 +32,12 @@ class GlobalHotKeyManager {
   }
 
   static Future<void> _showClipboardPopup() async {
-    print('🚀 Toggling Flutter clipboard overlay...');
+    print('🚀 Showing clipboard popup (native) ...');
 
     try {
-      final ok = ClipboardOverlay.show(navigatorKey.currentContext);
-      if (ok) {
-        print('✅ Clipboard overlay shown!');
-      } else {
-        print('❌ Failed to show clipboard overlay (no Overlay)');
-      }
+      // Always show native popup to avoid bringing app window to front
+      await NativeClipboardPopup.showPopup();
+      print('✅ Native clipboard popup shown!');
     } catch (e) {
       print('❌ Error showing clipboard overlay: $e');
     }
