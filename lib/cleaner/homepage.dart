@@ -38,6 +38,63 @@ class _CleanerState extends State<Cleaner> {
     'C:\\Windows\\Prefetch',
   ];
 
+  Widget _buildScannedFoldersStrip() {
+    if (_scannedFolders.isEmpty) return const SizedBox.shrink();
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      decoration: BoxDecoration(
+        color: const Color(0xFF4CAF50).withOpacity(0.06),
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: const Color(0xFF4CAF50).withOpacity(0.25)),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Icon(Icons.folder, color: Color(0xFF4CAF50), size: 18),
+          const SizedBox(width: 8),
+          const Text(
+            'Default scan locations:',
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w700,
+              color: Color(0xFF1B5E20),
+            ),
+          ),
+          const SizedBox(width: 8),
+          Expanded(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  for (final p in _scannedFolders)
+                    Container(
+                      margin: const EdgeInsets.only(right: 6),
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(999),
+                        border: Border.all(color: const Color(0xFF4CAF50).withOpacity(0.3)),
+                      ),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.chevron_right, size: 16, color: Color(0xFF4CAF50)),
+                          const SizedBox(width: 4),
+                          Text(
+                            p,
+                            style: const TextStyle(fontSize: 11, fontFamily: 'monospace'),
+                          ),
+                        ],
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,6 +106,9 @@ class _CleanerState extends State<Cleaner> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Recently scanned folders quick view
+            _buildScannedFoldersStrip(),
+            const SizedBox(height: 16),
             Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(

@@ -82,7 +82,13 @@ class _AboutState extends State<About> {
                   flex: 3,
                   child: Column(
                     children: [
+                      // Developer info adds credibility and context
+                      _buildDeveloperInfoCard(),
+                      const SizedBox(height: 20),
                       _buildFeaturesGrid(),
+                      const SizedBox(height: 20),
+                      // Technical specs help users understand requirements
+                      _buildTechnicalSpecsCard(),
                       const SizedBox(height: 20),
                       _buildLegalInfoCard(),
                     ],
