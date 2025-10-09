@@ -2629,226 +2629,220 @@ class _ScanOptionsDialogState extends State<ScanOptionsDialog> {
 
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-      title: Row(
-        children: [
-          Icon(Icons.search, color: Color(0xFF306998)),
-          SizedBox(width: 8),
-          Text('Scan Options'),
-        ],
-      ),
-      content: Container(
-        width: 500,
+    return Dialog(
+      backgroundColor: Colors.transparent,
+      insetPadding: const EdgeInsets.all(24),
+      child: Container
+        (
+        width: 640,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.08),
+              blurRadius: 20,
+              offset: const Offset(0, 10),
+            ),
+          ],
+          border: Border.all(color: const Color(0xFFE5E7EB)),
+        ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              'Choose how to scan for Python environments:',
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.grey[600],
-              ),
-            ),
-            SizedBox(height: 16),
-
-            // Full PC Scan Option
-            Card(
-              elevation: 2,
-              child: RadioListTile<String>(
-                title: Row(
-                  children: [
-                    Icon(Icons.computer, color: Color(0xFF306998)),
-                    SizedBox(width: 8),
-                    Text('Scan All Local Drives'),
-                  ],
+            // Header
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Color(0xFF306998), Color(0xFF4B79A1)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
                 ),
-                subtitle: Padding(
-                  padding: EdgeInsets.only(left: 32),
-                  child: Text(
-                    'Scans all local drives (C:, D:, etc.) for Python environments.\nThis may take several minutes.',
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ),
-                value: 'full',
-                groupValue: _selectedScanType,
-                onChanged: (value) {
-                  setState(() {
-                    _selectedScanType = value!;
-                  });
-                },
-                activeColor: Color(0xFF306998),
+                borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
               ),
-            ),
-
-            SizedBox(height: 8),
-
-            // Custom Path Scan Option
-            Card(
-              elevation: 2,
-              child: Column(
-                children: [
-                  RadioListTile<String>(
-                    title: Row(
+              child: Row(
+                children: const [
+                  Icon(Icons.search, color: Colors.white),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(Icons.folder_special, color: Color(0xFF306998)),
-                        SizedBox(width: 8),
-                        Text('Scan Specific Locations'),
+                        Text(
+                          'Scan Environments',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        SizedBox(height: 2),
+                        Text(
+                          'Choose where to look for Python environments',
+                          style: TextStyle(
+                            color: Colors.white70,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                       ],
                     ),
-                    subtitle: Padding(
-                      padding: EdgeInsets.only(left: 32),
-                      child: Text(
-                        'Choose specific folders or drives to scan.',
-                        style: TextStyle(fontSize: 12),
-                      ),
-                    ),
-                    value: 'custom',
-                    groupValue: _selectedScanType,
-                    onChanged: (value) {
-                      setState(() {
-                        _selectedScanType = value!;
-                      });
-                    },
-                    activeColor: Color(0xFF306998),
                   ),
-                  if (_selectedScanType == 'custom') ...[
-                    Padding(
-                      padding: EdgeInsets.all(16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  'Selected locations:',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 13,
-                                  ),
-                                ),
-                              ),
-                              ElevatedButton.icon(
-                                onPressed: _addCustomPath,
-                                icon: Icon(Icons.add, size: 16),
-                                label: Text('Add Path'),
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color(0xFF306998),
-                                  foregroundColor: Colors.white,
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 12, vertical: 8),
-                                  textStyle: TextStyle(fontSize: 12),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 8),
-                          Container(
-                            constraints: BoxConstraints(maxHeight: 150),
-                            child: _customPaths.isEmpty
-                                ? Container(
-                                    padding: EdgeInsets.all(16),
-                                    decoration: BoxDecoration(
-                                      color: Colors.grey[100],
-                                      borderRadius: BorderRadius.circular(8),
-                                      border:
-                                          Border.all(color: Colors.grey[300]!),
-                                    ),
-                                    child: Row(
-                                      children: [
-                                        Icon(Icons.info_outline,
-                                            color: Colors.grey[600], size: 16),
-                                        SizedBox(width: 8),
-                                        Text(
-                                          'No locations selected. Click "Add Path" to choose folders or drives.',
-                                          style: TextStyle(
-                                            color: Colors.grey[600],
-                                            fontSize: 12,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  )
-                                : ListView.builder(
-                                    shrinkWrap: true,
-                                    itemCount: _customPaths.length,
-                                    itemBuilder: (context, index) {
-                                      return Container(
-                                        margin: EdgeInsets.only(bottom: 4),
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 12, vertical: 8),
-                                        decoration: BoxDecoration(
-                                          color: Color(0xFF306998)
-                                              .withOpacity(0.1),
-                                          borderRadius:
-                                              BorderRadius.circular(6),
-                                          border: Border.all(
-                                              color: Color(0xFF306998)
-                                                  .withOpacity(0.3)),
-                                        ),
-                                        child: Row(
-                                          children: [
-                                            Icon(Icons.folder,
-                                                size: 16,
-                                                color: Color(0xFF306998)),
-                                            SizedBox(width: 8),
-                                            Expanded(
-                                              child: Text(
-                                                _customPaths[index],
-                                                style: TextStyle(
-                                                  fontSize: 12,
-                                                  fontFamily: 'monospace',
-                                                ),
-                                                overflow: TextOverflow.ellipsis,
-                                              ),
-                                            ),
-                                            IconButton(
-                                              onPressed: () {
-                                                setState(() {
-                                                  _customPaths.removeAt(index);
-                                                });
-                                              },
-                                              icon: Icon(Icons.close, size: 16),
-                                              constraints: BoxConstraints(
-                                                  minWidth: 24, minHeight: 24),
-                                              padding: EdgeInsets.zero,
-                                              splashRadius: 12,
-                                            ),
-                                          ],
-                                        ),
-                                      );
-                                    },
-                                  ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
                 ],
               ),
             ),
 
-            SizedBox(height: 16),
-            Container(
-              padding: EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Colors.blue[50],
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: Colors.blue[200]!),
-              ),
-              child: Row(
+            // Body
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(Icons.info_outline, color: Colors.blue[700], size: 16),
-                  SizedBox(width: 8),
-                  Expanded(
-                    child: Text(
-                      'The scanner looks for activation scripts like:\\n• .venv\\Scripts\\activate.ps1\\n• venv\\Scripts\\activate.bat\\n• conda\\Scripts\\activate',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.blue[700],
+                  // Full scan option card
+                  _OptionCard(
+                    selected: _selectedScanType == 'full',
+                    onTap: () => setState(() => _selectedScanType = 'full'),
+                    leading: const Icon(Icons.computer, color: Color(0xFF306998)),
+                    title: 'Scan all local drives',
+                    badge: 'Recommended',
+                    description:
+                        'Searches all local drives (C:, D:, etc.) for Python environments. This may take several minutes.',
+                  ),
+                  const SizedBox(height: 12),
+
+                  // Custom paths option card
+                  _OptionCard(
+                    selected: _selectedScanType == 'custom',
+                    onTap: () => setState(() => _selectedScanType = 'custom'),
+                    leading: const Icon(Icons.folder_special, color: Color(0xFF306998)),
+                    title: 'Scan specific locations',
+                    description: 'Choose folders or drives you want to include in the scan.',
+                    trailing: _selectedScanType == 'custom'
+                        ? TextButton.icon(
+                            onPressed: _addCustomPath,
+                            icon: const Icon(Icons.add, size: 18),
+                            label: const Text('Add Path'),
+                            style: TextButton.styleFrom(
+                              foregroundColor: const Color(0xFF306998),
+                              backgroundColor: const Color(0xFF306998).withOpacity(0.08),
+                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                            ),
+                          )
+                        : null,
+                  ),
+
+                  if (_selectedScanType == 'custom') ...[
+                    const SizedBox(height: 10),
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[50],
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: const Color(0xFFE5E7EB)),
                       ),
+                      child: _customPaths.isEmpty
+                          ? Row(
+                              children: [
+                                Icon(Icons.info_outline, color: Colors.grey[600], size: 18),
+                                const SizedBox(width: 8),
+                                Expanded(
+                                  child: Text(
+                                    'No locations selected yet. Click "Add Path" to choose folders or drives.',
+                                    style: TextStyle(color: Colors.grey[700], fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            )
+                          : ConstrainedBox(
+                              constraints: const BoxConstraints(maxHeight: 160),
+                              child: SingleChildScrollView(
+                                child: Wrap(
+                                  spacing: 8,
+                                  runSpacing: 8,
+                                  children: [
+                                    for (final p in _customPaths)
+                                      Chip(
+                                        avatar: const Icon(Icons.folder, size: 16, color: Color(0xFF306998)),
+                                        label: Text(
+                                          p,
+                                          style: const TextStyle(fontSize: 12, fontFamily: 'monospace'),
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                        backgroundColor: const Color(0xFF306998).withOpacity(0.08),
+                                        deleteIcon: const Icon(Icons.close, size: 16),
+                                        onDeleted: () {
+                                          setState(() => _customPaths.remove(p));
+                                        },
+                                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                      ),
+                                  ],
+                                ),
+                              ),
+                            ),
                     ),
+                  ],
+
+                  const SizedBox(height: 16),
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFEFF6FF),
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: const Color(0xFFBFDBFE)),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Icon(Icons.info_outline, color: Color(0xFF2563EB), size: 18),
+                        SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            'The scanner looks for activation scripts like:\n• .venv\\Scripts\\activate.ps1\n• venv\\Scripts\\activate.bat\n• conda\\Scripts\\activate',
+                            style: TextStyle(fontSize: 12, color: Color(0xFF1D4ED8)),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            // Footer actions
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                    onPressed: () => Navigator.of(context).pop(),
+                    child: const Text('Cancel'),
+                    style: TextButton.styleFrom(
+                      foregroundColor: const Color(0xFF111827),
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  ElevatedButton(
+                    onPressed: _canStartScan()
+                        ? () {
+                            Navigator.of(context).pop({
+                              'scanType': _selectedScanType,
+                              'customPaths': _customPaths,
+                            });
+                          }
+                        : null,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF306998),
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                    ),
+                    child: const Text('Start Scan'),
                   ),
                 ],
               ),
@@ -2856,27 +2850,6 @@ class _ScanOptionsDialogState extends State<ScanOptionsDialog> {
           ],
         ),
       ),
-      actions: [
-        TextButton(
-          onPressed: () => Navigator.of(context).pop(),
-          child: Text('Cancel'),
-        ),
-        ElevatedButton(
-          onPressed: _canStartScan()
-              ? () {
-                  Navigator.of(context).pop({
-                    'scanType': _selectedScanType,
-                    'customPaths': _customPaths,
-                  });
-                }
-              : null,
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xFF306998),
-            foregroundColor: Colors.white,
-          ),
-          child: Text('Start Scan'),
-        ),
-      ],
     );
   }
 
@@ -2896,5 +2869,116 @@ class _ScanOptionsDialogState extends State<ScanOptionsDialog> {
         _customPaths.add(result);
       });
     }
+  }
+}
+
+class _OptionCard extends StatelessWidget {
+  final bool selected;
+  final VoidCallback? onTap;
+  final Widget leading;
+  final String title;
+  final String? description;
+  final String? badge;
+  final Widget? trailing;
+
+  const _OptionCard({
+    Key? key,
+    required this.selected,
+    required this.onTap,
+    required this.leading,
+    required this.title,
+    this.description,
+    this.badge,
+    this.trailing,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final baseBorder = Border.all(color: const Color(0xFFE5E7EB));
+    final selectedBorder = Border.all(color: const Color(0xFF306998), width: 1.5);
+
+    return InkWell(
+      borderRadius: BorderRadius.circular(12),
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(14),
+        decoration: BoxDecoration(
+          color: selected ? const Color(0xFF306998).withOpacity(0.06) : Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          border: selected ? selectedBorder : baseBorder,
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: 40,
+              height: 40,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: const Color(0xFF306998).withOpacity(0.08),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: leading,
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          title,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xFF111827),
+                          ),
+                        ),
+                      ),
+                      if (badge != null)
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF10B981).withOpacity(0.12),
+                            borderRadius: BorderRadius.circular(999),
+                            border: Border.all(color: const Color(0xFF10B981).withOpacity(0.4)),
+                          ),
+                          child: Text(
+                            badge!,
+                            style: const TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xFF065F46),
+                            ),
+                          ),
+                        ),
+                      if (trailing != null) ...[
+                        const SizedBox(width: 8),
+                        trailing!,
+                      ],
+                    ],
+                  ),
+                  if (description != null) ...[
+                    const SizedBox(height: 4),
+                    Text(
+                      description!,
+                      style: TextStyle(fontSize: 12, color: Colors.grey[700]),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+            Radio<bool>(
+              value: true,
+              groupValue: selected,
+              onChanged: (_) => onTap?.call(),
+              activeColor: const Color(0xFF306998),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
