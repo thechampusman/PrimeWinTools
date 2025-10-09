@@ -54,6 +54,5 @@ installer_simple.iss
 INSTALLER_README.md
 temp_installer/
 Output/
-
-# Website files (moved to separate project)
-index.html
+UDRIVE_README.md
+test_qr.html

@@ -8,6 +8,7 @@ import 'package:window_manager/window_manager.dart';
 
 import 'clipboard/DataBase/ClipBoardDataBase.dart';
 import 'services/hotkey_manager.dart';
+import 'services/app_service_manager.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
@@ -76,12 +77,14 @@ class MyTrayListener with TrayListener {
   }
 
   @override
-  void onTrayMenuItemClick(MenuItem menuItem) {
+  void onTrayMenuItemClick(MenuItem menuItem) async {
     if (menuItem.key == 'show') {
       _showAndFocusWindow();
     } else if (menuItem.key == 'clipboard') {
       _showAndFocusWindow();
     } else if (menuItem.key == 'exit') {
+      
+      await AppServiceManager().disposeAll();
       windowManager.destroy();
     }
   }
@@ -133,9 +136,9 @@ class _MyAppState extends State<MyApp> with WindowListener {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Scaffold(
+      home: const Scaffold(
         backgroundColor: Colors.transparent,
-        body: const Dashboard(),
+        body: Dashboard(),
       ),
     );
   }

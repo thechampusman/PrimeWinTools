@@ -148,7 +148,7 @@ class _AboutState extends State<About> {
           ),
           const SizedBox(height: 8),
           Text(
-            'Professional Windows Utility Suite',
+            'Advanced System Optimization & Privacy Suite',
             style: TextStyle(
               color: Colors.white.withOpacity(0.9),
               fontSize: 18,
@@ -167,7 +167,7 @@ class _AboutState extends State<About> {
               ),
             ),
             child: const Text(
-              'Version 1.0.3 • Build 2025.09.03',
+              'Version 1.1.0 • Build 2025.10.02',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 14,
@@ -497,26 +497,50 @@ class _AboutState extends State<About> {
             children: [
               _buildFeatureCard(
                 '🧹',
-                'System Cleaner',
-                'Clean temp files\nOptimize performance',
+                'Advanced System Cleaner',
+                'Clean temp files\nPrivacy traces removal\nCustomizable categories',
                 const Color(0xFF4CAF50),
               ),
               _buildFeatureCard(
+                '🔒',
+                'Privacy Protection',
+                'Remove thumbnail cache\nBrowser history cleanup\nSecure data removal',
+                const Color(0xFFE91E63),
+              ),
+              _buildFeatureCard(
                 '📋',
-                'Clipboard Manager',
-                '20-day history\nSmart tracking',
+                'Smart Clipboard Manager',
+                '20-day history\nAutomatic tracking\nQuick access overlay',
                 const Color(0xFF2196F3),
+              ),
+              _buildFeatureCard(
+                '📱',
+                'QR Code Generator',
+                'Responsive design\nInstant generation\nMultiple formats',
+                const Color(0xFF673AB7),
               ),
               _buildFeatureCard(
                 '🌐',
                 'Localhost Manager',
-                'Port monitoring\nService detection',
+                'Port monitoring\nService detection\nReal-time status',
                 const Color(0xFF9C27B0),
               ),
               _buildFeatureCard(
+                '⚙️',
+                'Configurable Settings',
+                'Custom clean categories\nPersonalized experience\nSafe operations',
+                const Color(0xFF607D8B),
+              ),
+              _buildFeatureCard(
+                '📊',
+                'Detailed Scanning',
+                'Category-based results\nExpandable file lists\nSize analytics',
+                const Color(0xFFFF5722),
+              ),
+              _buildFeatureCard(
                 '⚡',
-                'Performance',
-                'Native speed\nLow memory usage',
+                'High Performance',
+                'Native speed\nLow memory usage\nEfficient algorithms',
                 const Color(0xFFFF9800),
               ),
             ],
