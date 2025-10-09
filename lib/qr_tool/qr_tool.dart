@@ -30,7 +30,7 @@ class _QRCodeToolState extends State<QRCodeTool> {
 
   void _setupQRTool() {
     qrToolPath = _getQRToolPath();
-    // Don't auto-start server, let user control it
+    
   }
 
   Future<void> _manualStartServer() async {
@@ -63,7 +63,7 @@ class _QRCodeToolState extends State<QRCodeTool> {
 
   Future<void> _startLocalServer() async {
     try {
-      // Try to find an available port
+      
       for (int port = 8088; port <= 8099; port++) {
         try {
           server = await HttpServer.bind('localhost', port);
@@ -71,7 +71,7 @@ class _QRCodeToolState extends State<QRCodeTool> {
           isServerRunning = true;
           break;
         } catch (e) {
-          // Port is busy, try next one
+          
           continue;
         }
       }
@@ -205,7 +205,7 @@ class _QRCodeToolState extends State<QRCodeTool> {
             padding: EdgeInsets.all(isVerySmallScreen ? 16 : 24),
             child: Column(
               children: [
-                // Header Section
+                
                 Flex(
                   direction: isSmallScreen ? Axis.vertical : Axis.horizontal,
                   mainAxisAlignment: isSmallScreen
@@ -286,7 +286,7 @@ class _QRCodeToolState extends State<QRCodeTool> {
                 ),
                 SizedBox(height: isVerySmallScreen ? 24 : 32),
 
-                // Stats Cards Row
+                
                 isSmallScreen
                     ? Column(
                         children: [
@@ -354,7 +354,7 @@ class _QRCodeToolState extends State<QRCodeTool> {
                       ),
                 SizedBox(height: isVerySmallScreen ? 24 : 32),
 
-                // Main Content Area
+                
                 Center(
                   child: Container(
                     width: double.infinity,
@@ -376,7 +376,7 @@ class _QRCodeToolState extends State<QRCodeTool> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        // Header
+                        
                         Container(
                           padding: EdgeInsets.all(isVerySmallScreen ? 12 : 16),
                           decoration: const BoxDecoration(
@@ -402,7 +402,7 @@ class _QRCodeToolState extends State<QRCodeTool> {
                             ],
                           ),
                         ),
-                        // Content
+                        
                         Padding(
                           padding: EdgeInsets.all(isVerySmallScreen ? 16 : 20),
                           child: Column(
@@ -665,7 +665,7 @@ class _QRCodeToolState extends State<QRCodeTool> {
   }
 }
 
-// QR Tool Integration Helper
+
 class QRToolIntegration {
   static const String toolName = 'QR Code Tool';
   static const String toolDescription =
@@ -729,7 +729,7 @@ class QRToolIntegration {
   }
 
   static void addToMainApp() {
-    // This method can be called to register the QR tool
-    // in your main application's tool registry
+    
+    
   }
 }

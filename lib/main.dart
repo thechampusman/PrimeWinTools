@@ -83,7 +83,7 @@ class MyTrayListener with TrayListener {
     } else if (menuItem.key == 'clipboard') {
       _showAndFocusWindow();
     } else if (menuItem.key == 'exit') {
-      // Properly dispose services before exiting
+      
       await AppServiceManager().disposeAll();
       windowManager.destroy();
     }
@@ -136,9 +136,9 @@ class _MyAppState extends State<MyApp> with WindowListener {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Scaffold(
+      home: const Scaffold(
         backgroundColor: Colors.transparent,
-        body: const Dashboard(),
+        body: Dashboard(),
       ),
     );
   }

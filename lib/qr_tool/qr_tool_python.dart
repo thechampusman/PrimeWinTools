@@ -15,7 +15,7 @@ class _QRToolPythonState extends State<QRToolPython>
     with TickerProviderStateMixin {
   late TabController _tabController;
 
-  // Controllers
+  
   final TextEditingController _textController = TextEditingController();
   final TextEditingController _urlController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
@@ -25,19 +25,19 @@ class _QRToolPythonState extends State<QRToolPython>
   final TextEditingController _smsPhoneController = TextEditingController();
   final TextEditingController _smsMessageController = TextEditingController();
 
-  // WiFi controllers
+  
   final TextEditingController _wifiSSIDController = TextEditingController();
   final TextEditingController _wifiPasswordController = TextEditingController();
   String _wifiSecurity = 'WPA';
 
-  // vCard controllers
+  
   final TextEditingController _vCardNameController = TextEditingController();
   final TextEditingController _vCardPhoneController = TextEditingController();
   final TextEditingController _vCardEmailController = TextEditingController();
   final TextEditingController _vCardOrgController = TextEditingController();
   final TextEditingController _vCardUrlController = TextEditingController();
 
-  // QR settings
+  
   String _contentType = 'text';
   int _qrSize = 512;
   String _errorLevel = 'M';
@@ -45,7 +45,7 @@ class _QRToolPythonState extends State<QRToolPython>
   Color _fgColor = Colors.black;
   Color _bgColor = Colors.white;
 
-  // State
+  
   Uint8List? _qrImageBytes;
   bool _isGenerating = false;
   String? _lastError;
@@ -219,7 +219,7 @@ class _QRToolPythonState extends State<QRToolPython>
     }
 
     try {
-      // For Windows, save to Downloads folder
+      
       final downloadsPath = Platform.isWindows
           ? '${Platform.environment['USERPROFILE']}\\Downloads'
           : '${Platform.environment['HOME']}/Downloads';
@@ -238,7 +238,7 @@ class _QRToolPythonState extends State<QRToolPython>
 
   Future<void> _copyQR() async {
     if (_qrImageBytes != null) {
-      // For now, just show a message - copying images to clipboard is complex
+      
       _showMessage('Use Download to save the QR code', Colors.blue);
     }
   }
@@ -311,7 +311,7 @@ class _QRToolPythonState extends State<QRToolPython>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Content Type Selector
+          
           Card(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -342,7 +342,7 @@ class _QRToolPythonState extends State<QRToolPython>
           ),
           const SizedBox(height: 16),
 
-          // Content Input
+          
           Card(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -351,7 +351,7 @@ class _QRToolPythonState extends State<QRToolPython>
           ),
           const SizedBox(height: 20),
 
-          // Generate Button
+          
           SizedBox(
             width: double.infinity,
             height: 50,
@@ -380,7 +380,7 @@ class _QRToolPythonState extends State<QRToolPython>
             ),
           ),
 
-          // Error Display
+          
           if (_lastError != null) ...[
             const SizedBox(height: 16),
             Card(

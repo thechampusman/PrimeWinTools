@@ -8,8 +8,9 @@ import 'package:window_manager/window_manager.dart';
 
 import '../clipboard/ClipBoardManager.dart';
 import '../clipboard/clipboard.dart';
-import '../udrive/udrive_page.dart';
+
 import '../services/app_service_manager.dart';
+import '../python_env/python_env_manager.dart';
 import 'clipboard_overlay.dart';
 import 'localhost_manager.dart';
 
@@ -40,7 +41,6 @@ class _DashboardState extends State<Dashboard> {
     _serviceManager = AppServiceManager();
     clipboardManager = _serviceManager.clipboardManager;
 
-    // Start clipboard monitoring
     _serviceManager.startClipboardMonitoring(() {
       if (mounted) {
         setState(() {});
@@ -52,8 +52,6 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   void dispose() {
-    // Don't dispose services here - they should persist
-    // Only dispose on app exit
     super.dispose();
   }
 
@@ -272,8 +270,8 @@ class _DashboardState extends State<Dashboard> {
                                     ),
                                     SizedBox(height: isVerySmallScreen ? 4 : 8),
                                     _NavButton(
-                                      icon: Icons.cloud,
-                                      label: isVerySmallScreen ? '' : 'UDrive',
+                                      icon: Icons.qr_code,
+                                      label: isVerySmallScreen ? '' : 'QR Code',
                                       selected: _selectedIndex == 3,
                                       fontSize: navFontSize,
                                       iconSize: navIconSize,
@@ -283,8 +281,10 @@ class _DashboardState extends State<Dashboard> {
                                     ),
                                     SizedBox(height: isVerySmallScreen ? 4 : 8),
                                     _NavButton(
-                                      icon: Icons.qr_code,
-                                      label: isVerySmallScreen ? '' : 'QR Code',
+                                      icon: Icons.folder_special,
+                                      label: isVerySmallScreen
+                                          ? ''
+                                          : 'Python Envs',
                                       selected: _selectedIndex == 4,
                                       fontSize: navFontSize,
                                       iconSize: navIconSize,
@@ -347,8 +347,9 @@ class _DashboardState extends State<Dashboard> {
                                     ),
                                     const LocalhostManager(
                                         key: ValueKey<int>(2)),
-                                    const UDrivePage(key: ValueKey<int>(3)),
-                                    const QRCodeTool(key: ValueKey<int>(4)),
+                                    const QRCodeTool(key: ValueKey<int>(3)),
+                                    const PythonEnvManager(
+                                        key: ValueKey<int>(4)),
                                     const About(key: ValueKey<int>(5)),
                                   ],
                                 ),

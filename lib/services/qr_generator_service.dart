@@ -5,12 +5,12 @@ import 'dart:typed_data';
 class QRCodeGenerator {
   static const String _scriptPath = 'scripts/qr_generator.py';
 
-  /// Check if Python and required packages are available
+  
   static Future<bool> checkAvailability() async {
     try {
       final result = await Process.run('python', ['--version']);
       if (result.exitCode != 0) {
-        // Try python3
+        
         final result3 = await Process.run('python3', ['--version']);
         return result3.exitCode == 0;
       }
@@ -20,7 +20,7 @@ class QRCodeGenerator {
     }
   }
 
-  /// Install required Python packages
+  
   static Future<bool> installRequirements() async {
     try {
       final scriptFile = File(_scriptPath);
@@ -36,7 +36,7 @@ class QRCodeGenerator {
       );
 
       if (result.exitCode != 0) {
-        // Try python3
+        
         final result3 = await Process.run(
           'python3',
           [scriptFile.absolute.path, '--install'],
@@ -52,7 +52,7 @@ class QRCodeGenerator {
     }
   }
 
-  /// Generate QR code and save to file
+  
   static Future<QRGenerationResult> generateToFile({
     required String data,
     required String outputPath,
@@ -96,7 +96,7 @@ class QRCodeGenerator {
         '--json',
       ];
 
-      // Try python first, then python3
+      
       ProcessResult result;
       try {
         result = await Process.run('python', args,
@@ -125,7 +125,7 @@ class QRCodeGenerator {
     }
   }
 
-  /// Generate QR code and return as base64 string
+  
   static Future<QRGenerationResult> generateBase64({
     required String data,
     int size = 512,
@@ -166,7 +166,7 @@ class QRCodeGenerator {
         '--json',
       ];
 
-      // Try python first, then python3
+      
       ProcessResult result;
       try {
         result = await Process.run('python', args,
@@ -195,7 +195,7 @@ class QRCodeGenerator {
     }
   }
 
-  /// Generate WiFi QR code
+  
   static Future<QRGenerationResult> generateWifiQR({
     required String ssid,
     String password = '',
@@ -233,7 +233,7 @@ class QRCodeGenerator {
         args.addAll(['--output', outputPath]);
       }
 
-      // Try python first, then python3
+      
       ProcessResult result;
       try {
         result = await Process.run('python', args,
@@ -262,7 +262,7 @@ class QRCodeGenerator {
     }
   }
 
-  /// Generate vCard QR code
+  
   static Future<QRGenerationResult> generateVCardQR({
     required String name,
     String phone = '',
@@ -306,7 +306,7 @@ class QRCodeGenerator {
         args.addAll(['--output', outputPath]);
       }
 
-      // Try python first, then python3
+      
       ProcessResult result;
       try {
         result = await Process.run('python', args,
@@ -367,7 +367,7 @@ class QRGenerationResult {
     );
   }
 
-  /// Get image bytes from base64 if available
+  
   Uint8List? get imageBytes {
     if (base64 != null) {
       try {
