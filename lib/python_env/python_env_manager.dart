@@ -478,11 +478,11 @@ Run a scan to build the environment cache and speed up future app launches.''';
         await _saveCachedEnvironments();
       }
 
-  setState(() {
-    _scanStatus = _cancelRequested
-    ? 'Scan cancelled - ${foundEnvironments.length} environments found so far'
-    : 'Scan completed - ${foundEnvironments.length} unique environments found';
-  });
+      setState(() {
+        _scanStatus = _cancelRequested
+            ? 'Scan cancelled - ${foundEnvironments.length} environments found so far'
+            : 'Scan completed - ${foundEnvironments.length} unique environments found';
+      });
 
       await Future.delayed(Duration(seconds: 2));
     } catch (e) {
@@ -1374,7 +1374,8 @@ Run a scan to build the environment cache and speed up future app launches.''';
                         child: ElevatedButton.icon(
                           onPressed: available
                               ? () {
-                                  Clipboard.setData(ClipboardData(text: command));
+                                  Clipboard.setData(
+                                      ClipboardData(text: command));
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                       content: const Text('Command copied'),
@@ -1389,8 +1390,10 @@ Run a scan to build the environment cache and speed up future app launches.''';
                           style: ElevatedButton.styleFrom(
                             backgroundColor: color,
                             foregroundColor: Colors.white,
-                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-                            textStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 8),
+                            textStyle: const TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.w600),
                           ),
                         ),
                       ),
@@ -1407,19 +1410,24 @@ Run a scan to build the environment cache and speed up future app launches.''';
                     ),
                     child: SelectableText(
                       command,
-                      style: const TextStyle(fontFamily: 'monospace', fontSize: 12, color: Color(0xFF374151)),
+                      style: const TextStyle(
+                          fontFamily: 'monospace',
+                          fontSize: 12,
+                          color: Color(0xFF374151)),
                     ),
                   ),
                   if (!available) ...[
                     const SizedBox(height: 6),
                     Row(
                       children: [
-                        const Icon(Icons.info_outline, size: 14, color: Colors.orange),
+                        const Icon(Icons.info_outline,
+                            size: 14, color: Colors.orange),
                         const SizedBox(width: 6),
                         Expanded(
                           child: Text(
                             'Command not available for this environment.',
-                            style: TextStyle(fontSize: 11, color: Colors.grey[600]),
+                            style: TextStyle(
+                                fontSize: 11, color: Colors.grey[600]),
                           ),
                         ),
                       ],
@@ -1432,7 +1440,8 @@ Run a scan to build the environment cache and speed up future app launches.''';
         }
 
         return Dialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           child: Container(
             width: 640,
             constraints: const BoxConstraints(maxHeight: 700),
@@ -1446,9 +1455,13 @@ Run a scan to build the environment cache and speed up future app launches.''';
                 // Header
                 Container(
                   decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+                    borderRadius:
+                        const BorderRadius.vertical(top: Radius.circular(16)),
                     gradient: LinearGradient(
-                      colors: [accent.withOpacity(0.95), accent.withOpacity(0.75)],
+                      colors: [
+                        accent.withOpacity(0.95),
+                        accent.withOpacity(0.75)
+                      ],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
@@ -1462,7 +1475,8 @@ Run a scan to build the environment cache and speed up future app launches.''';
                           color: Colors.white.withOpacity(0.2),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: const Icon(Icons.play_arrow, color: Colors.white),
+                        child:
+                            const Icon(Icons.play_arrow, color: Colors.white),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
@@ -1480,11 +1494,14 @@ Run a scan to build the environment cache and speed up future app launches.''';
                               children: [
                                 Flexible(
                                   child: Text(env.name,
-                                      style: TextStyle(color: Colors.white.withOpacity(0.95))),
+                                      style: TextStyle(
+                                          color:
+                                              Colors.white.withOpacity(0.95))),
                                 ),
                                 const SizedBox(width: 8),
                                 Container(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 4),
                                   decoration: BoxDecoration(
                                     color: Colors.white.withOpacity(0.15),
                                     borderRadius: BorderRadius.circular(999),
@@ -1518,25 +1535,30 @@ Run a scan to build the environment cache and speed up future app launches.''';
                         // Environment quick info
                         Row(
                           children: [
-                            Icon(Icons.folder, size: 16, color: Colors.grey[700]),
+                            Icon(Icons.folder,
+                                size: 16, color: Colors.grey[700]),
                             const SizedBox(width: 6),
                             Expanded(
                               child: Text(
                                 env.path,
-                                style: const TextStyle(fontSize: 12, color: Color(0xFF4B5563)),
+                                style: const TextStyle(
+                                    fontSize: 12, color: Color(0xFF4B5563)),
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),
                           ],
                         ),
                         const SizedBox(height: 10),
-                        if (env.pythonVersion.isNotEmpty && env.pythonVersion != 'Unknown')
+                        if (env.pythonVersion.isNotEmpty &&
+                            env.pythonVersion != 'Unknown')
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 4),
                             decoration: BoxDecoration(
                               color: accent.withOpacity(0.08),
                               borderRadius: BorderRadius.circular(8),
-                              border: Border.all(color: accent.withOpacity(0.25)),
+                              border:
+                                  Border.all(color: accent.withOpacity(0.25)),
                             ),
                             child: Text(
                               'Python ${env.pythonVersion}',
@@ -1584,18 +1606,21 @@ Run a scan to build the environment cache and speed up future app launches.''';
                             padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               color: const Color(0xFFFFF3E0),
-                              border: Border.all(color: const Color(0xFFFFCC80)),
+                              border:
+                                  Border.all(color: const Color(0xFFFFCC80)),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: const Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Icon(Icons.warning_amber_rounded, color: Color(0xFFF57C00), size: 16),
+                                Icon(Icons.warning_amber_rounded,
+                                    color: Color(0xFFF57C00), size: 16),
                                 SizedBox(width: 8),
                                 Expanded(
                                   child: Text(
                                     'No activation script was detected. The environment may be invalid or moved.',
-                                    style: TextStyle(fontSize: 12, color: Color(0xFF6D4C41)),
+                                    style: TextStyle(
+                                        fontSize: 12, color: Color(0xFF6D4C41)),
                                   ),
                                 ),
                               ],
@@ -1709,11 +1734,15 @@ Run a scan to build the environment cache and speed up future app launches.''';
                 const SizedBox(width: 6),
                 Text(
                   '$label: ',
-                  style: TextStyle(fontSize: 12, color: Colors.grey[700], fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.grey[700],
+                      fontWeight: FontWeight.w600),
                 ),
                 Text(
                   value,
-                  style: const TextStyle(fontSize: 12, color: Color(0xFF1F2937)),
+                  style:
+                      const TextStyle(fontSize: 12, color: Color(0xFF1F2937)),
                 ),
               ],
             ),
@@ -1721,7 +1750,8 @@ Run a scan to build the environment cache and speed up future app launches.''';
         }
 
         return Dialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           child: Container(
             width: 680,
             constraints: const BoxConstraints(maxHeight: 760),
@@ -1735,7 +1765,8 @@ Run a scan to build the environment cache and speed up future app launches.''';
                 // Header
                 Container(
                   decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+                    borderRadius:
+                        const BorderRadius.vertical(top: Radius.circular(16)),
                     gradient: LinearGradient(
                       colors: [base.withOpacity(0.95), base.withOpacity(0.75)],
                       begin: Alignment.topLeft,
@@ -1751,7 +1782,8 @@ Run a scan to build the environment cache and speed up future app launches.''';
                           color: Colors.white.withOpacity(0.2),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Icon(_getEnvironmentIcon(env.type), color: Colors.white),
+                        child: Icon(_getEnvironmentIcon(env.type),
+                            color: Colors.white),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
@@ -1769,7 +1801,8 @@ Run a scan to build the environment cache and speed up future app launches.''';
                             Row(
                               children: [
                                 Container(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 4),
                                   decoration: BoxDecoration(
                                     color: Colors.white.withOpacity(0.15),
                                     borderRadius: BorderRadius.circular(999),
@@ -1804,14 +1837,18 @@ Run a scan to build the environment cache and speed up future app launches.''';
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            const Icon(Icons.folder, size: 16, color: Color(0xFF6B7280)),
+                            const Icon(Icons.folder,
+                                size: 16, color: Color(0xFF6B7280)),
                             const SizedBox(width: 6),
                             Expanded(
                               child: Tooltip(
                                 message: env.path,
                                 child: Text(
                                   env.path,
-                                  style: const TextStyle(fontSize: 12, color: Color(0xFF374151), fontFamily: 'monospace'),
+                                  style: const TextStyle(
+                                      fontSize: 12,
+                                      color: Color(0xFF374151),
+                                      fontFamily: 'monospace'),
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
@@ -1819,7 +1856,8 @@ Run a scan to build the environment cache and speed up future app launches.''';
                             const SizedBox(width: 8),
                             TextButton.icon(
                               onPressed: () {
-                                Clipboard.setData(ClipboardData(text: env.path));
+                                Clipboard.setData(
+                                    ClipboardData(text: env.path));
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
                                     content: Text('Path copied to clipboard'),
@@ -1830,7 +1868,8 @@ Run a scan to build the environment cache and speed up future app launches.''';
                               },
                               icon: const Icon(Icons.copy, size: 14),
                               label: const Text('Copy Path'),
-                              style: TextButton.styleFrom(foregroundColor: base),
+                              style:
+                                  TextButton.styleFrom(foregroundColor: base),
                             ),
                           ],
                         ),
@@ -1841,18 +1880,27 @@ Run a scan to build the environment cache and speed up future app launches.''';
                           spacing: 10,
                           runSpacing: 10,
                           children: [
-                            infoChip(icon: Icons.code, label: 'Python', value: env.pythonVersion),
-                            infoChip(icon: Icons.apps, label: 'Packages', value: '${env.packageCount}'),
+                            infoChip(
+                                icon: Icons.code,
+                                label: 'Python',
+                                value: env.pythonVersion),
+                            infoChip(
+                                icon: Icons.apps,
+                                label: 'Packages',
+                                value: '${env.packageCount}'),
                             infoChip(
                               icon: Icons.sd_storage,
                               label: 'Size',
-                              value: env.sizeOnDisk > 0 ? '${env.sizeOnDisk} MB' : 'Calculating...',
+                              value: env.sizeOnDisk > 0
+                                  ? '${env.sizeOnDisk} MB'
+                                  : 'Calculating...',
                             ),
                             if (env.createdDate != null)
                               infoChip(
                                 icon: Icons.event,
                                 label: 'Created',
-                                value: env.createdDate!.toString().split('.')[0],
+                                value:
+                                    env.createdDate!.toString().split('.')[0],
                               ),
                             if (env.lastUsed != null)
                               infoChip(
@@ -1875,12 +1923,18 @@ Run a scan to build the environment cache and speed up future app launches.''';
                           ),
                           child: Row(
                             children: [
-                              const Icon(Icons.badge, size: 16, color: Color(0xFF6B7280)),
+                              const Icon(Icons.badge,
+                                  size: 16, color: Color(0xFF6B7280)),
                               const SizedBox(width: 8),
-                              const Text('Original Name:', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600)),
+                              const Text('Original Name:',
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600)),
                               const SizedBox(width: 6),
                               Expanded(
-                                child: Text(env.originalName, style: const TextStyle(fontSize: 12), overflow: TextOverflow.ellipsis),
+                                child: Text(env.originalName,
+                                    style: const TextStyle(fontSize: 12),
+                                    overflow: TextOverflow.ellipsis),
                               ),
                             ],
                           ),
@@ -2131,8 +2185,9 @@ Run a scan to build the environment cache and speed up future app launches.''';
                         style: TextButton.styleFrom(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 12, vertical: 8),
-                          backgroundColor:
-                              _cancelRequested ? Colors.grey[200] : Colors.red[50],
+                          backgroundColor: _cancelRequested
+                              ? Colors.grey[200]
+                              : Colors.red[50],
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
@@ -2632,8 +2687,7 @@ class _ScanOptionsDialogState extends State<ScanOptionsDialog> {
     return Dialog(
       backgroundColor: Colors.transparent,
       insetPadding: const EdgeInsets.all(24),
-      child: Container
-        (
+      child: Container(
         width: 640,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -2705,7 +2759,8 @@ class _ScanOptionsDialogState extends State<ScanOptionsDialog> {
                   _OptionCard(
                     selected: _selectedScanType == 'full',
                     onTap: () => setState(() => _selectedScanType = 'full'),
-                    leading: const Icon(Icons.computer, color: Color(0xFF306998)),
+                    leading:
+                        const Icon(Icons.computer, color: Color(0xFF306998)),
                     title: 'Scan all local drives',
                     badge: 'Recommended',
                     description:
@@ -2717,9 +2772,11 @@ class _ScanOptionsDialogState extends State<ScanOptionsDialog> {
                   _OptionCard(
                     selected: _selectedScanType == 'custom',
                     onTap: () => setState(() => _selectedScanType = 'custom'),
-                    leading: const Icon(Icons.folder_special, color: Color(0xFF306998)),
+                    leading: const Icon(Icons.folder_special,
+                        color: Color(0xFF306998)),
                     title: 'Scan specific locations',
-                    description: 'Choose folders or drives you want to include in the scan.',
+                    description:
+                        'Choose folders or drives you want to include in the scan.',
                     trailing: _selectedScanType == 'custom'
                         ? TextButton.icon(
                             onPressed: _addCustomPath,
@@ -2727,9 +2784,12 @@ class _ScanOptionsDialogState extends State<ScanOptionsDialog> {
                             label: const Text('Add Path'),
                             style: TextButton.styleFrom(
                               foregroundColor: const Color(0xFF306998),
-                              backgroundColor: const Color(0xFF306998).withOpacity(0.08),
-                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                              backgroundColor:
+                                  const Color(0xFF306998).withOpacity(0.08),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 12, vertical: 8),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8)),
                             ),
                           )
                         : null,
@@ -2747,12 +2807,14 @@ class _ScanOptionsDialogState extends State<ScanOptionsDialog> {
                       child: _customPaths.isEmpty
                           ? Row(
                               children: [
-                                Icon(Icons.info_outline, color: Colors.grey[600], size: 18),
+                                Icon(Icons.info_outline,
+                                    color: Colors.grey[600], size: 18),
                                 const SizedBox(width: 8),
                                 Expanded(
                                   child: Text(
                                     'No locations selected yet. Click "Add Path" to choose folders or drives.',
-                                    style: TextStyle(color: Colors.grey[700], fontSize: 12),
+                                    style: TextStyle(
+                                        color: Colors.grey[700], fontSize: 12),
                                   ),
                                 ),
                               ],
@@ -2766,18 +2828,25 @@ class _ScanOptionsDialogState extends State<ScanOptionsDialog> {
                                   children: [
                                     for (final p in _customPaths)
                                       Chip(
-                                        avatar: const Icon(Icons.folder, size: 16, color: Color(0xFF306998)),
+                                        avatar: const Icon(Icons.folder,
+                                            size: 16, color: Color(0xFF306998)),
                                         label: Text(
                                           p,
-                                          style: const TextStyle(fontSize: 12, fontFamily: 'monospace'),
+                                          style: const TextStyle(
+                                              fontSize: 12,
+                                              fontFamily: 'monospace'),
                                           overflow: TextOverflow.ellipsis,
                                         ),
-                                        backgroundColor: const Color(0xFF306998).withOpacity(0.08),
-                                        deleteIcon: const Icon(Icons.close, size: 16),
+                                        backgroundColor: const Color(0xFF306998)
+                                            .withOpacity(0.08),
+                                        deleteIcon:
+                                            const Icon(Icons.close, size: 16),
                                         onDeleted: () {
-                                          setState(() => _customPaths.remove(p));
+                                          setState(
+                                              () => _customPaths.remove(p));
                                         },
-                                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                        materialTapTargetSize:
+                                            MaterialTapTargetSize.shrinkWrap,
                                       ),
                                   ],
                                 ),
@@ -2797,12 +2866,14 @@ class _ScanOptionsDialogState extends State<ScanOptionsDialog> {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
-                        Icon(Icons.info_outline, color: Color(0xFF2563EB), size: 18),
+                        Icon(Icons.info_outline,
+                            color: Color(0xFF2563EB), size: 18),
                         SizedBox(width: 8),
                         Expanded(
                           child: Text(
                             'The scanner looks for activation scripts like:\n• .venv\\Scripts\\activate.ps1\n• venv\\Scripts\\activate.bat\n• conda\\Scripts\\activate',
-                            style: TextStyle(fontSize: 12, color: Color(0xFF1D4ED8)),
+                            style: TextStyle(
+                                fontSize: 12, color: Color(0xFF1D4ED8)),
                           ),
                         ),
                       ],
@@ -2823,7 +2894,8 @@ class _ScanOptionsDialogState extends State<ScanOptionsDialog> {
                     child: const Text('Cancel'),
                     style: TextButton.styleFrom(
                       foregroundColor: const Color(0xFF111827),
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 10),
                     ),
                   ),
                   const SizedBox(width: 8),
@@ -2839,8 +2911,10 @@ class _ScanOptionsDialogState extends State<ScanOptionsDialog> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF306998),
                       foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 12),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
                     ),
                     child: const Text('Start Scan'),
                   ),
@@ -2895,7 +2969,8 @@ class _OptionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final baseBorder = Border.all(color: const Color(0xFFE5E7EB));
-    final selectedBorder = Border.all(color: const Color(0xFF306998), width: 1.5);
+    final selectedBorder =
+        Border.all(color: const Color(0xFF306998), width: 1.5);
 
     return InkWell(
       borderRadius: BorderRadius.circular(12),
@@ -2903,7 +2978,9 @@ class _OptionCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(14),
         decoration: BoxDecoration(
-          color: selected ? const Color(0xFF306998).withOpacity(0.06) : Colors.white,
+          color: selected
+              ? const Color(0xFF306998).withOpacity(0.06)
+              : Colors.white,
           borderRadius: BorderRadius.circular(12),
           border: selected ? selectedBorder : baseBorder,
         ),
@@ -2939,11 +3016,14 @@ class _OptionCard extends StatelessWidget {
                       ),
                       if (badge != null)
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 4),
                           decoration: BoxDecoration(
                             color: const Color(0xFF10B981).withOpacity(0.12),
                             borderRadius: BorderRadius.circular(999),
-                            border: Border.all(color: const Color(0xFF10B981).withOpacity(0.4)),
+                            border: Border.all(
+                                color:
+                                    const Color(0xFF10B981).withOpacity(0.4)),
                           ),
                           child: Text(
                             badge!,
