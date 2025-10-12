@@ -550,7 +550,8 @@ class _LocalhostManagerState extends State<LocalhostManager> {
                 const SizedBox(height: 6),
                 if (_localIPv4 != null)
                   Tooltip(
-                    message: 'Open network URL: http://${_localIPv4}:${port.port}',
+                    message:
+                        'Open network URL: http://${_localIPv4}:${port.port}',
                     child: MouseRegion(
                       cursor: SystemMouseCursors.click,
                       child: GestureDetector(
@@ -688,7 +689,8 @@ class _LocalhostManagerState extends State<LocalhostManager> {
                     ),
                     const SizedBox(width: 4),
                     IconButton(
-                      onPressed: () => _copyToClipboard('localhost:${port.port}'),
+                      onPressed: () =>
+                          _copyToClipboard('localhost:${port.port}'),
                       icon: const Icon(Icons.copy, size: 18),
                       tooltip: 'Copy URL',
                       color: const Color(0xFF757575),
@@ -713,8 +715,8 @@ class _LocalhostManagerState extends State<LocalhostManager> {
                             color: const Color(0xFF757575),
                             visualDensity: VisualDensity.compact,
                             style: IconButton.styleFrom(
-                              backgroundColor: const Color(0xFF757575)
-                                  .withOpacity(0.1),
+                              backgroundColor:
+                                  const Color(0xFF757575).withOpacity(0.1),
                               minimumSize: const Size(28, 28),
                               padding: const EdgeInsets.all(6),
                             ),
@@ -730,8 +732,8 @@ class _LocalhostManagerState extends State<LocalhostManager> {
                             color: const Color(0xFF757575),
                             visualDensity: VisualDensity.compact,
                             style: IconButton.styleFrom(
-                              backgroundColor: const Color(0xFF757575)
-                                  .withOpacity(0.1),
+                              backgroundColor:
+                                  const Color(0xFF757575).withOpacity(0.1),
                               minimumSize: const Size(28, 28),
                               padding: const EdgeInsets.all(6),
                             ),
@@ -875,8 +877,7 @@ class _LocalhostManagerState extends State<LocalhostManager> {
     showDialog<void>(
       context: context,
       builder: (context) => Dialog(
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -895,7 +896,9 @@ class _LocalhostManagerState extends State<LocalhostManager> {
                         child: Center(child: CircularProgressIndicator()));
                   }
                   final result = snapshot.data;
-                  if (result == null || !result.success || result.base64 == null) {
+                  if (result == null ||
+                      !result.success ||
+                      result.base64 == null) {
                     return Column(
                       children: [
                         const Icon(Icons.error_outline, size: 48),

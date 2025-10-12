@@ -70,6 +70,14 @@ PrimeWinTools is a versatile utility for Windows users, combining powerful clipb
 - Quick access to open services in browser or copy URLs to clipboard.
 - Advanced port scanning with process identification and PID tracking.
 
+### What's New (Network Access & UX improvements)
+- LAN network URL: each detected localhost service now shows a network-accessible URL (http://<your-ip>:<port>) when your machine has a non-loopback IPv4 address. This makes it easy for devices on the same local network to reach a development server running on your machine.
+- Clickable network URL: the displayed network URL is clickable — it opens in the default browser and also supports copying to the clipboard.
+- Copy network URL: a dedicated "Copy network URL" action copies the full network URL to the clipboard and shows a toast/snackbar confirmation.
+- QR code dialog: a "Show QR" action opens a dialog containing a QR code for the network URL so mobile devices can scan and open the service quickly. The app falls back to showing the raw URL if QR generation is unavailable.
+- Responsive actions & overflow menu: action buttons in the Localhost Manager adapt to narrow window widths; when space is limited the less-used actions are moved into a three-dot overflow menu to avoid layout issues.
+- IP detection: the app attempts to detect your primary non-loopback IPv4 address on startup and when the Localhost tab is opened. If no LAN IP is available, the network actions are hidden and the UI displays "No LAN IP".
+
 ### 4. User-Friendly Interface:
 - Clean and simple UI like Acrylic material blur for ease of use and look appealing.
 - Efficient background operation without interrupting your workflow.
@@ -77,7 +85,46 @@ PrimeWinTools is a versatile utility for Windows users, combining powerful clipb
 
 ---
 
-## 🚀 Getting Started
+## � QR Generator & Python Environments (Advanced / Optional)
+
+### QR Generator (optional)
+- Location: `scripts/qr_generator.py` — a small Python helper used by the app to generate QR codes on demand.
+- Dependencies: the script uses the `qrcode` and `Pillow` Python packages. If those packages are not installed, the app will gracefully fall back and display the raw network URL.
+- Install (one-time, system or virtualenv):
+
+  - Using the script's installer flag (recommended):
+
+    ```powershell
+    python scripts\qr_generator.py --install
+    ```
+
+  - Or manually with pip:
+
+    ```powershell
+    pip install "qrcode[pil]" Pillow
+    ```
+
+- Notes:
+  - Ensure a Python 3 interpreter is available on the system PATH so the Flutter app can call the script.
+  - The app requests a base64 image from the script; if generation fails the UI shows the URL text so you can still copy/scan it manually.
+
+### Python Environment Manager
+- Purpose: helps detect, list, and cache discovered Python virtual environments and interpreters on the host machine (useful when developing or running Python-backed features).
+- Cache: environment metadata is cached to speed up subsequent loads. Cache file: `cache/python_environments.json` (located in the app working directory). The UI exposes a cache info dialog and an option to clear the cache.
+- Validation: cached environments are validated by checking for common activation scripts in the environment folder, including:
+  - `Scripts\activate.ps1`
+  - `Scripts\activate.bat`
+  - `bin/activate`
+- Actions in UI:
+  - Scan for environments (configurable paths), refresh and validate results.
+  - View cached environments and metadata (Python version, package count, last used).
+  - Clear the environment cache to force a fresh scan.
+
+---
+
+---
+
+## �🚀 Getting Started
 
 ### Installation:
 
@@ -106,7 +153,8 @@ PrimeWinTools is a versatile utility for Windows users, combining powerful clipb
 1. Navigate to the **Localhost** tab.
 2. Click "Refresh" to scan for active localhost ports and services.
 3. View detailed information about each port including process name, PID, and service type.
-4. Use the action buttons to open services in browser or copy URLs to clipboard.
+4. Use the action buttons to open services in browser or copy URLs to clipboard. When a LAN IP is detected, an additional network URL is shown under the port which can be opened, copied, or shared via QR.
+5. On narrow windows the extra actions will be available under the three-dot overflow menu (⋮).
 5. Monitor development servers and identify what's running on each port.
 
 ---
