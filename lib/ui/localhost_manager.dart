@@ -664,63 +664,137 @@ class _LocalhostManagerState extends State<LocalhostManager> {
           const SizedBox(width: 8),
           Expanded(
             flex: 2,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconButton(
-                  onPressed: () => _openInBrowser(port.port),
-                  icon: const Icon(Icons.open_in_new, size: 18),
-                  tooltip: 'Open in browser',
-                  color: const Color(0xFF2196F3),
-                  style: IconButton.styleFrom(
-                    backgroundColor: const Color(0xFF2196F3).withOpacity(0.1),
-                    minimumSize: const Size(32, 32),
-                  ),
-                ),
-                const SizedBox(width: 4),
-                IconButton(
-                  onPressed: () => _copyToClipboard('localhost:${port.port}'),
-                  icon: const Icon(Icons.copy, size: 18),
-                  tooltip: 'Copy URL',
-                  color: const Color(0xFF757575),
-                  style: IconButton.styleFrom(
-                    backgroundColor: const Color(0xFF757575).withOpacity(0.1),
-                    minimumSize: const Size(32, 32),
-                  ),
-                ),
-                const SizedBox(width: 4),
-                if (_localIPv4 != null)
-                  Tooltip(
-                    message: 'Copy network URL: http://${_localIPv4}:${port.port}',
-                    child: IconButton(
-                      onPressed: () => _copyNetworkUrl(port.port),
-                      icon: const Icon(Icons.share, size: 18),
-                      tooltip: 'Copy network URL',
+            child: LayoutBuilder(builder: (context, constraints) {
+              // If narrow, show primary actions and an overflow menu
+              const threshold = 140.0; // tweakable
+              final narrow = constraints.maxWidth < threshold;
+              return Align(
+                alignment: Alignment.center,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    IconButton(
+                      onPressed: () => _openInBrowser(port.port),
+                      icon: const Icon(Icons.open_in_new, size: 18),
+                      tooltip: 'Open in browser',
+                      color: const Color(0xFF2196F3),
+                      visualDensity: VisualDensity.compact,
+                      style: IconButton.styleFrom(
+                        backgroundColor:
+                            const Color(0xFF2196F3).withOpacity(0.1),
+                        minimumSize: const Size(28, 28),
+                        padding: const EdgeInsets.all(6),
+                      ),
+                    ),
+                    const SizedBox(width: 4),
+                    IconButton(
+                      onPressed: () => _copyToClipboard('localhost:${port.port}'),
+                      icon: const Icon(Icons.copy, size: 18),
+                      tooltip: 'Copy URL',
                       color: const Color(0xFF757575),
+                      visualDensity: VisualDensity.compact,
                       style: IconButton.styleFrom(
                         backgroundColor:
                             const Color(0xFF757575).withOpacity(0.1),
-                        minimumSize: const Size(32, 32),
+                        minimumSize: const Size(28, 28),
+                        padding: const EdgeInsets.all(6),
                       ),
                     ),
-                  ),
-                if (_localIPv4 != null)
-                  Tooltip(
-                    message: 'Show QR',
-                    child: IconButton(
-                      onPressed: () => _showQrDialog(port.port),
-                      icon: const Icon(Icons.qr_code, size: 18),
-                      tooltip: 'Show QR',
-                      color: const Color(0xFF757575),
-                      style: IconButton.styleFrom(
-                        backgroundColor:
-                            const Color(0xFF757575).withOpacity(0.1),
-                        minimumSize: const Size(32, 32),
+                    const SizedBox(width: 4),
+                    if (!narrow) ...[
+                      if (_localIPv4 != null)
+                        Tooltip(
+                          message:
+                              'Copy network URL: http://${_localIPv4}:${port.port}',
+                          child: IconButton(
+                            onPressed: () => _copyNetworkUrl(port.port),
+                            icon: const Icon(Icons.share, size: 18),
+                            tooltip: 'Copy network URL',
+                            color: const Color(0xFF757575),
+                            visualDensity: VisualDensity.compact,
+                            style: IconButton.styleFrom(
+                              backgroundColor: const Color(0xFF757575)
+                                  .withOpacity(0.1),
+                              minimumSize: const Size(28, 28),
+                              padding: const EdgeInsets.all(6),
+                            ),
+                          ),
+                        ),
+                      if (_localIPv4 != null)
+                        Tooltip(
+                          message: 'Show QR',
+                          child: IconButton(
+                            onPressed: () => _showQrDialog(port.port),
+                            icon: const Icon(Icons.qr_code, size: 18),
+                            tooltip: 'Show QR',
+                            color: const Color(0xFF757575),
+                            visualDensity: VisualDensity.compact,
+                            style: IconButton.styleFrom(
+                              backgroundColor: const Color(0xFF757575)
+                                  .withOpacity(0.1),
+                              minimumSize: const Size(28, 28),
+                              padding: const EdgeInsets.all(6),
+                            ),
+                          ),
+                        ),
+                    ] else ...[
+                      // show overflow menu with the extra actions
+                      Tooltip(
+                        message: 'More actions',
+                        child: PopupMenuButton<int>(
+                          icon: const Icon(Icons.more_vert,
+                              size: 18, color: Color(0xFF757575)),
+                          color: Colors.white,
+                          elevation: 6,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8)),
+                          itemBuilder: (ctx) => [
+                            if (_localIPv4 != null)
+                              PopupMenuItem<int>(
+                                value: 1,
+                                child: Row(
+                                  children: const [
+                                    Icon(Icons.share,
+                                        size: 18, color: Color(0xFF424242)),
+                                    SizedBox(width: 12),
+                                    Text(
+                                      'Copy network URL',
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          color: Color(0xFF424242)),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            if (_localIPv4 != null)
+                              PopupMenuItem<int>(
+                                value: 2,
+                                child: Row(
+                                  children: const [
+                                    Icon(Icons.qr_code,
+                                        size: 18, color: Color(0xFF424242)),
+                                    SizedBox(width: 12),
+                                    Text(
+                                      'Show QR',
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          color: Color(0xFF424242)),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                          ],
+                          onSelected: (v) {
+                            if (v == 1) _copyNetworkUrl(port.port);
+                            if (v == 2) _showQrDialog(port.port);
+                          },
+                        ),
                       ),
-                    ),
-                  ),
-              ],
-            ),
+                    ],
+                  ],
+                ),
+              );
+            }),
           ),
         ],
       ),
