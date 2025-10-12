@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:io';
 import 'dart:async';
+import '../services/qr_generator_service.dart';
 
 class LocalhostManager extends StatefulWidget {
   const LocalhostManager({super.key});
@@ -689,15 +690,33 @@ class _LocalhostManagerState extends State<LocalhostManager> {
                 ),
                 const SizedBox(width: 4),
                 if (_localIPv4 != null)
-                  IconButton(
-                    onPressed: () => _copyNetworkUrl(port.port),
-                    icon: const Icon(Icons.share, size: 18),
-                    tooltip: 'Copy network URL',
-                    color: const Color(0xFF757575),
-                    style: IconButton.styleFrom(
-                      backgroundColor:
-                          const Color(0xFF757575).withOpacity(0.1),
-                      minimumSize: const Size(32, 32),
+                  Tooltip(
+                    message: 'Copy network URL: http://${_localIPv4}:${port.port}',
+                    child: IconButton(
+                      onPressed: () => _copyNetworkUrl(port.port),
+                      icon: const Icon(Icons.share, size: 18),
+                      tooltip: 'Copy network URL',
+                      color: const Color(0xFF757575),
+                      style: IconButton.styleFrom(
+                        backgroundColor:
+                            const Color(0xFF757575).withOpacity(0.1),
+                        minimumSize: const Size(32, 32),
+                      ),
+                    ),
+                  ),
+                if (_localIPv4 != null)
+                  Tooltip(
+                    message: 'Show QR',
+                    child: IconButton(
+                      onPressed: () => _showQrDialog(port.port),
+                      icon: const Icon(Icons.qr_code, size: 18),
+                      tooltip: 'Show QR',
+                      color: const Color(0xFF757575),
+                      style: IconButton.styleFrom(
+                        backgroundColor:
+                            const Color(0xFF757575).withOpacity(0.1),
+                        minimumSize: const Size(32, 32),
+                      ),
                     ),
                   ),
               ],
@@ -773,6 +792,66 @@ class _LocalhostManagerState extends State<LocalhostManager> {
     if (_localIPv4 == null) return;
     final url = 'http://${_localIPv4!}:$port';
     _copyToClipboard(url);
+  }
+
+  Future<void> _showQrDialog(int port) async {
+    if (_localIPv4 == null) return;
+    final url = 'http://${_localIPv4!}:$port';
+
+    showDialog<void>(
+      context: context,
+      builder: (context) => Dialog(
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('Scan to open on mobile',
+                  style: Theme.of(context).textTheme.titleMedium),
+              const SizedBox(height: 12),
+              FutureBuilder<QRGenerationResult>(
+                future: QRCodeGenerator.generateBase64(data: url, size: 300),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const SizedBox(
+                        height: 300,
+                        width: 300,
+                        child: Center(child: CircularProgressIndicator()));
+                  }
+                  final result = snapshot.data;
+                  if (result == null || !result.success || result.base64 == null) {
+                    return Column(
+                      children: [
+                        const Icon(Icons.error_outline, size: 48),
+                        const SizedBox(height: 8),
+                        Text('QR generator unavailable — URL:'),
+                        const SizedBox(height: 8),
+                        SelectableText(url),
+                      ],
+                    );
+                  }
+
+                  final bytes = result.imageBytes!;
+                  return Image.memory(bytes, width: 300, height: 300);
+                },
+              ),
+              const SizedBox(height: 12),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                    onPressed: () => Navigator.of(context).pop(),
+                    child: const Text('Close'),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   void _copyToClipboard(String text) async {
