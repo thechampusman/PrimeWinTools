@@ -13,11 +13,30 @@ class LocalhostManager extends StatefulWidget {
 class _LocalhostManagerState extends State<LocalhostManager> {
   List<PortInfo> _usedPorts = [];
   bool _isScanning = false;
+  String? _localIPv4;
 
   @override
   void initState() {
     super.initState();
+    _detectLocalIp();
     _scanPorts();
+  }
+
+  Future<void> _detectLocalIp() async {
+    try {
+      for (var iface in await NetworkInterface.list()) {
+        for (var addr in iface.addresses) {
+          if (addr.type == InternetAddressType.IPv4 && !addr.isLoopback) {
+            setState(() {
+              _localIPv4 = addr.address;
+            });
+            return;
+          }
+        }
+      }
+    } catch (e) {
+      // ignore, leave _localIPv4 null
+    }
   }
 
   Future<void> _scanPorts() async {
@@ -505,23 +524,54 @@ class _LocalhostManagerState extends State<LocalhostManager> {
         children: [
           Expanded(
             flex: 2,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              decoration: BoxDecoration(
-                color: const Color(0xFF1976D2).withOpacity(0.1),
-                borderRadius: BorderRadius.circular(6),
-                border:
-                    Border.all(color: const Color(0xFF1976D2).withOpacity(0.3)),
-              ),
-              child: Text(
-                ':${port.port}',
-                style: const TextStyle(
-                  color: Color(0xFF1976D2),
-                  fontFamily: 'monospace',
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF1976D2).withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(6),
+                    border: Border.all(
+                        color: const Color(0xFF1976D2).withOpacity(0.3)),
+                  ),
+                  child: Text(
+                    ':${port.port}',
+                    style: const TextStyle(
+                      color: Color(0xFF1976D2),
+                      fontFamily: 'monospace',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
-              ),
+                const SizedBox(height: 6),
+                if (_localIPv4 != null)
+                  Tooltip(
+                    message: 'Open network URL: http://${_localIPv4}:${port.port}',
+                    child: MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: GestureDetector(
+                        onTap: () => _openNetworkUrl(port.port),
+                        child: Text(
+                          'http://${_localIPv4}:${port.port}',
+                          style: const TextStyle(
+                            color: Color(0xFF1976D2),
+                            fontSize: 12,
+                            decoration: TextDecoration.underline,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ),
+                  )
+                else
+                  Text(
+                    'No LAN IP',
+                    style: TextStyle(color: Colors.grey[500], fontSize: 12),
+                  ),
+              ],
             ),
           ),
           const SizedBox(width: 8),
@@ -637,6 +687,19 @@ class _LocalhostManagerState extends State<LocalhostManager> {
                     minimumSize: const Size(32, 32),
                   ),
                 ),
+                const SizedBox(width: 4),
+                if (_localIPv4 != null)
+                  IconButton(
+                    onPressed: () => _copyNetworkUrl(port.port),
+                    icon: const Icon(Icons.share, size: 18),
+                    tooltip: 'Copy network URL',
+                    color: const Color(0xFF757575),
+                    style: IconButton.styleFrom(
+                      backgroundColor:
+                          const Color(0xFF757575).withOpacity(0.1),
+                      minimumSize: const Size(32, 32),
+                    ),
+                  ),
               ],
             ),
           ),
@@ -689,6 +752,27 @@ class _LocalhostManagerState extends State<LocalhostManager> {
         ),
       );
     }
+  }
+
+  void _openNetworkUrl(int port) async {
+    if (_localIPv4 == null) return;
+    final url = 'http://${_localIPv4!}:$port';
+    try {
+      await Process.start('cmd', ['/c', 'start', url]);
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Failed to open network URL: $e'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
+  }
+
+  void _copyNetworkUrl(int port) async {
+    if (_localIPv4 == null) return;
+    final url = 'http://${_localIPv4!}:$port';
+    _copyToClipboard(url);
   }
 
   void _copyToClipboard(String text) async {
