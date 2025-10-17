@@ -967,92 +967,170 @@ class _CleanerState extends State<Cleaner> {
       builder: (BuildContext context) {
         return StatefulBuilder(
           builder: (context, setStateDialog) {
-            return AlertDialog(
-              title: const Row(
-                children: [
-                  Icon(Icons.settings, color: Color(0xFF667EEA)),
-                  SizedBox(width: 8),
-                  Text('Cleaning Settings'),
-                ],
-              ),
-              content: SizedBox(
-                width: double.maxFinite,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Text(
-                      'Select what you want to clean:',
-                      style: TextStyle(fontSize: 14, color: Colors.grey),
-                    ),
-                    const SizedBox(height: 16),
-                    _buildCategoryTile(
-                      'temp_files',
-                      'Temporary Files',
-                      'System temporary files and cache',
-                      Icons.delete,
-                      setStateDialog,
-                    ),
-                    _buildCategoryTile(
-                      'thumbnail_cache',
-                      'Privacy - Thumbnail Cache',
-                      'Removes traces of viewed images/videos',
-                      Icons.image,
-                      setStateDialog,
-                    ),
-                    _buildCategoryTile(
-                      'recent_documents',
-                      'Recent Documents',
-                      'Recently accessed file history',
-                      Icons.history,
-                      setStateDialog,
-                    ),
-                    _buildCategoryTile(
-                      'browser_cache',
-                      'Browser Cache',
-                      'Web browser cached files',
-                      Icons.web,
-                      setStateDialog,
-                    ),
-                    _buildCategoryTile(
-                      'download_history',
-                      'Download History',
-                      'Downloaded file history',
-                      Icons.download,
-                      setStateDialog,
-                    ),
-                  ],
-                ),
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () {
-                    setState(() {
-                      _cleaningCategories.updateAll((key, value) => false);
-                    });
-                    setStateDialog(() {});
-                  },
-                  child: const Text('Clear All'),
-                ),
-                TextButton(
-                  onPressed: () {
-                    setState(() {
-                      _cleaningCategories.updateAll((key, value) => true);
-                    });
-                    setStateDialog(() {});
-                  },
-                  child: const Text('Select All'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF667EEA),
-                    foregroundColor: Colors.white,
+            return Dialog(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16)),
+              child: Container(
+                constraints: const BoxConstraints(maxWidth: 680),
+                child: Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Title
+                      Row(
+                        children: const [
+                          Icon(Icons.settings,
+                              color: Color(0xFF667EEA), size: 24),
+                          SizedBox(width: 12),
+                          Text(
+                            'Cleaning Settings',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
+                              color: Color(0xFF1F2937),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      const Text(
+                        'Select what you want to clean:',
+                        style:
+                            TextStyle(fontSize: 14, color: Color(0xFF6B7280)),
+                      ),
+                      const SizedBox(height: 20),
+                      // Preset chips
+                      Wrap(
+                        spacing: 8,
+                        runSpacing: 8,
+                        children: [
+                          _buildPresetChip('Safe', Icons.shield_moon,
+                              const Color(0xFF10B981), () {
+                            _applyPreset('safe');
+                            setStateDialog(() {});
+                          }),
+                          _buildPresetChip('Balanced', Icons.auto_awesome,
+                              const Color(0xFF6366F1), () {
+                            _applyPreset('balanced');
+                            setStateDialog(() {});
+                          }),
+                          _buildPresetChip('Aggressive', Icons.speed,
+                              const Color(0xFFEF4444), () {
+                            _applyPreset('aggressive');
+                            setStateDialog(() {});
+                          }),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      // Scrollable content
+                      Flexible(
+                        child: SingleChildScrollView(
+                          child: LayoutBuilder(
+                            builder: (context, constraints) {
+                              final maxW = constraints.maxWidth;
+                              // target card width ~ 300
+                              final cardW =
+                                  maxW >= 620 ? (maxW - 16) / 2 : maxW;
+                              return Wrap(
+                                spacing: 16,
+                                runSpacing: 12,
+                                children: [
+                                  _buildCategoryCard(
+                                      width: cardW,
+                                      keyName: 'temp_files',
+                                      title: 'Temporary Files',
+                                      description:
+                                          'System temporary files and cache',
+                                      icon: Icons.delete,
+                                      color: const Color(0xFF0EA5E9),
+                                      setStateDialog: setStateDialog),
+                                  _buildCategoryCard(
+                                      width: cardW,
+                                      keyName: 'thumbnail_cache',
+                                      title: 'Privacy - Thumbnail Cache',
+                                      description:
+                                          'Removes traces of viewed images/videos',
+                                      icon: Icons.image,
+                                      color: const Color(0xFF8B5CF6),
+                                      setStateDialog: setStateDialog),
+                                  _buildCategoryCard(
+                                      width: cardW,
+                                      keyName: 'recent_documents',
+                                      title: 'Recent Documents',
+                                      description:
+                                          'Recently accessed file history',
+                                      icon: Icons.history,
+                                      color: const Color(0xFF10B981),
+                                      setStateDialog: setStateDialog),
+                                  _buildCategoryCard(
+                                      width: cardW,
+                                      keyName: 'browser_cache',
+                                      title: 'Browser Cache',
+                                      description: 'Web browser cached files',
+                                      icon: Icons.web,
+                                      color: const Color(0xFFF59E0B),
+                                      setStateDialog: setStateDialog),
+                                  _buildCategoryCard(
+                                      width: cardW,
+                                      keyName: 'download_history',
+                                      title: 'Download History',
+                                      description: 'Downloaded file history',
+                                      icon: Icons.download,
+                                      color: const Color(0xFFEF4444),
+                                      setStateDialog: setStateDialog),
+                                ],
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 24),
+                      // Actions
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          OutlinedButton(
+                            onPressed: () {
+                              setState(() {
+                                _cleaningCategories
+                                    .updateAll((key, value) => false);
+                              });
+                              setStateDialog(() {});
+                            },
+                            child: const Text('Clear All'),
+                          ),
+                          const SizedBox(width: 8),
+                          OutlinedButton(
+                            onPressed: () {
+                              setState(() {
+                                _cleaningCategories
+                                    .updateAll((key, value) => true);
+                              });
+                              setStateDialog(() {});
+                            },
+                            child: const Text('Select All'),
+                          ),
+                          const SizedBox(width: 8),
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xFF667EEA),
+                              foregroundColor: Colors.white,
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 24, vertical: 12),
+                            ),
+                            child: const Text('Save'),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                  child: const Text('Save'),
                 ),
-              ],
+              ),
             );
           },
         );
@@ -1060,73 +1138,175 @@ class _CleanerState extends State<Cleaner> {
     );
   }
 
-  Widget _buildCategoryTile(
-    String key,
-    String title,
-    String description,
-    IconData icon,
-    StateSetter setStateDialog,
-  ) {
-    final isSelected = _cleaningCategories[key] ?? false;
-
-    return Container(
-      margin: const EdgeInsets.only(bottom: 8),
-      decoration: BoxDecoration(
-        color: isSelected ? const Color(0xFFF0F9FF) : Colors.grey[50],
-        border: Border.all(
-          color: isSelected ? const Color(0xFF0EA5E9) : Colors.grey[200]!,
-          width: 1.5,
+  Widget _buildPresetChip(
+      String label, IconData icon, Color color, VoidCallback onTap) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(999),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        decoration: BoxDecoration(
+          color: color.withOpacity(0.08),
+          borderRadius: BorderRadius.circular(999),
+          border: Border.all(color: color.withOpacity(0.35)),
         ),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: CheckboxListTile(
-        value: isSelected,
-        onChanged: (bool? value) {
-          setState(() {
-            _cleaningCategories[key] = value ?? false;
-          });
-          setStateDialog(() {});
-        },
-        title: Row(
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              icon,
-              size: 20,
-              color: isSelected ? const Color(0xFF0EA5E9) : Colors.grey[600],
-            ),
+            Icon(icon, size: 16, color: color),
             const SizedBox(width: 8),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: isSelected
-                          ? const Color(0xFF0EA5E9)
-                          : Colors.grey[800],
-                    ),
-                  ),
-                  Text(
-                    description,
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.grey[600],
-                    ),
-                  ),
-                ],
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+                color: color.darken(),
               ),
             ),
           ],
         ),
-        activeColor: const Color(0xFF0EA5E9),
-        checkColor: Colors.white,
-        controlAffinity: ListTileControlAffinity.leading,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
       ),
     );
+  }
+
+  void _applyPreset(String preset) {
+    Map<String, bool> config;
+    switch (preset) {
+      case 'safe':
+        config = {
+          'temp_files': true,
+          'thumbnail_cache': true,
+          'recent_documents': false,
+          'browser_cache': false,
+          'download_history': false,
+        };
+        break;
+      case 'balanced':
+        config = {
+          'temp_files': true,
+          'thumbnail_cache': true,
+          'recent_documents': true,
+          'browser_cache': false,
+          'download_history': false,
+        };
+        break;
+      case 'aggressive':
+      default:
+        config = {
+          'temp_files': true,
+          'thumbnail_cache': true,
+          'recent_documents': true,
+          'browser_cache': true,
+          'download_history': true,
+        };
+    }
+    _cleaningCategories = Map<String, bool>.from(config);
+  }
+
+  Widget _buildCategoryCard({
+    required double width,
+    required String keyName,
+    required String title,
+    required String description,
+    required IconData icon,
+    required Color color,
+    required StateSetter setStateDialog,
+  }) {
+    final isSelected = _cleaningCategories[keyName] ?? false;
+    return SizedBox(
+      width: width,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: () {
+            _toggleCategory(keyName);
+            setStateDialog(() {});
+          },
+          borderRadius: BorderRadius.circular(12),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 180),
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: isSelected ? color.withOpacity(0.06) : Colors.grey[50],
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(
+                color: isSelected ? color.withOpacity(0.45) : Colors.grey[300]!,
+                width: 1.2,
+              ),
+              boxShadow: isSelected
+                  ? [
+                      BoxShadow(
+                        color: color.withOpacity(0.15),
+                        blurRadius: 10,
+                        offset: const Offset(0, 4),
+                      )
+                    ]
+                  : [],
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 36,
+                  height: 36,
+                  decoration: BoxDecoration(
+                    color: color.withOpacity(0.12),
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: color.withOpacity(0.35)),
+                  ),
+                  child: Icon(icon, size: 18, color: color),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              title,
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
+                                color: isSelected
+                                    ? color.darken()
+                                    : const Color(0xFF1F2937),
+                              ),
+                            ),
+                          ),
+                          Switch.adaptive(
+                            value: isSelected,
+                            onChanged: (val) {
+                              _cleaningCategories[keyName] = val;
+                              setStateDialog(() {});
+                            },
+                            activeColor: color,
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        description,
+                        style: const TextStyle(
+                          fontSize: 12,
+                          color: Color(0xFF6B7280),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _toggleCategory(String keyName) {
+    final current = _cleaningCategories[keyName] ?? false;
+    _cleaningCategories[keyName] = !current;
   }
 }
 
@@ -1163,9 +1343,18 @@ class _CleanButtonState extends State<_CleanButton> {
       return Colors.white;
     }
 
+    void scheduleHover(bool value) {
+      if (!mounted) return;
+      if (_isHovered == value) return;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        setState(() => _isHovered = value);
+      });
+    }
+
     return MouseRegion(
-      onEnter: isDisabled ? null : (_) => setState(() => _isHovered = true),
-      onExit: isDisabled ? null : (_) => setState(() => _isHovered = false),
+      onEnter: isDisabled ? null : (_) => scheduleHover(true),
+      onExit: isDisabled ? null : (_) => scheduleHover(false),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
         height: 40,
@@ -1228,5 +1417,15 @@ class _CleanButtonState extends State<_CleanButton> {
         ),
       ),
     );
+  }
+}
+
+extension _ColorX on Color {
+  Color darken([double amount = 0.15]) {
+    assert(amount >= 0 && amount <= 1);
+    final hsl = HSLColor.fromColor(this);
+    final darkened =
+        hsl.withLightness((hsl.lightness - amount).clamp(0.0, 1.0));
+    return darkened.toColor();
   }
 }
